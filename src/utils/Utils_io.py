@@ -13,32 +13,6 @@ try:
 except Exception as e:
     print('Import of matplotlib or json failed with: {} \n try to install them with pip install...')
 
-def show_available_gpus():
-    """
-    Prints all GPUs and their currently BytesInUse
-    Returns the first GPU instance with less than 1280 bytes in use
-    From our tests that indicates that this Gpu is available
-    Usage:
-    gpu = get_available_gpu()
-    with tf.device(gpu):
-       results = model.fit()
-       ...
-       
-    """
-
-    # get a list of all visible GPUs
-
-    import os
-    import tensorflow as tf
-    from tensorflow.keras import backend as K
-    from tensorflow.python.client import device_lib
-
-    gpus = [x for x in device_lib.list_local_devices() if x.device_type == 'GPU']
-
-    [print('available GPUs: no:{} --> {}'.format(i, gpu.physical_device_desc)) for i, gpu in enumerate(gpus)]
-    print('-----')
-    return gpus
-
 
 # define some helper classes and a console and file logger
 class Console_and_file_logger():
@@ -114,49 +88,49 @@ def ensure_dir(file_path):
         
 
 
-def save_plot(fig, path, filename='', override=False, tight=True):
-    """
-    Saves an matplotlib figure to the given path + filename
-    If the figure exists, ad a number at the end and increase it
-    as long as there is already an image with this name
-    :param fig:
-    :param path:
-    :param filename:
-    :return:
-    """
-    logging.debug('Trying to save to {0}'.format(path))
-    ensure_dir(path)
-    if tight:
-        plt.tight_layout()
+# def save_plot(fig, path, filename='', override=False, tight=True):
+#     """
+#     Saves an matplotlib figure to the given path + filename
+#     If the figure exists, ad a number at the end and increase it
+#     as long as there is already an image with this name
+#     :param fig:
+#     :param path:
+#     :param filename:
+#     :return:
+#     """
+#     logging.debug('Trying to save to {0}'.format(path))
+#     ensure_dir(path)
+#     if tight:
+#         plt.tight_layout()
+#
+#     i = 0
+#     if override:
+#         newname = '{}.png'.format(filename)
+#         fig.savefig(os.path.join(path, newname))
+#     else:
+#         while True:
+#             i += 1
+#             newname = '{}{:d}.png'.format(filename + '_', i)
+#             if os.path.exists(os.path.join(path, newname)):
+#                 continue
+#             fig.savefig(os.path.join(path, newname))
+#             break
+#     logging.debug('Image saved: {}'.format(os.path.join(path, newname)))
+#     # free memory, close fig
+#     plt.close(fig)
 
-    i = 0
-    if override:
-        newname = '{}.png'.format(filename)
-        fig.savefig(os.path.join(path, newname))
-    else:
-        while True:
-            i += 1
-            newname = '{}{:d}.png'.format(filename + '_', i)
-            if os.path.exists(os.path.join(path, newname)):
-                continue
-            fig.savefig(os.path.join(path, newname))
-            break
-    logging.debug('Image saved: {}'.format(os.path.join(path, newname)))
-    # free memory, close fig
-    plt.close(fig)
 
-
-def get_metadata_maybe(sitk_img, key, default='not_found'):
-    # helper for unicode decode errors
-    try:
-        value = sitk_img.GetMetaData(key)
-    except Exception as e:
-        logging.debug('key not found: {}, {}'.format(key, e))
-        value = default
-    # need to encode/decode all values because of unicode errors in the dataset
-    if not isinstance(value, int):
-        value = value.encode('utf8', 'backslashreplace').decode('utf-8').replace('\\udcfc', 'ue')
-    return value
+# def get_metadata_maybe(sitk_img, key, default='not_found'):
+#     # helper for unicode decode errors
+#     try:
+#         value = sitk_img.GetMetaData(key)
+#     except Exception as e:
+#         logging.debug('key not found: {}, {}'.format(key, e))
+#         value = default
+#     # need to encode/decode all values because of unicode errors in the dataset
+#     if not isinstance(value, int):
+#         value = value.encode('utf8', 'backslashreplace').decode('utf-8').replace('\\udcfc', 'ue')
+#     return value
 
 
 def init_config(config, save=True):
