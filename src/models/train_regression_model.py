@@ -1,9 +1,7 @@
 import logging
-import pathlib
 
-def train_fold(config, in_memory=False):
+def train_fold(config, dataset_json, in_memory=False):
     # make sure necessary config params are given, otherwise replace with default
-    import tensorflow
     import tensorflow as tf
     import numpy as np
     tf.get_logger().setLevel('FATAL')
@@ -29,9 +27,9 @@ def train_fold(config, in_memory=False):
     import logging, os
 
     # local imports
-    from src.utils.Utils_io import Console_and_file_logger, init_config, ensure_dir
+    from src.utils.Utils_io import ConsoleAndFileLogger, init_config, ensure_dir
     from src.utils.KerasCallbacks import get_callbacks
-    from src.data.Dataset import get_trainings_files, all_files_in_df
+    from src.data.Dataset import get_trainings_files
     from src.data.PhaseGenerators import PhaseRegressionGenerator_v2
     from src.models.PhaseRegModels import PhaseRegressionModel
 
@@ -51,10 +49,10 @@ def train_fold(config, in_memory=False):
     TENSORBOARD_PATH = os.path.join(FOLD_PATH, 'tensorboard_logs')
     CONFIG_PATH = os.path.join(FOLD_PATH, 'config')
     SEGMENTATION_EXP = config.get("SEGMENTATION_EXP", None)
-    PRETRAINED_SEG = SEGMENTATION_EXP is not None
-    if PRETRAINED_SEG:
-        SEGMENTATION_MODEL = os.path.join(SEGMENTATION_EXP, 'model.json')
-        SEGMENTATION_WEIGHTS = os.path.join(SEGMENTATION_EXP, f'f{FOLD}', 'model', 'model.h5')
+    # PRETRAINED_SEG = SEGMENTATION_EXP is not None
+    # if PRETRAINED_SEG:
+    #     SEGMENTATION_MODEL = os.path.join(SEGMENTATION_EXP, 'model.json')
+    #     SEGMENTATION_WEIGHTS = os.path.join(SEGMENTATION_EXP, f'f{FOLD}', 'model', 'model.h5')
 
     ensure_dir(MODEL_PATH)
     ensure_dir(TENSORBOARD_PATH)
@@ -65,13 +63,18 @@ def train_fold(config, in_memory=False):
     DF_META = config.get('DF_META', None)
     EPOCHS = config.get('EPOCHS', 100)
 
-    Console_and_file_logger(path=FOLD_PATH, log_lvl=logging.INFO)
+    ConsoleAndFileLogger(path=FOLD_PATH, log_lvl=logging.INFO)
     config = init_config(config=locals(), save=True)
     logging.info('Is built with tensorflow: {}'.format(tf.test.is_built_with_cuda()))
     logging.info('Visible devices:\n{}'.format(tf.config.list_physical_devices()))
 
+    suffix = dataset_json["suffix"]
+    file_ending = dataset_json["file_ending"]
+
     # get k-fold data from DATA_ROOT and subdirectories
     x_train_lax, y_train_lax, x_val_lax, y_val_lax = get_trainings_files(data_path=DATA_PATH_LAX,
+                                                                         suffix=suffix,
+                                                                         ftype=file_ending,
                                                                          path_to_folds_df=DF_FOLDS,
                                                                          fold=FOLD)
 
@@ -79,11 +82,6 @@ def train_fold(config, in_memory=False):
     logging.info('LAX val CMR: {}, LAX val masks: {}'.format(len(x_val_lax), len(y_val_lax)))
 
     t0 = time()
-    # check if we find each patient in the corresponding dataframe
-    if DF_META is not None and os.path.exists(DF_META):
-        all_given = all_files_in_df(DF_META, x_train_lax, x_val_lax)
-        logging.info('found all patients in df meta: {}'.format(all_given))
-
     debug = 0  # make sure single threaded
 
     # Create the batchgenerators
@@ -92,13 +90,13 @@ def train_fold(config, in_memory=False):
         config['SHUFFLE'] = False
         config['WORKERS'] = 1
         config['BATCHSIZE'] = 1
-    batch_generator = PhaseRegressionGenerator_v2(x_train_lax, x_train_lax, config=config, in_memory=in_memory)
+    batch_generator = PhaseRegressionGenerator_v2(x_train_lax, x_train_lax, config=config, dataset_json=dataset_json, in_memory=in_memory)
     val_config = config.copy()
     val_config['AUGMENT'] = False
     val_config['AUGMENT_PHASES'] = False
     val_config['HIST_MATCHING'] = False
     val_config['AUGMENT_TEMP'] = False
-    validation_generator = PhaseRegressionGenerator_v2(x_val_lax, x_val_lax, config=val_config, in_memory=in_memory)
+    validation_generator = PhaseRegressionGenerator_v2(x_val_lax, x_val_lax, config=val_config, dataset_json=dataset_json, in_memory=in_memory)
 
     import matplotlib.pyplot as plt
     from src.visualization.Visualize import show_2D_or_3D
@@ -189,9 +187,9 @@ def main(args=None, in_memory=False, seg_exp_path=None):
             config = json.loads(data_file.read())
 
         # Define new paths, make sure that:
-        # 1. we dont overwrite a previous config
+        # 1. we don't overwrite a previous config
         # 2. cluster based trainings are compatible with saving locally (cluster/local)
-        # we dont need to initialise this config, as it should already have the correct format,
+        # we don't need to initialise this config, as it should already have the correct format,
         # The fold configs will be saved within each fold run
         # add a timestamp and a slurm jobid to each project to make repeated experiments unique
         EXPERIMENT = config.get('EXPERIMENT', 'UNDEFINED')
@@ -203,18 +201,24 @@ def main(args=None, in_memory=False, seg_exp_path=None):
         if args.data:  # if we specified a different data path (training from workspace or node temporal disk)
             config['DATA_PATH_LAX'] = os.path.join(args.data, "lax/")
             config['DF_FOLDS'] = os.path.join(args.data, "df_kfold.csv")
-            config['DF_META'] = os.path.join(args.data, "Lax_3D_dicomTags_phase.csv")
+            config['DF_META'] = os.path.join(args.data, "gt_phases.csv")
 
         logging.debug(config)
     else:
         logging.error('no config given, please select one from the templates in exp/examples')
+
+    if args.data_json:
+        with open(args.data_json, encoding='utf-8') as data_file:
+            data_json = json.load(data_file)
 
     from src.models.predict_phase_reg_model import predict
     for f in config.get('FOLDS', [0]):
         logging.info('starting fold: {}'.format(f))
         config_ = config.copy()
         config_['FOLD'] = f
-        cfg = train_fold(config_, in_memory=in_memory)
+        data_json_ = data_json.copy()
+        data_json_['FOLD'] = f
+        cfg = train_fold(config_, data_json_, in_memory=in_memory)
         predict(cfg)
         gc.collect()
         logging.info('train fold: {} finished'.format(f))
@@ -237,13 +241,6 @@ def main(args=None, in_memory=False, seg_exp_path=None):
     except Exception as e:
         logging.error('{} predict phase failed with: {}'.format(config.get('EXPERIMENT'), e))
 
-    try:
-        from src.models.evaluate_dice_phase_reg import evaluate_dice
-        logging.info('Evaluating dice for use_segmentation model')
-        evaluate_dice(config.get('EXP_PATH'), in_memory=in_memory)
-    except Exception as e:
-        logging.error(f'Failed with dice evaluation for {config.get("EXPERIMENT")}: '+str(e))
-
 
 if __name__ == "__main__":
     import argparse
@@ -253,7 +250,7 @@ if __name__ == "__main__":
     # usually these three parameters should encapsulate all experiment parameters
     parser.add_argument('-cfg_reg', action='store',
                         default=None)  # path to a cfg file, such as the example cfgs in data/cfgs
-    parser.add_argument('-cfg_seg', action='store',
+    parser.add_argument('-data_json', action='store',
                         default=None)  # path to a cfg file, such as the example cfgs in data/cfgs
     parser.add_argument('-data', action='store', default=None)  # path to any dataset that can be processed
     parser.add_argument('-inmemory', action='store', default=False)  # enable in memory pre-processing on the cluster

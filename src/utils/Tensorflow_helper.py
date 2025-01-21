@@ -1,6 +1,5 @@
 import os
 
-
 def show_available_gpus():
     """
     Prints all GPUs and their currently BytesInUse
@@ -24,32 +23,6 @@ def show_available_gpus():
     return gpus
 
 
-def show_free_gpus(gpus):
-    import tensorflow as tf
-    from tensorflow.keras import backend as K
-    from tensorflow.contrib.memory_stats import BytesInUse
-
-    bytes_used = {}
-
-    for gpu in gpus:
-        with tf.device(gpu.name):
-            bytes_in_use = BytesInUse()
-            bytes_used[gpu.name] = K.get_session().run(bytes_in_use)
-
-    [print('available GPUs: no:{} --> {}, current load: {}'.format(i, gpu.physical_device_desc, bytes_used[gpu.name]))
-     for i, gpu in enumerate(gpus)]
-    # filter GPUs with more RAM usage than 1280 bytes
-    available_gpus = [gpu for gpu in gpus if bytes_used[gpu.name] <= 1280]
-
-    if len(available_gpus) >= 1:
-        selected_gpu = available_gpus[0]
-        print('Selected GPU: {}, {}'.format(selected_gpu.name, selected_gpu.physical_device_desc))
-        # os.environ["CUDA_VISIBLE_DEVICES"]=str(selected_gpu.name[-1])
-        return '/device:GPU:0'
-    else:
-        print('No GPU available!!!')
-
-
 def choose_gpu_by_id(gpu_id='0'):
     """
     define the visible GPUs returns the current GPU
@@ -63,5 +36,4 @@ def choose_gpu_by_id(gpu_id='0'):
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
     os.environ["CUDA_VISIBLE_DEVICES"] = gpu_id
     gpu_list = ["/gpu:%d" % i for i in range(len(gpu_id.split(',')))]
-    # print(device_lib.list_local_devices())
     return gpu_list

@@ -1,11 +1,10 @@
 import os, errno
 import logging
-from time import time
-import platform
+# from time import time
+# import platform
 
-if not platform.system() == 'Windows':
-    import matplotlib as mpl
-
+# if not platform.system() == 'Windows':
+    # import matplotlib as mpl
     #mpl.use('TkAgg')
 try:
     import matplotlib.pyplot as plt
@@ -15,7 +14,7 @@ except Exception as e:
 
 
 # define some helper classes and a console and file logger
-class Console_and_file_logger():
+class ConsoleAndFileLogger:
     def __init__(self, logfile_name='Log', log_lvl=logging.INFO, path='./logs/'):
         """
         Create your own logger
@@ -23,7 +22,6 @@ class Console_and_file_logger():
         log info messages into the console
         log error messages into a dedicated *_error logfile
         :param logfile_name:
-        :param log_dir:
         """
 
         # Define the general formatting schema
@@ -85,39 +83,40 @@ def ensure_dir(file_path):
         except OSError as e:
             if e.errno != errno.EEXIST:
                 raise
-        
 
 
-# def save_plot(fig, path, filename='', override=False, tight=True):
-#     """
-#     Saves an matplotlib figure to the given path + filename
-#     If the figure exists, ad a number at the end and increase it
-#     as long as there is already an image with this name
-#     :param fig:
-#     :param path:
-#     :param filename:
-#     :return:
-#     """
-#     logging.debug('Trying to save to {0}'.format(path))
-#     ensure_dir(path)
-#     if tight:
-#         plt.tight_layout()
-#
-#     i = 0
-#     if override:
-#         newname = '{}.png'.format(filename)
-#         fig.savefig(os.path.join(path, newname))
-#     else:
-#         while True:
-#             i += 1
-#             newname = '{}{:d}.png'.format(filename + '_', i)
-#             if os.path.exists(os.path.join(path, newname)):
-#                 continue
-#             fig.savefig(os.path.join(path, newname))
-#             break
-#     logging.debug('Image saved: {}'.format(os.path.join(path, newname)))
-#     # free memory, close fig
-#     plt.close(fig)
+def save_plot(fig, path, filename='', override=False, tight=True):
+    """
+    Saves an matplotlib figure to the given path + filename
+    If the figure exists, ad a number at the end and increase it
+    as long as there is already an image with this name
+    :param fig:
+    :param path:
+    :param filename:
+    :param override:
+    :param tight:
+    :return:
+    """
+    logging.debug('Trying to save to {0}'.format(path))
+    ensure_dir(path)
+    if tight:
+        plt.tight_layout()
+
+    i = 0
+    if override:
+        newname = '{}.png'.format(filename)
+        fig.savefig(os.path.join(path, newname))
+    else:
+        while True:
+            i += 1
+            newname = '{}{:d}.png'.format(filename + '_', i)
+            if os.path.exists(os.path.join(path, newname)):
+                continue
+            fig.savefig(os.path.join(path, newname))
+            break
+    logging.debug('Image saved: {}'.format(os.path.join(path, newname)))
+    # free memory, close fig
+    plt.close(fig)
 
 
 # def get_metadata_maybe(sitk_img, key, default='not_found'):
@@ -184,3 +183,4 @@ def init_config(config, save=True):
 
         # logging.info('config saved:\n {}'.format(json.dumps(write_config, indent=4, sort_keys=True)))
     return config
+

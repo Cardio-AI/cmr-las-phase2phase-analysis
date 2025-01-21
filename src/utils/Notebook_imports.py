@@ -19,7 +19,7 @@ import random
 random.seed(SEED)
 np.random.seed(SEED)
 
-from src.utils.Utils_io import Console_and_file_logger, ensure_dir
+from src.utils.Utils_io import ConsoleAndFileLogger, ensure_dir
 
 # make jupyter able to display multiple lines of variables in one cell
 from IPython.core.interactiveshell import InteractiveShell

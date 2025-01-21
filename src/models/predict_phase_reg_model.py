@@ -37,7 +37,7 @@ def predict(cfg_file, data_root='', c2l=False, exp=None, number_of_examples=None
     from logging import info
     import numpy as np
     from src.data.Dataset import get_trainings_files
-    from src.utils.Utils_io import Console_and_file_logger, ensure_dir
+    from src.utils.Utils_io import ConsoleAndFileLogger, ensure_dir
     from src.data.PhaseGenerators import PhaseRegressionGenerator_v2
     from src.models.PhaseRegModels import PhaseRegressionModel
     from ProjectRoot import change_wd_to_project_root
@@ -60,7 +60,7 @@ def predict(cfg_file, data_root='', c2l=False, exp=None, number_of_examples=None
     print(tf.config.list_physical_devices('GPU'))
 
     EXPERIMENT = config.get('EXPERIMENT', 'UNDEFINED')
-    Console_and_file_logger(EXPERIMENT, logging.INFO)
+    ConsoleAndFileLogger(EXPERIMENT, logging.INFO)
     info('Loaded config for experiment: {}'.format(EXPERIMENT))
     PRETRAINED_SEG = config.get('PRETRAINED_SEG', False)
 
@@ -604,7 +604,7 @@ def get_as_single_mask(segmentation, channels, whole_mask=True) -> np.ndarray:
 
 def get_rv_lv_dir(vects_nda, masks=None, length=-1, plot=True, z=None, dir_axis=0, gtind=None, exp_path=None, patient='temp',
                           save=False):
-
+    from src.utils.detect_phases_from_dir import detect_phases
     lower, mid, upper = -1, 0, 1
 
     lv_args = interpret_deformable(dir_axis=dir_axis, masks=masks, length=length, vects_nda=vects_nda,
@@ -685,34 +685,13 @@ def plot_two_direction_instance(dir_1d_mean_a, dir_1d_mean_b, direction_a, direc
 
 def get_focus_point(mask2d: np.ndarray, calculation: Union[Literal['septum'], List, int, None] = 'septum', print_ct=False, whole_mask=True):
     from scipy import ndimage
-    from src.data.Preprocess import get_ip_from_2dmask
-    from src.data.Postprocess import get_predicted_as_segmentation
-
-    if calculation == 'septum':
-        import matplotlib.pyplot as plt
-        from src.visualization.Visualize import show_2D_or_3D
-        # first roll to center of mean septum,
-        # than rotate to a 90 degree angle between the septum and the x-axis
-        # Get the anterior and inferior insertion points for all valid slices
-        fips, sips = get_ip_from_2dmask(mask2d)
-        # average both points to find the mean fip and sip per volume
-        if fips is not None and sips is not None:
-            x_coord = np.array([fips[0], sips[0]]).mean(axis=0).astype(int)
-            y_coord = np.array([fips[1], sips[1]]).mean(axis=0).astype(int)
-            focus = np.array([x_coord, y_coord])
-        else:
-            logging.error("It was not possible to find intersection points to use the mid of septum as focus poin.\nWill use whole mask center point instead.")
-            focus = get_focus_point(mask2d, [1,2,3])
-        if print_ct: print('Using mid of septum as focus point')
-
-    else:
-        if type(calculation) == int:
-            calculation = [calculation]
-        mask_for_focus = get_as_single_mask(mask2d[...,None], channels=calculation, whole_mask=whole_mask)  # masks of first ts
-        center_of_mask = ndimage.center_of_mass(mask_for_focus)
-        focus = np.array([center_of_mask[1], center_of_mask[2]])
-        if print_ct: print(
-            f'Using mask(s): {", ".join(np.array(["right ventricle", "myocardium", "left ventricle", "rv outline"])[calculation])} for ct')
+    if type(calculation) == int:
+        calculation = [calculation]
+    mask_for_focus = get_as_single_mask(mask2d[...,None], channels=calculation, whole_mask=whole_mask)  # masks of first ts
+    center_of_mask = ndimage.center_of_mass(mask_for_focus)
+    focus = np.array([center_of_mask[1], center_of_mask[2]])
+    if print_ct: print(
+        f'Using mask(s): {", ".join(np.array(["right ventricle", "myocardium", "left ventricle", "rv outline"])[calculation])} for ct')
     return focus
 
 
@@ -734,6 +713,7 @@ def interpret_deformable(vects_nda, masks=None, mask_channels=None, dir_axis=0, 
                          ct_calculation: Union[Literal['septum'], list, int, None] = 'septum'):
     import numpy as np
     from scipy import ndimage
+    from src.visualization.save import write_sitk
     if length is None:
         length = vects_nda.shape[0]
     if vects_nda.dtype is not np.float32: vects_nda = vects_nda.astype("float32")
@@ -1045,7 +1025,7 @@ def predict_phase_from_deformable(exp_path, create_figures=True, norm_thresh=50,
     from src.data.Postprocess import align_resample_multi
     from src.visualization.Visualize import plot_dir_norm, plot_dir_norm_split_by, plot_pfd_per_phase_as_violin, \
         plot_scatter
-    from src.data.Dataset import merge_patient_with_metadata
+
     aligned_length = 40
     vols_alignedscaled = None
     vols_rv_alignedscaled = None
@@ -1214,7 +1194,8 @@ def interpret_deformable_async(nda_vect, gt_len, gt, dir_axis, norm_thresh, conn
         masks=masks,
         mask_channels=mask_channels,
         ct_calculation=ct_calculation)
-
+    
+    from src.utils.detect_phases_from_dir import detect_phases
     indices = detect_phases(dir_1d_mean=dir_1d_mean[:cardiac_cycle_length])
 
     return cardiac_cycle_length, dir_1d_mean, ind, indices, norm_1d_mean, weight, idx, ct, masks

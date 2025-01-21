@@ -1,7 +1,21 @@
-cmr-las-phase2phase-analysis
+Phase2Phase aligned long-axis strain
 ==============================
 
-This repository is for the automatic calculation of the strain in LAX CMR. 
+This repository contains code to perform the automatic calculation of the long-axis strain (LAS) from 
+four-chamber long-axis (4CH) cardiac magnetic resonance (CMR) cine images..
+
+This repository was used for the following paper:
+
+**An automatic self-supervised phase-based approach to aligned long axis strain measurements in four chamber CMR**
+
+Motivation
+-
+---
+
+![Visual Abstract of Pipeline](/docs/img/Visual%20Abstract_V3.png)
+
+
+
 
 Project Organization
 ------------

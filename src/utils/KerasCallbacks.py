@@ -14,7 +14,7 @@ from keras import backend as K
 from keras.callbacks import TensorBoard
 from keras.callbacks import Callback
 from keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau, LearningRateScheduler
-from src.visualization.Visualize import plot_3d_vol, plot_4d_vol, plot_displacement
+from src.visualization.Visualize import plot_displacement #plot_3d_vol, plot_4d_vol,
 from src.visualization.Visualize import show_slice_transparent as show_slice
 from src.utils.Utils_io import ensure_dir
 
