@@ -38,9 +38,9 @@ def get_trainings_files(data_path, suffix=None, ftype=None, fold=0, path_to_fold
     if ftype is None:
         ftype = ".nii.gz"
 
-    img_suffix = "**/*{}{}".format(suffix["image_suffix"], ftype)
+    img_suffix = "*{}{}".format(suffix["image_suffix"], ftype)
     # load the cmr files with given pattern from the data path
-    x = sorted(glob.glob(os.path.join(data_path, img_suffix)))
+    x = sorted(glob.glob(os.path.join(data_path, '**', img_suffix), recursive=True))
 
     if len(x) == 0:
         logging.error('No files found in: {}, with suffix {}, try to list all files in this directory:'.format(data_path,suffix))
@@ -49,9 +49,9 @@ def get_trainings_files(data_path, suffix=None, ftype=None, fold=0, path_to_fold
         x = sorted(glob.glob(os.path.join(data_path, '*')))
 
 
-    if len(suffix["mask_suffix"])>0:
-        mask_suffix = "**/*{}{}".format(suffix["mask_suffix"], ftype)
-        y = sorted(glob.glob(os.path.join(data_path, mask_suffix)))
+    if suffix["mask_suffix"] is not None and len(suffix["mask_suffix"])>0:
+        mask_suffix = "*{}{}".format(suffix["mask_suffix"], ftype)
+        y = sorted(glob.glob(os.path.join(data_path, '**',mask_suffix), recursive=True))
     else:
         y=x
 

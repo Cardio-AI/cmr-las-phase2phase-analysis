@@ -1,3 +1,4 @@
+import glob
 import os, errno
 import logging
 # from time import time
@@ -181,6 +182,37 @@ def init_config(config, save=True):
         with open(os.path.join(write_config['CONFIG_PATH'], 'config.json'), 'w') as fp:
             json.dump(write_config, fp)
 
-        # logging.info('config saved:\n {}'.format(json.dumps(write_config, indent=4, sort_keys=True)))
     return config
 
+
+def init_json(json_data, file_path):
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    json_file = os.path.join(file_path, 'dataset.json')
+    with open(json_file, 'w') as json_file_path:
+        json.dump(json_data, json_file_path, indent=4)
+
+    return json_data
+
+def get_json(search_pattern, file_path):
+    search_path = os.path.join(file_path, search_pattern)
+    files = sorted(glob.glob(search_path))
+
+    if not files:
+        search_path = os.path.join(os.path.dirname(file_path), '**', search_pattern)
+        files = sorted(glob.glob(search_path))
+
+    print(f"Config file: {files}")
+    return files
+
+def get_post_processing(json_file):
+    with open(json_file) as json_file:
+        json_data = json.load(json_file)
+    ret = json_data["post_processing"]
+    if ret["use_segmentation"]:
+        if not ret["mask_channels"]:
+            ret["mask_channels"] = [
+                label_id for label, label_id in json_data["labels"].items() if label != "background"
+            ]
+    else:
+        ret["mask_channels"] = []
+    return ret

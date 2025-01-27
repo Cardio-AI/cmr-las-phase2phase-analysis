@@ -429,24 +429,24 @@ def transform_to_binary_mask(mask_nda, mask_values=None):
         mask[..., ix] = mask_nda == mask_value
     return mask
 
-#
-# def from_channel_to_flat(binary_mask, start_c=0, threshold=0.5):
-#     """
-#     Transform a tensor or numpy nda from a channel-wise (one channel per label) representation
-#     to a value-based representation
-#     :param binary_mask:
-#     :return:
-#     """
-#     # convert to bool nda to allow later indexing
-#     binary_mask = binary_mask >= threshold
-#
-#     # reduce the shape by the channels
-#     temp = np.zeros(binary_mask.shape[:-1], dtype=np.uint8)
-#
-#     for c in range(binary_mask.shape[-1]):
-#         temp[binary_mask[..., c]] = c + start_c
-#     return temp
-#
+
+def from_channel_to_flat(binary_mask, start_c=0, threshold=0.5):
+    """
+    Transform a tensor or numpy nda from a channel-wise (one channel per label) representation
+    to a value-based representation
+    :param binary_mask:
+    :return:
+    """
+    # convert to bool nda to allow later indexing
+    binary_mask = binary_mask >= threshold
+
+    # reduce the shape by the channels
+    temp = np.zeros(binary_mask.shape[:-1], dtype=np.uint8)
+
+    for c in range(binary_mask.shape[-1]):
+        temp[binary_mask[..., c]] = c + start_c
+    return temp
+
 
 def clip_quantile(img_nda, upper_quantile=.999, lower_boundary=0):
     """

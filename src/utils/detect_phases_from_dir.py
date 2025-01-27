@@ -1,6 +1,6 @@
 import logging
-
 DEBUG = False
+import numpy as np
 
 def detect_phases(dir_1d_mean):
     """
@@ -113,19 +113,19 @@ def get_md(dir_1d_mean, lower_idx, upper_idx):
         cycle = np.concatenate([dir_1d_mean[lower_idx:], dir_1d_mean[:upper_idx]])
 
     peaks, prop = sig.find_peaks(cycle, prominence=(None, None))
-    if len(peaks) > 0:
-        peak_values = cycle[peaks]
-        peaks = [p for p, _ in sorted(zip(peaks, peak_values), key=lambda pair: pair[1],
-                                      reverse=True)]  # or use the prominence: prop['prominences']
-        md = lower_idx + peaks[0]  # max(peaks)  # take the biggest peak between the boundaries
-    else:
-        try:
-            md = lower_idx + np.argmax(cycle)
-        except Exception as e:
-            if lower_idx < upper_idx:
-                md = (lower_idx + upper_idx) // 2  # direct middle
-            else:
-                md = (upper_idx + length + lower_idx) // 2  # middle across the cycle border
+    # if len(peaks) > 0:
+    #     peak_values = cycle[peaks]
+    #     peaks = [p for p, _ in sorted(zip(peaks, peak_values), key=lambda pair: pair[1],
+    #                                   reverse=True)]  # or use the prominence: prop['prominences']
+    #     md = lower_idx + peaks[0]  # max(peaks)  # take the biggest peak between the boundaries
+    # else:
+    #     try:
+    #         md = lower_idx + np.argmax(cycle)
+    #     except Exception as e:
+    #         if lower_idx < upper_idx:
+    #             md = (lower_idx + upper_idx) // 2  # direct middle
+    #         else:
+    #             md = (upper_idx + length + lower_idx) // 2  # middle across the cycle border
     if lower_idx < upper_idx:
         md = (lower_idx + upper_idx) // 2  # direct middle
     else:
@@ -298,3 +298,4 @@ def get_ms(dir_1d_mean, length):
     ms = np.argmin(dir_1d_mean)
     ms = np.mod(ms, length)
     return ms
+

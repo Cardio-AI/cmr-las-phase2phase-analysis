@@ -27,7 +27,7 @@ def train_fold(config, dataset_json, in_memory=False):
     import logging, os
 
     # local imports
-    from src.utils.Utils_io import ConsoleAndFileLogger, init_config, ensure_dir
+    from src.utils.Utils_io import ConsoleAndFileLogger, init_config, init_json, ensure_dir
     from src.utils.KerasCallbacks import get_callbacks
     from src.data.Dataset import get_trainings_files
     from src.data.PhaseGenerators import PhaseRegressionGenerator_v2
@@ -65,11 +65,15 @@ def train_fold(config, dataset_json, in_memory=False):
 
     ConsoleAndFileLogger(path=FOLD_PATH, log_lvl=logging.INFO)
     config = init_config(config=locals(), save=True)
+    dataset_json = init_json(dataset_json, CONFIG_PATH)
     logging.info('Is built with tensorflow: {}'.format(tf.test.is_built_with_cuda()))
     logging.info('Visible devices:\n{}'.format(tf.config.list_physical_devices()))
 
-    suffix = dataset_json["suffix"]
-    file_ending = dataset_json["file_ending"]
+    suffix = dataset_json.get("suffix", None)
+    if suffix is None:
+        file_ending = "nii.gz"
+    else:
+        file_ending = suffix["file_ending"]
 
     # get k-fold data from DATA_ROOT and subdirectories
     x_train_lax, y_train_lax, x_val_lax, y_val_lax = get_trainings_files(data_path=DATA_PATH_LAX,
@@ -210,6 +214,8 @@ def main(args=None, in_memory=False, seg_exp_path=None):
     if args.data_json:
         with open(args.data_json, encoding='utf-8') as data_file:
             data_json = json.load(data_file)
+    else:
+        logging.error('no dataset given, please select one from the templates in exp/examples')
 
     from src.models.predict_phase_reg_model import predict
     for f in config.get('FOLDS', [0]):
@@ -219,7 +225,7 @@ def main(args=None, in_memory=False, seg_exp_path=None):
         data_json_ = data_json.copy()
         data_json_['FOLD'] = f
         cfg = train_fold(config_, data_json_, in_memory=in_memory)
-        predict(cfg)
+        predict(cfg, json_file=data_json_)
         gc.collect()
         logging.info('train fold: {} finished'.format(f))
         # evaluate dice with 2D slices but phase generator

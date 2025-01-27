@@ -465,9 +465,9 @@ class PhaseRegressionGenerator_v2(DataGenerator):
         self.ISNIFTI = False
 
         logging.info('first file: {}'.format(self.IMAGES[0].lower()))
-        if 'nii.gz' in dataset_json["file_ending"]:
+        if 'nii.gz' in dataset_json.get("suffix",{}).get("file_ending", "nii.gz"):
             self.ISNIFTI = True
-        self.STARTID = dataset_json["start_id"]
+        self.STARTID = dataset_json.get("start_id", 0)
 
         # opens a dataframe with cleaned phases per patient
         self.METADATA_FILE = config.get('DF_META', None)

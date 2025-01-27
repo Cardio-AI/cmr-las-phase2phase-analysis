@@ -3,6 +3,8 @@ from scipy.interpolate import interp1d
 from src.models.KerasLayers import minmax_lambda
 from skimage import measure
 
+from typing import Literal
+
 def align_resample_multi(dirs, norms, gt, gt_len,  target_t=30, normalise_dir=True, normalise_norm=True, rescale=False):
     """
     Alignment wrapper for a full dataset

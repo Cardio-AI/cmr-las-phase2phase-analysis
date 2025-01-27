@@ -8,8 +8,7 @@ from scipy.ndimage import gaussian_filter1d
 DEBUG = False
 
 
-def predict(cfg_file, data_root='', c2l=False, exp=None, number_of_examples=None,
-            use_segmentation=None, norm_thresh=40, connected_component_filter=None):
+def predict(cfg_file, json_file=None, data_root='', c2l=False, exp=None, number_of_examples=None):
     """
         TODO:
             rethink the current behaviour of processing all files, and than save them to disk, the reason for this is
@@ -23,11 +22,6 @@ def predict(cfg_file, data_root='', c2l=False, exp=None, number_of_examples=None
         :param c2l: trained on the cluster - inference from local data (path to data from the cluster nodes will be not available locally)
         :param exp: path to trained model/experiment instance (predictions will be saved here)
         :type exp: str
-        :param use_segmentation: indicates which parts of the segmentation should be used for masking
-        :type use_segmentation: str
-        :param norm_thresh: integer stating the norm percentile threshold. Standard value: 40%
-        :param connected_component_filter: Size of padding array arround largest connected component. If None, no connected component filter is applied.
-        :type connected_component_filter: int
     """
 
     import json, logging, os
@@ -45,12 +39,21 @@ def predict(cfg_file, data_root='', c2l=False, exp=None, number_of_examples=None
     from src.data.Postprocess import get_predicted_as_segmentation
     from src.utils.Tensorflow_helper import choose_gpu_by_id
 
-    # load the experiment config
+    # load the experiment config and json
     if type(cfg_file) == type(''):
         with open(cfg_file, encoding='utf-8') as data_file:
             config = json.loads(data_file.read())
     else:
         config = cfg_file
+
+    if json_file is not None and type(json_file) == type(""):
+        with open(json_file, encoding='utf-8') as data_file:
+            dataset_json = json.loads(data_file.read())
+    elif json_file is not None:
+        dataset_json = json_file
+    else:
+        dataset_json = {}
+
     globals().update(config)
 
     # ------------------------------------------define GPU id/s to use
@@ -80,7 +83,16 @@ def predict(cfg_file, data_root='', c2l=False, exp=None, number_of_examples=None
             config['SEGMENTATION_WEIGHTS'] = os.path.join(exp.replace('phase_regression', ''),
                                                           *config['SEGMENTATION_WEIGHTS'].split('/')[-4:])
 
+
+    suffix = dataset_json.get("suffix", None)
+    if suffix is None:
+        file_ending = "nii.gz"
+    else:
+        file_ending = suffix["file_ending"]
+
     x_train_lax, y_train_lax, x_val_lax, y_val_lax = get_trainings_files(data_path=config['DATA_PATH_LAX'],
+                                                                         suffix=suffix,
+                                                                         ftype=file_ending,
                                                                          path_to_folds_df=config['DF_FOLDS'],
                                                                          fold=config['FOLD'])
 
@@ -118,6 +130,8 @@ def predict(cfg_file, data_root='', c2l=False, exp=None, number_of_examples=None
     logging.info('loaded model weights as h5 file')
 
     # Settings for masking
+    post_processing = get_post_processing(data_json)
+    use_segmentation = post_processing.get("use_segmentation", False)
     if use_segmentation is None:
         NNUNET_SEG = False
         val_config['NNUNET_SEG'] = False
@@ -142,7 +156,7 @@ def predict(cfg_file, data_root='', c2l=False, exp=None, number_of_examples=None
     for x_train_lax_, y_train_lax_, x_val_lax_, y_val_lax_ in zip(x_train_laxs, y_train_laxs, x_val_laxs, y_val_laxs):
         preds_, moved_, vects_, gts_, segmentations_ = [], [], [], [], []
         logging.info('***********  processing junk: {} of {}'.format(junk, len(x_val_laxs)))
-        validation_generator = PhaseRegressionGenerator_v2(x_val_lax_, y_val_lax_, config=val_config, in_memory=False)
+        validation_generator = PhaseRegressionGenerator_v2(x_val_lax_, y_val_lax_, config=val_config, in_memory=False, dataset_json=dataset_json)
 
         for i, (x, y) in enumerate(validation_generator):
             results = model.predict_on_batch(x)
@@ -162,7 +176,6 @@ def predict(cfg_file, data_root='', c2l=False, exp=None, number_of_examples=None
             gts_.append(y[0])
 
         fold = "{:04d}".format((100 * val_config['FOLD']) + junk) if val_config['FOLD'] > 0 else "{:04d}".format(junk)
-        # fold = (100 * val_config['FOLD']) + junk if val_config['FOLD'] > 0 else "00" + str(junk)
 
         pred_filename = os.path.join(pred_path, 'gtpred_fold{}.npy'.format(fold))
         moved_filename = os.path.join(moved_path, 'moved_f{}.npy'.format(fold))
@@ -205,8 +218,8 @@ def predict(cfg_file, data_root='', c2l=False, exp=None, number_of_examples=None
                                               number_of_examples,
                                               segmentation,
                                               vects, x_val_lax_,
-                                              norm_thresh=norm_thresh,
-                                              connected_component_filter=connected_component_filter,
+                                              norm_thresh=post_processing.get("norm_threshold", 40),
+                                              connected_component_filter=post_processing.get("cc_filter", 110),
                                               mask_channels=mask_channels)
 
     del validation_generator
@@ -1277,8 +1290,8 @@ def plot_direction_instance(dir_1d_mean, directions, exp_path, mid, norm_1d_mean
 
 
 if __name__ == "__main__":
-    import argparse, os, sys, glob
-
+    import argparse, os, sys
+    from src.utils.Utils_io import get_json, get_post_processing
     os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
     parser = argparse.ArgumentParser(description='predict a phase registration model')
@@ -1288,60 +1301,29 @@ if __name__ == "__main__":
     parser.add_argument('-data', action='store', default='')
     parser.add_argument('-work_dir', action='store', default='/mnt/ssd/git/cmr-phase-detection')
     parser.add_argument('-c2l', action='store_true', default=False)
-    parser.add_argument('-masking_style', action='store', default=None)
 
     results = parser.parse_args()
     os.chdir(results.work_dir)
     sys.path.append(os.getcwd())
     print('given parameters: {}'.format(results))
 
-    # get all cfgs - we expect to find 4 as we usually train a 4-fold cv
+    # get all cfgs and dataset json (we expect to find 4 as we usually train a 4-fold cv)
     # call the predict_fn for each cfg
-    initial_search_pattern = 'config/config.json'  # path to one experiment
-    search_path = os.path.join(results.exp_root, initial_search_pattern)
-    cfg_files = sorted(glob.glob(search_path))
-    if len(cfg_files) == 0:
-        # we called this script with the experiment root,
-        # search for the sub-folders per split
-        search_pattern = '**/config/config.json'
-        search_path = os.path.join(results.exp_root, search_pattern)
-        print(search_path)
-        cfg_files = sorted(glob.glob(search_path))
-    print("Config file: " + str(cfg_files))
+    cfg_files = get_json('config/config.json', results.exp_root)
+    dataset_files = get_json('config/dataset.json', results.exp_root)
+
     patients_txt_file = os.path.join(results.exp_root, 'pred', 'patients.txt')
-
-    # Some adjustable parameter.
-    # If you don't want to use a connected component filter set it here to None.
-    # If you want to use pre-trained mask you can adjust the parser argument -use_segmentation
-    #       - 'mnm2' for this mask channels: [1 - LV, 2 - LV MYO, 3 - RV]
-
-    connected_component_filter = None
-    segmentation = None
-    norm_thresh = 0
-    if results.masking_style == "None":
-        pass
-    elif results.masking_style == "classic":
-        norm_thresh = 30
-    elif results.masking_style == "component":
-        norm_thresh = 40
-        # norm_thresh = 0.35
-        connected_component_filter =110
-    elif results.masking_style == "combined":
-        segmentation = 'whole'
-        norm_thresh = 40
-    else:
-        segmentation = results.masking_style
 
     if os.path.exists(patients_txt_file):
         import os
-
         # removing previous inference files using the os.remove() method
         os.remove(patients_txt_file)
 
-    for cfg in cfg_files:
+    for cfg,data_json in zip(cfg_files, dataset_files):
+        post_processing = get_post_processing(data_json)
+
         try:
-            predict(cfg_file=cfg, data_root=results.data, c2l=results.c2l, exp=results.exp_root,
-                    use_segmentation=segmentation, norm_thresh=norm_thresh, connected_component_filter=connected_component_filter)
+            predict(cfg_file=cfg, data_root=results.data, c2l=results.c2l, exp=results.exp_root, json_file=data_json)
             pass
         except Exception as e:
             print(e)
@@ -1350,12 +1332,12 @@ if __name__ == "__main__":
             logging.info('Predict cardiac keyframes and save them as figures')
             predict_phase_from_deformable(results.exp_root,
                                           create_figures=True,
-                                          norm_thresh=norm_thresh,
-                                          connected_component_filter=connected_component_filter,
+                                          norm_thresh=post_processing.get('norm_threshold', 40),
+                                          connected_component_filter=post_processing.get('cc_Filter', 110),
                                           dir_axis=0,
                                           roll_by_gt=False,
-                                          mask_channels=segmentation,
-                                          ct_calculation=[1,2,3], # 'septum',
+                                          mask_channels=post_processing.get("mask_channels", []),
+                                          ct_calculation=post_processing.get("focus_point"),
                                           max_junks=None)
         except Exception as e:
             logging.error('{} predict phase failed with: {}'.format(results.exp_root, e))
