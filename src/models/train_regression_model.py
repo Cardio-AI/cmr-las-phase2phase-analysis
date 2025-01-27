@@ -21,8 +21,6 @@ def train_fold(config, dataset_json, in_memory=False):
     print(GPUS)
     print(tf.config.list_physical_devices('GPU'))
     # ------------------------------------------ import helpers
-    # from tensorflow.python.client import device_lib
-    # import external libs
     from time import time
     import logging, os
 
@@ -49,10 +47,6 @@ def train_fold(config, dataset_json, in_memory=False):
     TENSORBOARD_PATH = os.path.join(FOLD_PATH, 'tensorboard_logs')
     CONFIG_PATH = os.path.join(FOLD_PATH, 'config')
     SEGMENTATION_EXP = config.get("SEGMENTATION_EXP", None)
-    # PRETRAINED_SEG = SEGMENTATION_EXP is not None
-    # if PRETRAINED_SEG:
-    #     SEGMENTATION_MODEL = os.path.join(SEGMENTATION_EXP, 'model.json')
-    #     SEGMENTATION_WEIGHTS = os.path.join(SEGMENTATION_EXP, f'f{FOLD}', 'model', 'model.h5')
 
     ensure_dir(MODEL_PATH)
     ensure_dir(TENSORBOARD_PATH)

@@ -1,6 +1,5 @@
 import logging
 import os
-import tensorflow
 import tensorflow as tf
 from tensorflow import keras
 
@@ -84,11 +83,8 @@ def get_optimizer(config, name_suff=''):
 
     opt = config.get('OPTIMIZER', 'Adam')
     lr = config.get('LEARNING_RATE', 0.001)
-    ep = config.get('EPSILON', 1e-08)
-    de = config.get('DECAY', 0.0)
 
     optimizer = None
-
     opt = opt.lower()
 
     if opt == 'adagrad':

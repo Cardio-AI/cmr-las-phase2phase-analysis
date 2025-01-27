@@ -1,7 +1,7 @@
 import logging
 import os.path
 
-from src.models.KerasLayers import get_angle_tf, get_idxs_tf, get_centers_tf #, ComposeTransform
+from src.models.KerasLayers import get_angle_tf, get_idxs_tf, get_centers_tf
 
 import sys
 import tensorflow
@@ -10,11 +10,11 @@ from tensorflow import keras
 import keras.layers as KL
 from keras.layers import Input
 from keras.models import Model
-from keras.layers import BatchNormalization, TimeDistributed #Dropout,
+from keras.layers import BatchNormalization, TimeDistributed
 from keras.layers import LSTM, Bidirectional
 import math
 
-from src.models.Unets import create_unet #, unet, create_3d_wrapper_for_2d_unet
+from src.models.Unets import create_unet
 from src.utils import Metrics as own_metr
 
 
@@ -194,14 +194,12 @@ class PhaseRegressionModel:
             # This would reduce the dimension of input vectors to output_dim in a way that retains the maximal variance
 
             downsamples = []
-            d_rate = 0.2
             filters_ = 16
             #  b, t, 4, 16, 16, n
             # two times conv with: n times 4,4,4 filters, valid/no border padding and a stride of 4
             # b, t, 1, 4, 4, n
             # conv with: n times 4,4,4 filters, valid/no border padding and a stride of 4
             # how often can we downsample the inplane/spatial resolution until we reach 1
-            # n = ln(1/x)/ln0,5
 
             n = int(math.log(1 / self.dim[-1]) / math.log(0.5))
             z = int(math.log(1 / self.dim[0]) / math.log(0.5))
@@ -369,9 +367,6 @@ class PhaseRegressionModel:
                 'transformed': self.image_loss_weight,
                 'flows': self.flow_loss_weight}
 
-            # if self.PRETRAINED_SEG:
-            #     weights['use_segmentation'] = 0
-
             if self.loss == 'cce':
                 losses = {
                     'onehot': own_metr.MSE(masked=self.mask_loss, loss_fn='cce', onehot=True),
@@ -440,55 +435,3 @@ def create_affine_transformer_fixed(config, networkname='affine_transformer_fixe
         model = Model(inputs=[inputs, input_displacement], outputs=[y, input_displacement], name=networkname)
 
         return model
-
-#
-# def create_dense_compose(config, networkname='dense_compose_displacement'):
-#     """
-#     Compose a single transform from a series of transforms.
-#     Supports both dense and affine transforms, and returns a dense transform unless all
-#     inputs are affine. The list of transforms to compose should be in the order in which
-#     they would be individually applied to an image. For example, given transforms A, B,
-#     and C, to compose a single transform T, where T(x) = C(B(A(x))), the appropriate
-#     function call is:
-#     T = compose([A, B, C])
-#     :param config:  Key value pairs for image size and other network parameters
-#     :param networkname: string, name of this model scope
-#     :param fill_value:
-#     :return: compiled keras model
-#     """
-#     if tf.distribute.has_strategy():
-#         strategy = tf.distribute.get_strategy()
-#     else:
-#         # distribute the training with the mirrored data paradigm across multiple gpus if available, if not use gpu 0
-#         strategy = tf.distribute.MirroredStrategy(devices=config.get('GPUS', ["/gpu:0"]))
-#
-#     with strategy.scope():
-#
-#         inputs = Input((5, *config.get('DIM', [10, 224, 224]), 3))
-#         indexing = config.get('INDEXING', 'ij')
-#         reverse = config.get('REVERSE_COMPOSE', False)
-#         # warp the source with the flow
-#         flows = tf.unstack(inputs, axis=1)
-#         # reverse=True
-#         # we need to reverse the transforms as we register from t+1 to t.
-#         # we need to provide the order in which we would apply the compose transforms
-#         # ED, MS, ES, PF, MD
-#         # flows:
-#         # 0= MS->ED, 1=ES->MS, 2=PF->ES, 3=MD->PF, 4=ED->MD
-#         # e.g. for compose:
-#         # MS->ED = [0]
-#         # ES->ED = [1,0]
-#         # PF->ED = [2,1,0]
-#         # list(reversed())
-#         if reverse:
-#             y = [ComposeTransform(interp_method='linear', shift_center=True, indexing=indexing,
-#                                   name='Compose_transform{}'.format(i))(list(reversed(flows[:i]))) for i in
-#                  range(2, len(flows) + 1)]
-#         else:
-#             y = [ComposeTransform(interp_method='linear', shift_center=True, indexing=indexing,
-#                                   name='Compose_transform{}'.format(i))(flows[:i]) for i in range(2, len(flows) + 1)]
-#         y = tf.stack([flows[0], *y], axis=1)
-#
-#         model = Model(inputs=[inputs], outputs=[y], name=networkname)
-#
-#         return model

@@ -1,20 +1,13 @@
 import glob
 import logging
 import os
-#import random
-#from logging import debug as debug
 from time import time
 
 import SimpleITK as sitk
 import numpy as np
 import pandas as pd
-# import skimage
-# import skimage.exposure
-# import yaml
-# from sklearn.model_selection import KFold
-#
-# from src.utils.Metrics import cfd
 from src.utils.Utils_io import ensure_dir
+
 DEBUG = False
 
 
@@ -43,7 +36,7 @@ def get_trainings_files(data_path, suffix=None, ftype=None, fold=0, path_to_fold
     x = sorted(glob.glob(os.path.join(data_path, '**', img_suffix), recursive=True))
 
     if len(x) == 0:
-        logging.error('No files found in: {}, with suffix {}, try to list all files in this directory:'.format(data_path,suffix))
+        logging.error('No files found in: {}, with suffix {}, try to list all files in this directory:'.format(data_path,img_suffix))
         files_ = os.listdir(data_path)
         logging.error(files_)
         x = sorted(glob.glob(os.path.join(data_path, '*')))
@@ -52,6 +45,8 @@ def get_trainings_files(data_path, suffix=None, ftype=None, fold=0, path_to_fold
     if suffix["mask_suffix"] is not None and len(suffix["mask_suffix"])>0:
         mask_suffix = "*{}{}".format(suffix["mask_suffix"], ftype)
         y = sorted(glob.glob(os.path.join(data_path, '**',mask_suffix), recursive=True))
+        if len(y) == 0:
+            logging.error('No masks found in: {}, with suffix {}, try to list all files in this directory:'.format(data_path,mask_suffix))
     else:
         y=x
 

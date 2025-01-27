@@ -132,15 +132,16 @@ def predict(cfg_file, json_file=None, data_root='', c2l=False, exp=None, number_
     # Settings for masking
     post_processing = get_post_processing(data_json)
     use_segmentation = post_processing.get("use_segmentation", False)
-    if use_segmentation is None:
+    mask_channels = None
+
+    if use_segmentation is None or use_segmentation is False:
         NNUNET_SEG = False
         val_config['NNUNET_SEG'] = False
-    elif type(use_segmentation) == type(''):
+
+    else:
         NNUNET_SEG = True
         val_config['NNUNET_SEG'] = True
-    else:
-        NNUNET_SEG = use_segmentation
-        val_config['NNUNET_SEG'] = use_segmentation
+        mask_channels = post_processing.get("mask_channels", [])
 
     # predict on the validation generator
     # this should avoid memory leaks for huge inference datasets
@@ -200,20 +201,6 @@ def predict(cfg_file, json_file=None, data_root='', c2l=False, exp=None, number_
             segmentation = None
 
         junk = junk + 1
-        mask_channels = None
-
-        # Select mask channels for segmentation, if a segmentation is given
-        if len(segmentations_) > 0 and use_segmentation is not None and NNUNET_SEG:
-            if type(use_segmentation) == type(''):
-                mask_channels = get_mask_channels(use_segmentation)
-            elif len(use_segmentation[0]) == 1:
-                mask_channels = use_segmentation
-            else:
-                mask_channels = np.unique(segmentations_[0])
-            logging.info(f"Found masks and mask channels for {use_segmentation}. Set mask channels to {mask_channels}")
-        else:
-            logging.info("Found no masks or no mask channels.")
-
         write_random_example_4d_files_to_disk(PRETRAINED_SEG or NNUNET_SEG, config, example_path, moved,
                                               number_of_examples,
                                               segmentation,
@@ -351,27 +338,27 @@ def write_4d_files_to_disk(examples, focus_size, PRETRAINED_SEG, config, example
         save_sitk(sitk_images, spacing, export_img_f_name)
 
         export_vec_f_name = os.path.join(example_path,
-                                         os.path.basename(elem).replace(file_type, '_vec_.nrrd'))
+                                         os.path.basename(elem).replace(file_type, '_vec.nrrd'))
         save_sitk(sitk_vects, spacing, export_vec_f_name)
 
         export_dir_f_name = os.path.join(example_path,
-                                         os.path.basename(elem).replace(file_type, '_dir_.nrrd'))
+                                         os.path.basename(elem).replace(file_type, '_dir.nrrd'))
         save_sitk(sitk_dir, spacing, export_dir_f_name)
 
         export_norm_f_name = os.path.join(example_path,
-                                          os.path.basename(elem).replace(file_type, '_norm_.nrrd'))
+                                          os.path.basename(elem).replace(file_type, '_norm.nrrd'))
         save_sitk(sitk_norm, spacing, export_norm_f_name)
 
         export_foc_f_name = os.path.join(example_path,
-                                         os.path.basename(elem).replace(file_type, '_foc_.nrrd'))
+                                         os.path.basename(elem).replace(file_type, '_foc.nrrd'))
         save_sitk(sitk_foc, spacing, export_foc_f_name)
 
         if PRETRAINED_SEG:
-            sitk_mask = [sitk.GetImageFromArray(np.flipud(vol.astype(np.uint8))) for vol in segmentation[example]]
+            sitk_mask = [sitk.GetImageFromArray(np.flipud(vol.astype(np.uint8))) for vol in np.transpose(segmentation[example], (0, 3, 1, 2))]
             new_mask_clean = sitk.JoinSeries(sitk_mask)
             new_mask_clean.SetSpacing(spacing)
             export_mask_f_name = os.path.join(example_path,
-                                              os.path.basename(elem).replace(file_type, '_mask_.nrrd'))
+                                              os.path.basename(elem).replace(file_type, '_mask.nrrd'))
             sitk.WriteImage(new_mask_clean, export_mask_f_name)
             seg_based_direction(vects[example], moved[example], segmentation[example], x_val_lax[example],
                                 focus_size, example_path, config, file_type)
@@ -382,10 +369,9 @@ def seg_based_direction(vect, moved, segmentation, x_val_lax, focus_size, exampl
     import SimpleITK as sitk
     import os
     _, directions_seg, _, norm_nda_seg, ct, _ = interpret_deformable(vects_nda=vect, masks=segmentation,
-                                                                     mask_channels=[1, 3], ct_calculation=[2],
+                                                                     mask_channels=[2, 3], ct_calculation=[1],
                                                                      dir_axis=0)
     if np.ma.is_masked(directions_seg):
-        print('masked segmentation')
         # directions_seg = directions_seg.data * ~directions_seg.mask
         # directions_seg[directions_seg.mask] = -10 # this works well with the jet transparent color map
         dir = directions_seg.data  # * ~directions_seg.mask
@@ -408,22 +394,19 @@ def seg_based_direction(vect, moved, segmentation, x_val_lax, focus_size, exampl
     zeros = np.zeros_like(moved)
     zeros[:,:, int(ct[0] - focus_size):int(ct[0] + focus_size),  int(ct[1] - focus_size):int(ct[1] + focus_size)] = 1
 
-    sitk_dir_seg = [sitk.GetImageFromArray(vol.astype('float32')) for vol in directions_seg]
-    sitk_norm_seg = [sitk.GetImageFromArray(vol.astype('float32')) for vol in norm_nda_seg]
-    sitk_foc_seg = [sitk.GetImageFromArray(vol.astype(np.uint8)) for vol in zeros]
-    sitk_dir_b_seg = [sitk.GetImageFromArray(vol.astype(np.uint8)) for vol in dir_seg_bucket]
+    sitk_dir_seg = [sitk.GetImageFromArray(vol.astype('float32')) for vol in np.transpose(directions_seg[...,None], (0, 3, 1, 2))]
+    sitk_norm_seg = [sitk.GetImageFromArray(vol.astype('float32')) for vol in  np.transpose(norm_nda_seg[...,None], (0, 3, 1, 2))]
+    sitk_foc_seg = [sitk.GetImageFromArray(vol.astype(np.uint8)) for vol in np.transpose(zeros, (0, 2, 3, 1))]
 
     new_dir_clean_seg = sitk.JoinSeries(sitk_dir_seg)
     new_norm_clean_seg = sitk.JoinSeries(sitk_norm_seg)
     new_foc_clean_seg = sitk.JoinSeries(sitk_foc_seg)
-    new_dir_b_seg = sitk.JoinSeries(sitk_dir_b_seg)
 
     spacing = config.get('SPACING', (1.0, 1.0))
     spacing = list(reversed(spacing)) + [1.0, 1.0]
     new_dir_clean_seg.SetSpacing(spacing)
     new_norm_clean_seg.SetSpacing(spacing)
     new_foc_clean_seg.SetSpacing(spacing)
-    new_dir_b_seg.SetSpacing(spacing)
 
     elem = x_val_lax
     file_type = '.nrrd' if '.nrrd' in elem else '.nii.gz'
@@ -437,14 +420,10 @@ def seg_based_direction(vect, moved, segmentation, x_val_lax, focus_size, exampl
     export_foc_seg_f_name = os.path.join(example_path,
                                          os.path.basename(elem).replace(file_type,
                                                                         '_foc_seg{}'.format(targetfile_type)))
-    export_dir_b_seg_f_name = os.path.join(example_path,
-                                           os.path.basename(elem).replace(file_type, '_dir_seg_b{}'.format(
-                                               targetfile_type)))
 
     sitk.WriteImage(new_dir_clean_seg, export_dir_seg_f_name)
     sitk.WriteImage(new_norm_clean_seg, export_norm_f_seg_name)
     sitk.WriteImage(new_foc_clean_seg, export_foc_seg_f_name)
-    sitk.WriteImage(new_dir_b_seg, export_dir_b_seg_f_name)
 
 def save_sitk(sitk_img, spacing, export_f_name):
     """
@@ -508,7 +487,7 @@ def get_rv_outline_as_mask(masks, include_septum=False):
 
         # dilate rv outline to increase thickness (but only to one side)
         # define thickness
-        dilate_thickness = new_slice.shape[0]//16
+        dilate_thickness = new_slice.shape[0]//32
         kernel = np.ones((dilate_thickness, dilate_thickness), np.uint8)
 
         new_slice = cv.dilate(new_slice, kernel=kernel, iterations=1)
@@ -600,7 +579,6 @@ def get_as_single_mask(segmentation, channels, whole_mask=True) -> np.ndarray:
     rv_outline = 3 in channels or 4 in channels
     include_rv_septum = 4 in channels
     if whole_mask and len(channels) >= 3:
-        # channels = [2]
         channels = channels
     else:
         channels = channels[(channels > 0) & (channels < 3)]
@@ -618,7 +596,6 @@ def get_as_single_mask(segmentation, channels, whole_mask=True) -> np.ndarray:
 def get_rv_lv_dir(vects_nda, masks=None, length=-1, plot=True, z=None, dir_axis=0, gtind=None, exp_path=None, patient='temp',
                           save=False):
     from src.utils.detect_phases_from_dir import detect_phases
-    lower, mid, upper = -1, 0, 1
 
     lv_args = interpret_deformable(dir_axis=dir_axis, masks=masks, length=length, vects_nda=vects_nda,
                                    mask_channels=[2],  ct_calculation=[1,2], as_angle=False)
@@ -645,8 +622,6 @@ def plot_two_direction_instance(dir_1d_mean_a, dir_1d_mean_b, direction_a, direc
     x = range(len(dir_1d_mean_a))
     fig = plt.figure(figsize=(25,4))
     rows = 3
-    pos = 1
-    ax = fig.add_subplot(rows, 1, pos)
     # DIR 2D+t
     dir_2d_t = direction_a.copy()
     if np.ma.is_masked(direction_a): dir_2d_t = dir_2d_t.data * ~direction_a.mask
@@ -671,25 +646,7 @@ def plot_two_direction_instance(dir_1d_mean_a, dir_1d_mean_b, direction_a, direc
 
     # Adding labels and title
     ax2.set_xlabel('Time (t)')
-    # ax2.set_ylabel(r'$\alpha$ ' + '\n2d+t')
     ax2.legend()
-
-    # DIR 2D+t
-    # pos = 3
-    # ax3 = fig.add_subplot(rows, 1, pos)
-    # dir_2d_t_b = direction_b.copy()
-    # if np.ma.is_masked(direction_b):
-    #     dir_2d_t_b = dir_2d_t_b.data * ~direction_b.mask
-    # fig = show_2D_or_3D(dir_2d_t_b, allow_slicing=False, cmap=div_cmap, fig=fig[-1], interpolation=None, vmin=-1, vmax=1)
-    # ax3_ = fig.get_axes()[0]
-    # _ = ax3_.set_yticks([])
-    # _ = ax3_.set_xticks([])
-    # ax3.set_ylabel(r'$\alpha$ ' + '\n2d+t')  # \nmid
-    # _ = ax3.set_yticks([])
-    # _ = ax3.set_xticks([])
-    # cax3 = fig.add_axes([0.45, 0.28, 0.1, 0.03])  # Adjust the position of colorbar as needed
-    # cb3 = fig.colorbar(ax3.get_images()[len(ax3.get_images()) // 2], cax=cax3, orientation='horizontal')
-    # cb3.ax.tick_params(color="black", labelsize=10, labelcolor='black')
 
     plt.tight_layout()
     plt.show()
@@ -702,7 +659,7 @@ def get_focus_point(mask2d: np.ndarray, calculation: Union[Literal['septum'], Li
         calculation = [calculation]
     mask_for_focus = get_as_single_mask(mask2d[...,None], channels=calculation, whole_mask=whole_mask)  # masks of first ts
     center_of_mask = ndimage.center_of_mass(mask_for_focus)
-    focus = np.array([center_of_mask[1], center_of_mask[2]])
+    focus = np.array([center_of_mask[0], center_of_mask[1]])
     if print_ct: print(
         f'Using mask(s): {", ".join(np.array(["right ventricle", "myocardium", "left ventricle", "rv outline"])[calculation])} for ct')
     return focus
@@ -756,7 +713,14 @@ def interpret_deformable(vects_nda, masks=None, mask_channels=None, dir_axis=0, 
             print(f'Using mask(s): {", ".join(_[mask_channels])} for calculation')
 
         mask = get_as_single_mask(masks, channels=mask_channels).astype(bool)
-        ct = get_focus_point(masks[0], print_ct=DEBUG, calculation=ct_calculation)
+        if ct_calculation == 'VOL':
+            ct = [dim_[0]/2, dim_[1]/2]
+        else:
+            if type(ct_calculation) == type(''):
+                if ct_calculation == 'MSE':
+                    ct_calculation = mask_channels
+            ct = get_focus_point(masks[0], print_ct=DEBUG, calculation=ct_calculation)
+
         _, directions = get_directions(ct=ct, dim_=dim_, length=length, vects_nda=vects_nda, as_angle=as_angle, diff_thresh=diff_thresh, masked=True)
     else:
         # 1st center definition,
@@ -782,18 +746,6 @@ def interpret_deformable(vects_nda, masks=None, mask_channels=None, dir_axis=0, 
         if not combinated_masking:
             all_masks.append(mask)
 
-    # if combinated masking is selected,
-    # the segmentation mask is further masked rule-base (norm and direction threshold)
-    # if masks is not None and combinated_masking:
-    #     if DEBUG:
-    #         print('Using combination of pre-trained masks and self-supervised rule-set')
-    #     vects_nda_ma, norm_mask, norm_nda = get_combined_masking_norm(vects_nda, mask, dir_axis, norm_percentile)
-    #     ct = np.array([*ndimage.center_of_mass(norm_mask)[0:2]])
-    #     mask, directions = get_directions(ct=ct, dim_=dim_, length=length, vects_nda=vects_nda_ma, as_angle=as_angle,
-    #                                       sigma=sigma, component_padding=component_padding,diff_thresh=diff_thresh)
-    #     all_masks.append(mask)
-
-
     # calc direction, based on the labels mask or the self-supervised mask
     if filename is not None: write_sitk(directions, filename=filename, suffix='dir2')
     # mask direction with a supervised or self-supervised mask
@@ -811,29 +763,6 @@ def interpret_deformable(vects_nda, masks=None, mask_channels=None, dir_axis=0, 
         write_sitk(directions_masked, filename=filename, suffix='dir_masked')
     return dir_1d_mean, directions_ma.astype(np.float16), norm_1d_mean, norm_ma, ct, all_masks
 
-
-
-def get_mask_channels(segmentation):
-    """
-    This method provides the mask channels with labels for various combinations of the MnM2 segmentation style
-        - Left ventricle cavity: 1
-        - Left ventricle myocardium: 2
-        - Right ventricle cavity: 3
-          (exclusive right ventricle myocardium --> later on rv cavity or myocardium is selected)
-
-        Returns:
-            mask_channels [int]
-    """
-    if segmentation == "myo":
-        return [2, 3]
-    elif segmentation == "lv_myo":
-        return [2]
-    elif segmentation == "rv_myo":
-        return [3]
-    elif segmentation == "lv":
-        return [1, 2]
-    elif segmentation == "whole":
-        return [1, 2, 3]
 
 
 def get_masked_array(array, mask, axis=(1, 2), aggregation_func=np.ma.mean):
@@ -1049,15 +978,13 @@ def predict_phase_from_deformable(exp_path, create_figures=True, norm_thresh=50,
 
     if mask_channels is None:
         masks=[]
-    if masks is not None and mask_channels is not None:
-        logging.info(f"Found masks and mask channels for {mask_channels}.")
-        if type(mask_channels) == type(''):
-           mask_channels = get_mask_channels(mask_channels)
-        else:
-            mask_channels = np.unique(masks)
+    if masks is not None and mask_channels == []:
+        mask_channels = np.unique(masks)
+        logging.info(f"Set mask channels to {mask_channels}")
+    if masks is not None and len(mask_channels) > 1:
         logging.info(f"Set mask channels to {mask_channels}")
     else:
-        logging.info("Found no masks or no mask channels.")
+        logging.info("Found no masks.")
 
     using_segmentation = masks is not None and mask_channels is not None and len(mask_channels) > 0
 
@@ -1215,7 +1142,6 @@ def interpret_deformable_async(nda_vect, gt_len, gt, dir_axis, norm_thresh, conn
 
 
 def plot_direction_instance(dir_1d_mean, directions, exp_path, mid, norm_1d_mean, norm_nda, patient, save, upper):
-    import seaborn as sb
     from matplotlib.ticker import FormatStrFormatter
     import matplotlib.pyplot as plt
     from src.visualization.Visualize import show_2D_or_3D

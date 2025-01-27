@@ -132,11 +132,8 @@ def clean_3d_prediction_3d_cc(pred, premask=False):
     assert len(np.unique(pred)) < 10, 'to many labels: {}'.format(len(np.unique(pred)))
 
     cleaned = np.zeros_like(pred)
-    # first remove surrounding predictions
-    # combine all labels
-    # find a mask for the biggest cc
-    # set all other values to zero
-    # process as usual
+    # first remove surrounding predictions, combine all labels, find a mask for the biggest cc
+    # set all other values to zero, process as usual
 
     if premask:
         try:
@@ -171,7 +168,6 @@ def clean_3d_label(val, nda):
 
     # find all cc for this label
     # tensorflow operation is only in 2D
-    # all_labels = tfa.image.connected_components(np.uint8(pred==val)).numpy()
     all_labels = measure.label(np.uint8(nda == val), background=0)
 
     for c in np.unique(all_labels)[1:]:
@@ -182,5 +178,3 @@ def clean_3d_label(val, nda):
             biggest = mask
             biggest_size = mask_size
     return biggest
-
-import cv2
