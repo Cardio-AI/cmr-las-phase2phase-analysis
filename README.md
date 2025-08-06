@@ -44,31 +44,34 @@ Please cite the following paper (accepted for the @ FIMH2025) if you use/modify 
 
 **Bibtext**
 ```
-@InProceedings{xx.xxxx/xxx-x-xxx-xxxx,
+@InProceedings{10.1007/978-3-031-94562-5_11,
   author="Mueller, Sarah Kaye
-  and Jonathan K
-  and Hussain, Tarique
-  and Hussain, Hamza
-  and Young, Daniel
-  and Sarikouch, Samir
-  and Pickardt, Thomas
+  and Jonathan Kiekenap
+  and Koehler, Sven
+  and Andre, Florian
+  and Frey, Norbert
   and Greil, Gerald
+  and Hussain, Tarique
+  and Wolf, Ivo
   and Engelhardt, Sandy",
-  editor="Camara, Oscar
-  and Puyol-Ant{\'o}n, Esther
-  and Qin, Chen
-  and Sermesant, Maxime
-  and Suinesiaputra, Avan
-  and Wang, Shuo
-  and Young, Alistair",
-  title="Self-supervised Motion Descriptor for Cardiac Phase Detection in 4D CMR Based on Discrete Vector Field Estimations",
-  booktitle="Statistical Atlases and Computational Models of the Heart. Regular and CMRxMotion Challenge Papers",
-  year="2022",
-  publisher="Springer Nature Switzerland",
+
+  editor="Chaniniok, Radek
+  and Zou, Q.
+  and Hussain, T.
+  and Nguyen, H.H.,
+  and Zaha, V.G.
+  and Gusseva, M.",
+
+  title="SAn Automatic Self-supervised Phase-Based Approach to Aligned Long-Axis Strain Measurements in Four Chamber Cardiovascular Magnetic Resonance Imaging",
+  booktitle="Functional Imaging and Modeling of the Heart. FIMH 2025. Lecture Notes in Computer Science",
+  year="2025",
+  publisher="Springer",
   address="Cham",
-  pages="65--78",
-  abstract="Cardiac magnetic resonance (CMR) sequences visualise the cardiac function voxel-wise over time. Simultaneously, deep learning-based deformable image registration is able to estimate discrete vector fields which warp one time step of a CMR sequence to the following in a self-supervised manner. However, despite the rich source of information included in these 3D+t vector fields, a standardised interpretation is challenging and the clinical applications remain limited so far. In this work, we show how to efficiently use a deformable vector field to describe the underlying dynamic process of a cardiac cycle in form of a derived 1D motion descriptor. Additionally, based on the expected cardiovascular physiological properties of a contracting or relaxing ventricle, we define a set of rules that enables the identification of five cardiovascular phases including the end-systole (ES) and end-diastole (ED) without usage of labels. We evaluate the plausibility of the motion descriptor on two challenging multi-disease, -center, -scanner short-axis CMR datasets. First, by reporting quantitative measures such as the periodic frame difference for the extracted phases. Second, by comparing qualitatively the general pattern when we temporally resample and align the motion descriptors of all instances across both datasets. The average periodic frame difference for the ED, ES key phases of our approach is {\$}{\$}0.80{\backslash}pm {\{}0.85{\}}{\$}{\$}0.80{\textpm}0.85, {\$}{\$}0.69{\backslash}pm {\{}0.79{\}}{\$}{\$}0.69{\textpm}0.79which is slightly better than the inter-observer variability ({\$}{\$}1.07{\backslash}pm {\{}0.86{\}}{\$}{\$}1.07{\textpm}0.86, {\$}{\$}0.91{\backslash}pm {\{}1.6{\}}{\$}{\$}0.91{\textpm}1.6) and the supervised baseline method ({\$}{\$}1.18{\backslash}pm {\{}1.91{\}}{\$}{\$}1.18{\textpm}1.91, {\$}{\$}1.21{\backslash}pm {\{}1.78{\}}{\$}{\$}1.21{\textpm}1.78). Code and labels are available on our GitHub repository. https://github.com/Cardio-AI/cmr-phase-detection.",
-  isbn="978-3-031-23443-9"
+  pages="113--125",
+  abstract="Cardiovascular Magnetic Resonance Imaging (cardiac MRI) is the gold standard for quantifying ventricular function, from which several parameters are derived. Among these, long-axis strain (LAS) is valuable for diagnosis of cardiovascular diseases. Unlike global longitudinal strain (GLS), which needs multi-plane imaging, LAS can be effectively derived from a single-plane four-chamber long-axis (4CH) cardiac MRI. Conventional analysis focuses on end-diastolic (ED) to end-systolic (ES) LAS, overlooking intermediate dynamics that could help distinguish diseases.
+In this study, we present a novel framework for estimating left ventricular LAS across five cardiac phases. The proposed method combines a self-supervised deformable image registration model for key frame detection with a supervised segmentation for landmark identification. LAS is calculated between ED and intermediate phases K (ED2K) and between consecutive phases (K2K).
+The methodology was developed and validated on the publicly available M&M2 dataset. The evaluation demonstrated significant differences between healthy individuals and patients with four of the seven cardiac diseases investigated not only in ED2ES, but also mid-systole to ES and ES to peak-flow. This emphasizes the diagnostic potential of phase-specific LAS analysis. The method is fully automated and fast, underscoring its potential for clinical application. The code and reference annotations will be made publicly available. .",
+  isbn="978-3-031-94561-8"
 ```
 
 Project Organization
@@ -142,3 +145,10 @@ jupyter labextension install @jupyter-widgets/jupyterlab-manager
 Further infos on how to enable the jupyterlab-extensions:
 
 <a target="_blank" href="https://ipywidgets.readthedocs.io/en/latest/user_install.html#installing-the-jupyterlab-extension">JupyterLab</a>
+
+Affiliation
+--------
+For more Information of our work, please visit our Webside:
+<a target="_blank" href="https://www.klinikum.uni-heidelberg.de/chirurgische-klinik-zentrum/herzchirurgie/forschung/institute-for-artificial-intelligence-in-cardiovascular-medicine-aicm">Institute for Artificial Intelligence in Cardiovascular Medicine </a>
+
+We are part of the Department of Cardiology, Angiology, Pneumology, Heidelberg University Hospital, Heidelberg, Germany
