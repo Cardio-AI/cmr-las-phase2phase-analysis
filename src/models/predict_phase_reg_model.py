@@ -139,8 +139,8 @@ def predict(cfg_file, json_file=None, data_root='', c2l=False, exp=None, number_
         val_config['NNUNET_SEG'] = False
 
     else:
-        NNUNET_SEG = True
-        val_config['NNUNET_SEG'] = True
+        NNUNET_SEG = dataset_json.get("seg_model_path", False)
+        val_config['NNUNET_SEG'] = NNUNET_SEG
         mask_channels = post_processing.get("mask_channels", [])
 
     # predict on the validation generator
