@@ -113,9 +113,54 @@ Project Organization
         ├── utils          <- Metrics, callbacks, io-utils, notebook imports
         └── visualization  <- Plots for the data, generator or evaluations
 
+Datasets
+------------
+For this project we used the 2D+t cine-SSFP 4CH CMR immages from the publicly available Multi-Disease, Multi-View & Multi-Center
+Right Ventricular Segmentation in Cardiac MRI (<a target="_blank" href="https://www.ub.edu/mnms-2/">M&Ms-2</a>) dataset. The training of both models, registration and segmentation, was performed on the 200 datasets from the **Training set**. Evaluation was performed on the **Testing set.** The annotations for the 5 keyframes in the Testing set were made by an experienced physician. These manual labels including the end-diastole (ED), mid-systole (MS; maximum contraction resulting in a peak ejection between ED and ES), end-systole (ES), peak flow (PF; peak early diastolic relaxation) and mid-diastole (MD; phase before atrial contraction at the on-set of the p-wave). Please contact us if you are interested in these labels.
 
+Training
+------------
+For the automatic detection of the LAS, you need to train two models:
+- A **deformable image registration model** (self-supervised, no groundtruth annotations necessary)
+- A **segmentation model** for at least the left ventricle (we used bi-ventricular segmentation as provided by <a target="_blank" href="https://www.ub.edu/mnms-2/">M&Ms-2</a>
 
-Setup native with OSX or Ubuntu
+### Deformable image registration model
+Our trainings script for deformable image registration support single and multi-GPU training (data-parallelisms) and should run locally, and on clusters. The trainings-flow is as follows:
+1. Re-use or modify one of the example configs provided in <a target="_blank" href="https://github.com/Cardio-AI/cmr-las-phase2phase-analysis/tree/main/data/configs">data/configs</a>
+2. Run src/models/train_regression_model.py, which parse the following arguments:
+  ```
+  - cfg (str): Path to an experiment config, you can find examples in data/configs
+  - data (str): Path to the data-root folder with 3d nrrd or nii.gz files (4CH single slice cine CMR)
+  - inmemory (bool) in memory preprocessing for cluster-based trainings         
+  ```
+3. Our trainings script will sequentially train four models on the corresponding dataset splits. The experiment config, model-definition/-weights, trainings-progress and tensorboard logs etc. will be saved automatically. After each model convergence we call the prediction scripts on the corresponding fold and save the predicted files into the sub-folders f0-f3. You can also train the model with a single fold. The number of folds is defined in the config file as:
+    ```
+   "FOLDS":[0, 1, 2, 3],
+    ```
+    For a split in several folds you have to provide a **_df_kfold.csv_** file. Here you should have a row for each patient and fold and if it belons to "train" or "test" in the modality column.
+    You can find an example for a df_kfold.csv in data/mnms-2.
+
+4. Each fold (f0...,f3) contains the following model specific files:
+    ```
+   ├── config (config used in this experiment fold)
+   ├── Log_errors.log (logging.error logfile)
+   ├── Log.log (console and trainings progress logs, if activated
+   ├── model (model graph and weights for later usage
+   ├── model.png (graph as model png)
+   ├── model_summary.txt (layer input/output shapes as structured txt file
+   └── tensorboard_logs (tensorboard logfiles: train-/test scalars and model predictions per epoch)
+    ```
+   
+### Segmentation model
+For the segmentation model we used the publicly available <a target="_blank" href="https://github.com/MIC-DKFZ/nnUNet"> nnU-Net </a>  framework. 
+Please use 2D 4CH cine CMR images for the training of the model. As nnU-Net does not support time sequences, our pipeline will automatically compute the segmentation per timestep and compute the cine masks.
+
+Please use the following assignment for segmentation:
+- LV bloodpool: 1
+- LV MYO (with septum): 2
+- RV bloodpool: 3
+
+Setup
 ------------
 ### Preconditions: 
 - Python 3.6 locally installed 
@@ -129,19 +174,32 @@ Setup native with OSX or Ubuntu
 git clone %reponame%
 cd %reponame%
 ```
-- Create a virtual environment either via virtualenv or conda
+- Create a conda environment from enrionment.yaml (environment name will be cmr-las)
 ```
-make environment
+conda env create --file environment.yaml
 ```
-- Install dependencies via requirements.txt
+- Activate environment
 ```
-make requirement
+conda activate phase_detection
+```
+- Install a helper to automatically change the working directory to the project root directory
+```
+pip install --extra-index-url https://test.pypi.org/simple/ ProjectRoot
+```
+- Create a jupyter kernel from the activated environment, this kernel will be visible in the jupyter lab
+```
+python -m ipykernel install --user --name pdet --display-name "phase_det kernel"
+```
+- Enable interactive widgets in Jupyterlab
+Pre-condition: nodejs installed globally or into the conda environment. e.g.:
+```
+conda install -c conda-forge nodejs
 ```
 - Install the jupyterlab-manager which enables the use of interactive widgets
 ```
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
 ```
-
+  
 Further infos on how to enable the jupyterlab-extensions:
 
 <a target="_blank" href="https://ipywidgets.readthedocs.io/en/latest/user_install.html#installing-the-jupyterlab-extension">JupyterLab</a>
