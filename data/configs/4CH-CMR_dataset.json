@@ -1,0 +1,23 @@
+{ 
+ "channel_names": {
+   "0": "cineMRI"
+ }, 
+ "labels": { 
+   	"background": 0,
+   	"RV": 1,
+   	"MLV": 2,
+   	"LVC": 3
+ }, 
+ "suffix": {
+	"image_suffix": "CINE",
+	"mask_suffix": "", 
+	"file_ending": ".nii.gz"	
+ },
+ "start_id": 0,
+ "post_processing":{
+	 "focus_point": "MSE",
+	 "use_segmentation": false,
+	 "norm_threshold": 40,
+	 "cc_filter": 110
+	 }
+ }
