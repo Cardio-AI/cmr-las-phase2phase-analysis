@@ -43,12 +43,11 @@ How to get started?
 ------------
 - <a target="_blank" href="https://github.com/Cardio-AI/cmr-las-phase2phase-analysis/tree/main/docs/Setup.md">Setup</a>
 - <a target="_blank" href="https://github.com/Cardio-AI/cmr-las-phase2phase-analysis/tree/main/docs/Data.md">Data</a>
-- <a target="_blank" href="https://github.com/Cardio-AI/cmr-las-phase2phase-analysis/tree/main/docs/config_files.md">Configuration files</a>
 
-### Training
+#### Training
 - <a target="_blank" href="https://github.com/Cardio-AI/cmr-las-phase2phase-analysis/tree/main/docs/Training.md">Training</a>
 
-### Inference
+#### Inference
 - <a target="_blank" href="https://github.com/Cardio-AI/cmr-las-phase2phase-analysis/tree/main/docs/Keyframe-detection.md">Keyframe detection</a>
 - <a target="_blank" href="https://github.com/Cardio-AI/cmr-las-phase2phase-analysis/tree/main/docs/Phase2Phase-LAS.md">Phase to phase LAS computing</a>
 

@@ -83,7 +83,7 @@ def create_unet(config, metrics=None, networkname='unet', single_model=True, sup
         # stacked models will be compiled later, dont return softmax outputs
         if single_model:
             outputs = Conv(mask_classes, one_by_one, activation='sigmoid', name='unet')(
-                outputs)  # WFT Data Science: 'sigmoid' ; output function, should be adapted to softmax for better performance and coupled with a Categorical Cross Entropy  + Dice as a loss function instead of the current BCE_Dice
+                outputs)  # WFT Data.md Science: 'sigmoid' ; output function, should be adapted to softmax for better performance and coupled with a Categorical Cross Entropy  + Dice as a loss function instead of the current BCE_Dice
             model = Model(inputs=[inputs], outputs=[outputs], name=networkname)
             model.compile(optimizer=mutils.get_optimizer(config, networkname), loss={'unet': loss_f}, metrics=metrics)
         else:

@@ -9,18 +9,16 @@ Our trainings script supports single- and multi-GPU training (local or  cluster)
 1. **Config setup**
    - Start from or modify an example config in <a target="_blank" href="https://github.com/Cardio-AI/cmr-las-phase2phase-analysis/tree/main/data/configs">data/configs</a>
 2. **Run Training**
-  ```
-  python src/models/train_regression_model.py \
-  - cfg_reg <path_to_config> \
-  - data_json <path_to_dataset_json> \
-  - data <data_root> \
-  - inmemory <true/false>         
-
-
-  ```
-    - ```cfg_reg```: Path to an experiment config (examples in ```data/configs```)
+      ```
+    python src/models/train_regression_model.py \
+   - cfg_reg <path_to_config> \
+   - data_json <path_to_dataset_json> \
+   - data <data_root> \
+   - inmemory <true/false>         
+    ```
+    -  ```cfg_reg ```: Path to an experiment config (examples in ```data/configs```)
     - ```data```: Root folder with 3d nrrd or nii.gz files (4CH single slice cine CMR; see <a target="_blank" href="https://github.com/Cardio-AI/cmr-las-phase2phase-analysis/tree/main/docs/Data.md">data/Data</a>)
-    - ```data_json```: Path to dataset.json, which contains all necessary information about labels, suffix and post processing  (examples in ```data/configs```).
+    - ```data_json```: Path to dataset.json, which contains all necessary information about labels, suffix and post-processing  (examples in ```data/configs```).
     - ```inmemory```: Enables in-memory pre-processing for cluster-based trainings
 
 3.  **Cross Validation**
@@ -29,7 +27,7 @@ Our trainings script supports single- and multi-GPU training (local or  cluster)
     - After training, predictions ar automatically saved into f0-f3 subfolders. 
 
 4.  **Outputs per fold**
-    ```
+   ```
    ├── config (config used in this experiment fold)
    ├── Log_errors.log (logging.error logfile)
    ├── Log.log (console and trainings progress logs, if activated
@@ -37,7 +35,7 @@ Our trainings script supports single- and multi-GPU training (local or  cluster)
    ├── model.png (graph as model png)
    ├── model_summary.txt (layer input/output shapes as structured txt file
    └── tensorboard_logs (tensorboard logfiles: train-/test scalars and model predictions per epoch)
-    ```
+   ```
    
 ### Segmentation model
 For segmentation, we used the publicly available <a target="_blank" href="https://github.com/MIC-DKFZ/nnUNet"> nnU-Net </a>  framework. 

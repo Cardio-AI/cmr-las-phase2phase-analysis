@@ -247,7 +247,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='train a phase registration model')
 
-    # usually these three parameters should encapsulate all experiment parameters
+    # usually these parameters should encapsulate all experiment parameters
     parser.add_argument('-cfg_reg', action='store',
                         default=None)  # path to a cfg file, such as the example cfgs in data/cfgs
     parser.add_argument('-data_json', action='store',

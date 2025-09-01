@@ -16,7 +16,7 @@ Please contact us if you are interested in these labels.
 
 ### Structure
 
-The project uses one data-root folder, which should at least contain a folder ´´´lax´´´ with the cine CMR files.
+The project uses one data-root folder, which should at least contain a folder  ```lax ``` with the cine CMR files.
 Additionally, the folder can contain a csv file for splitting the data **df_kfold.csv** and one with the groundtruth keyframe annotations.
 
  ```
@@ -28,15 +28,15 @@ Additionally, the folder can contain a csv file for splitting the data **df_kfol
 
 #### Cine 4CH CMR
 
-If you want to use your own data, make sure the images are provided in NRRD (´´´.nrrd´´´) or NIfTI (´´´.nii.gz´´´)format,
+If you want to use your own data, make sure the images are provided in NRRD ( ```nrrd ```) or NIfTI ( ```.nii.gz ```)format,
 and that the 4CH cine CMR images consist of a single slice.
 The expected format is:
-´´´
+ ```
 t × x × y × z
-´´´
+ ```
 where z = 1.
 
-In addition, you must set the correct temporal dimension in the configuration file to at least t + 1 (´´´"T_SHAPE"´´´).
+In addition, you must set the correct temporal dimension in the configuration file to at least t + 1 ( ```"T_SHAPE" ```).
 By default, it is set to 40. If your sequence has more than 39 time steps, you need to increase this number accordingly.
 
 #### Dataframe for k-fold split validation

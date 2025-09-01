@@ -2,7 +2,7 @@
 Setup
 ------------
 ### Preconditions: 
-- Python 3.6 locally installed 
+- Python 3.9 locally installed 
 (e.g.:  <a target="_blank" href="https://www.anaconda.com/download/#macos">Anaconda</a>)
 - Installed nvidia drivers, cuda and cudnn 
 (e.g.:  <a target="_blank" href="https://www.tensorflow.org/install/gpu">Tensorflow</a>)
@@ -15,11 +15,11 @@ cd %reponame%
 ```
 - Create a conda environment from enrionment.yaml (environment name will be cmr-las)
 ```
-conda env create --file environment.yaml
+conda env create --file environment.yml
 ```
 - Activate environment
 ```
-conda activate phase_detection
+conda activate cmr-las
 ```
 - Install a helper to automatically change the working directory to the project root directory
 ```
