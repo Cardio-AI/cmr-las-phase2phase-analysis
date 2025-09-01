@@ -31,7 +31,7 @@ def predict(cfg_file, json_file=None, data_root='', c2l=False, exp=None, number_
     from logging import info
     import numpy as np
     from src.data.Dataset import get_trainings_files
-    from src.utils.Utils_io import ConsoleAndFileLogger, ensure_dir
+    from src.utils.Utils_io import ConsoleAndFileLogger, ensure_dir, get_post_processing
     from src.data.PhaseGenerators import PhaseRegressionGenerator_v2
     from src.models.PhaseRegModels import PhaseRegressionModel
     from ProjectRoot import change_wd_to_project_root
@@ -206,7 +206,7 @@ def predict(cfg_file, json_file=None, data_root='', c2l=False, exp=None, number_
                                               segmentation,
                                               vects, x_val_lax_,
                                               norm_thresh=post_processing.get("norm_threshold", 40),
-                                              connected_component_filter=post_processing.get("cc_filter", 110),
+                                              connected_component_filter=post_processing.get("cc_filter", None),
                                               mask_channels=mask_channels)
 
     del validation_generator
@@ -294,7 +294,6 @@ def write_4d_files_to_disk(examples, focus_size, PRETRAINED_SEG, config, example
                            vects, x_val_lax, norm_thresh=55, connected_component_filter=None, mask_channels=None):
     import SimpleITK as sitk
     import os
-
     for example in examples:
         dir_1d_mean, directions, norm_1d_mean, norm_nda, ct, _ = interpret_deformable(vects_nda=vects[example],
                                                                                       masks=segmentation[
@@ -679,7 +678,7 @@ def get_combined_masking_norm(vects_nda, mask, dir_axis=0, norm_percentile=55):
 
 
 def interpret_deformable(vects_nda, masks=None, mask_channels=None, dir_axis=0, length=None, filename=None,
-                         norm_percentile=55, diff_thresh=1.2,  component_padding=None, sigma=0.8, as_angle=False,
+                         norm_percentile=55, diff_thresh=1.0,  component_padding=None, sigma=0.8, as_angle=False,
                          ct_calculation: Union[Literal['septum'], list, int, None] = 'septum'):
     import numpy as np
     from scipy import ndimage
@@ -1248,6 +1247,7 @@ if __name__ == "__main__":
     for cfg,data_json in zip(cfg_files, dataset_files):
         post_processing = get_post_processing(data_json)
 
+        predict(cfg_file=cfg, data_root=results.data, c2l=results.c2l, exp=results.exp_root, json_file=data_json)
         try:
             predict(cfg_file=cfg, data_root=results.data, c2l=results.c2l, exp=results.exp_root, json_file=data_json)
             pass

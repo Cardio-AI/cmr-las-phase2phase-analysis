@@ -120,19 +120,6 @@ def save_plot(fig, path, filename='', override=False, tight=True):
     plt.close(fig)
 
 
-# def get_metadata_maybe(sitk_img, key, default='not_found'):
-#     # helper for unicode decode errors
-#     try:
-#         value = sitk_img.GetMetaData(key)
-#     except Exception as e:
-#         logging.debug('key not found: {}, {}'.format(key, e))
-#         value = default
-#     # need to encode/decode all values because of unicode errors in the dataset
-#     if not isinstance(value, int):
-#         value = value.encode('utf8', 'backslashreplace').decode('utf-8').replace('\\udcfc', 'ue')
-#     return value
-
-
 def init_config(config, save=True):
     """
     Extract all config params (CAPITAL letters) from global or local namespace
@@ -193,6 +180,7 @@ def init_json(json_data, file_path):
 
     return json_data
 
+
 def get_json(search_pattern, file_path):
     search_path = os.path.join(file_path, search_pattern)
     files = sorted(glob.glob(search_path))
@@ -203,6 +191,7 @@ def get_json(search_pattern, file_path):
 
     print(f"Config file: {files}")
     return files
+
 
 def get_post_processing(json_file):
     with open(json_file) as json_file:
