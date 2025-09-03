@@ -164,7 +164,7 @@ def predict(cfg_file, json_file=None, data_root='', c2l=False, exp=None, number_
             if PRETRAINED_SEG:
                 preds, moved, vects, seg = results
                 segmentations_.append(get_predicted_as_segmentation(seg[0], return_as='label', start_c=1, threshold=0.5,
-                                                                    connected_component=True).astype(np.uint8))
+                                                                    connected_component=False).astype(np.uint8))
             else:
                 preds, moved, vects = results
                 if NNUNET_SEG:
@@ -678,7 +678,7 @@ def get_combined_masking_norm(vects_nda, mask, dir_axis=0, norm_percentile=55):
 
 
 def interpret_deformable(vects_nda, masks=None, mask_channels=None, dir_axis=0, length=None, filename=None,
-                         norm_percentile=55, diff_thresh=1.0,  component_padding=None, sigma=0.8, as_angle=False,
+                         norm_percentile=55, diff_thresh=1.2,  component_padding=None, sigma=0.8, as_angle=False,
                          ct_calculation: Union[Literal['septum'], list, int, None] = 'septum'):
     import numpy as np
     from scipy import ndimage
@@ -1247,7 +1247,6 @@ if __name__ == "__main__":
     for cfg,data_json in zip(cfg_files, dataset_files):
         post_processing = get_post_processing(data_json)
 
-        predict(cfg_file=cfg, data_root=results.data, c2l=results.c2l, exp=results.exp_root, json_file=data_json)
         try:
             predict(cfg_file=cfg, data_root=results.data, c2l=results.c2l, exp=results.exp_root, json_file=data_json)
             pass
