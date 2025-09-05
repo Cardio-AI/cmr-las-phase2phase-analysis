@@ -17,7 +17,7 @@ Please contact us if you are interested in these labels.
 ### Structure
 
 The project uses one data-root folder, which should at least contain a folder  ```lax ``` with the cine CMR files.
-Additionally, the folder can contain a csv file for splitting the data **df_kfold.csv** and one with the groundtruth keyframe annotations.
+Additionally, the folder can contain a csv file for splitting the data **df_kfold.csv** and one with the ground-truth keyframe annotations.
 
  ```
    ├── lax (folder with cine 4CH CMR) 
@@ -41,5 +41,7 @@ By default, it is set to 40. If your sequence has more than 39 time steps, you n
 
 #### Dataframe for k-fold split validation
 For a split in several folds you have to provide a **_df_kfold.csv_** file. 
-Here you should have a row for each patient and fold and if it belons to "train" or "test" in the modality column.
-You can find an example for a df_kfold.csv in data/mnms-2.
+Here you should have a row for each patient and fold and if it belongs to "train" or "test" in the modality column.
+You can find an example for a df_kfold.csv in ```data/mnms-2```.
+
+

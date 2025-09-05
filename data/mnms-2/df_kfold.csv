@@ -1,0 +1,1441 @@
+SUBJECT_CODE,DISEASE,VENDOR,SCANNER,FIELD,fold,modality,patient
+199,TRI,SIEMENS,SymphonyTim,1.5,0,test,199_LA
+358,TRI,SIEMENS,Symphony,1.5,0,test,358_LA
+340,TRI,Philips Medical Systems,Achieva,1.5,0,test,340_LA
+349,TRI,SIEMENS,SymphonyTim,1.5,0,test,349_LA
+341,TRI,SIEMENS,Avanto Fit,1.5,0,test,341_LA
+345,TRI,SIEMENS,SymphonyTim,1.5,0,test,345_LA
+351,TRI,SIEMENS,SymphonyTim,1.5,0,test,351_LA
+322,RV,Philips Medical Systems,Achieva,1.5,0,test,322_LA
+192,RV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,0,test,192_LA
+320,RV,Philips Medical Systems,Achieva,1.5,0,test,320_LA
+325,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,test,325_LA
+335,RV,SIEMENS,Avanto Fit,1.5,0,test,335_LA
+329,RV,SIEMENS,SymphonyTim,1.5,0,test,329_LA
+316,RV,SIEMENS,SymphonyTim,1.5,0,test,316_LA
+187,CIA,GE MEDICAL SYSTEMS,Signa HDxt,3.0,0,test,187_LA
+308,CIA,SIEMENS,SymphonyTim,1.5,0,test,308_LA
+149,CIA,SIEMENS,SymphonyTim,1.5,0,test,149_LA
+160,CIA,SIEMENS,SymphonyTim,1.5,0,test,160_LA
+186,CIA,GE MEDICAL SYSTEMS,Signa HDxt,3.0,0,test,186_LA
+141,CIA,GE MEDICAL SYSTEMS,Signa HDxt,3.0,0,test,141_LA
+158,CIA,SIEMENS,Symphony,1.5,0,test,158_LA
+190,CIA,SIEMENS,SymphonyTim,1.5,0,test,190_LA
+131,FALL,SIEMENS,Avanto Fit,1.5,0,test,131_LA
+139,FALL,SIEMENS,Avanto Fit,1.5,0,test,139_LA
+184,FALL,SIEMENS,SymphonyTim,1.5,0,test,184_LA
+137,FALL,SIEMENS,SymphonyTim,1.5,0,test,137_LA
+125,FALL,SIEMENS,Avanto Fit,1.5,0,test,125_LA
+291,FALL,SIEMENS,Avanto Fit,1.5,0,test,291_LA
+126,FALL,SIEMENS,SymphonyTim,1.5,0,test,126_LA
+181,FALL,SIEMENS,SymphonyTim,1.5,0,test,181_LA
+107,ARR,GE MEDICAL SYSTEMS,Signa HDxt,3.0,0,test,107_LA
+281,ARR,SIEMENS,SymphonyTim,1.5,0,test,281_LA
+289,ARR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,test,289_LA
+111,ARR,Philips Medical Systems,Achieva,1.5,0,test,111_LA
+120,ARR,SIEMENS,SymphonyTim,1.5,0,test,120_LA
+110,ARR,Philips Medical Systems,Achieva,1.5,0,test,110_LA
+109,ARR,GE MEDICAL SYSTEMS,Signa Explorer,1.5,0,test,109_LA
+283,ARR,SIEMENS,Avanto,1.5,0,test,283_LA
+270,HCM,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,test,270_LA
+264,HCM,SIEMENS,SymphonyTim,1.5,0,test,264_LA
+85,HCM,Philips Medical Systems,Achieva,1.5,0,test,085_LA
+271,HCM,SIEMENS,Symphony,1.5,0,test,271_LA
+90,HCM,Philips Medical Systems,Achieva,1.5,0,test,090_LA
+88,HCM,Philips Medical Systems,Achieva,1.5,0,test,088_LA
+79,HCM,Philips Medical Systems,Achieva,1.5,0,test,079_LA
+86,HCM,Philips Medical Systems,Achieva,1.5,0,test,086_LA
+87,HCM,Philips Medical Systems,Achieva,1.5,0,test,087_LA
+276,HCM,SIEMENS,SymphonyTim,1.5,0,test,276_LA
+91,HCM,Philips Medical Systems,Achieva,1.5,0,test,091_LA
+84,HCM,Philips Medical Systems,Achieva,1.5,0,test,084_LA
+82,HCM,Philips Medical Systems,Achieva,1.5,0,test,082_LA
+76,HCM,Philips Medical Systems,Achieva,1.5,0,test,076_LA
+268,HCM,SIEMENS,SymphonyTim,1.5,0,test,268_LA
+47,LV,SIEMENS,SymphonyTim,1.5,0,test,047_LA
+241,LV,SIEMENS,SymphonyTim,1.5,0,test,241_LA
+250,LV,SIEMENS,SymphonyTim,1.5,0,test,250_LA
+61,LV,SIEMENS,SymphonyTim,1.5,0,test,061_LA
+236,LV,SIEMENS,SymphonyTim,1.5,0,test,236_LA
+56,LV,SIEMENS,Symphony,1.5,0,test,056_LA
+252,LV,SIEMENS,SymphonyTim,1.5,0,test,252_LA
+239,LV,SIEMENS,SymphonyTim,1.5,0,test,239_LA
+240,LV,SIEMENS,SymphonyTim,1.5,0,test,240_LA
+169,LV,SIEMENS,SymphonyTim,1.5,0,test,169_LA
+59,LV,SIEMENS,SymphonyTim,1.5,0,test,059_LA
+60,LV,SIEMENS,SymphonyTim,1.5,0,test,060_LA
+249,LV,SIEMENS,SymphonyTim,1.5,0,test,249_LA
+45,LV,SIEMENS,SymphonyTim,1.5,0,test,045_LA
+251,LV,SIEMENS,SymphonyTim,1.5,0,test,251_LA
+36,NOR,Philips Medical Systems,Achieva,1.5,0,test,036_LA
+212,NOR,SIEMENS,SymphonyTim,1.5,0,test,212_LA
+8,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,test,008_LA
+230,NOR,SIEMENS,SymphonyTim,1.5,0,test,230_LA
+228,NOR,SIEMENS,SymphonyTim,1.5,0,test,228_LA
+161,NOR,Philips Medical Systems,Achieva,1.5,0,test,161_LA
+229,NOR,SIEMENS,SymphonyTim,1.5,0,test,229_LA
+4,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,test,004_LA
+211,NOR,SIEMENS,SymphonyTim,1.5,0,test,211_LA
+3,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,test,003_LA
+15,NOR,Philips Medical Systems,Achieva,1.5,0,test,015_LA
+27,NOR,Philips Medical Systems,Achieva,1.5,0,test,027_LA
+207,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,0,test,207_LA
+40,NOR,Philips Medical Systems,Achieva,1.5,0,test,040_LA
+218,NOR,SIEMENS,SymphonyTim,1.5,0,test,218_LA
+214,NOR,SIEMENS,SymphonyTim,1.5,0,test,214_LA
+227,NOR,SIEMENS,SymphonyTim,1.5,0,test,227_LA
+30,NOR,Philips Medical Systems,Achieva,1.5,0,test,030_LA
+11,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,test,011_LA
+114,ARR,Philips Medical Systems,Achieva,1.5,0,test,114_LA
+300,FALL,SIEMENS,Avanto Fit,1.5,0,test,300_LA
+321,RV,Philips Medical Systems,Achieva,1.5,0,test,321_LA
+346,TRI,SIEMENS,Avanto,1.5,0,train,346_LA
+348,TRI,SIEMENS,SymphonyTim,1.5,0,train,348_LA
+343,TRI,SIEMENS,SymphonyTim,1.5,0,train,343_LA
+355,TRI,SIEMENS,Symphony,1.5,0,train,355_LA
+347,TRI,SIEMENS,SymphonyTim,1.5,0,train,347_LA
+344,TRI,SIEMENS,Avanto,1.5,0,train,344_LA
+356,TRI,SIEMENS,Symphony,1.5,0,train,356_LA
+313,RV,SIEMENS,SymphonyTim,1.5,0,train,313_LA
+318,RV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,0,train,318_LA
+194,RV,SIEMENS,TrioTim,3.0,0,train,194_LA
+332,RV,SIEMENS,SymphonyTim,1.5,0,train,332_LA
+319,RV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,0,train,319_LA
+331,RV,SIEMENS,SymphonyTim,1.5,0,train,331_LA
+328,RV,SIEMENS,SymphonyTim,1.5,0,train,328_LA
+157,CIA,SIEMENS,Avanto Fit,1.5,0,train,157_LA
+151,CIA,SIEMENS,SymphonyTim,1.5,0,train,151_LA
+145,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,145_LA
+310,CIA,SIEMENS,Avanto Fit,1.5,0,train,310_LA
+303,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,303_LA
+152,CIA,SIEMENS,SymphonyTim,1.5,0,train,152_LA
+147,CIA,Philips Medical Systems,Achieva,1.5,0,train,147_LA
+188,CIA,Philips Medical Systems,Achieva,1.5,0,train,188_LA
+182,FALL,SIEMENS,Avanto Fit,1.5,0,train,182_LA
+138,FALL,SIEMENS,SymphonyTim,1.5,0,train,138_LA
+293,FALL,SIEMENS,Avanto Fit,1.5,0,train,293_LA
+136,FALL,SIEMENS,Avanto Fit,1.5,0,train,136_LA
+295,FALL,SIEMENS,Avanto Fit,1.5,0,train,295_LA
+121,FALL,SIEMENS,SymphonyTim,1.5,0,train,121_LA
+134,FALL,SIEMENS,Avanto Fit,1.5,0,train,134_LA
+129,FALL,SIEMENS,Avanto Fit,1.5,0,train,129_LA
+113,ARR,Philips Medical Systems,Achieva,1.5,0,train,113_LA
+108,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,0,train,108_LA
+288,ARR,SIEMENS,SymphonyTim,1.5,0,train,288_LA
+117,ARR,Philips Medical Systems,Achieva,1.5,0,train,117_LA
+179,ARR,Philips Medical Systems,Achieva,1.5,0,train,179_LA
+285,ARR,SIEMENS,SymphonyTim,1.5,0,train,285_LA
+286,ARR,SIEMENS,SymphonyTim,1.5,0,train,286_LA
+178,ARR,Philips Medical Systems,Achieva,1.5,0,train,178_LA
+89,HCM,Philips Medical Systems,Achieva,1.5,0,train,089_LA
+73,HCM,Philips Medical Systems,Achieva,1.5,0,train,073_LA
+263,HCM,SIEMENS,Symphony,1.5,0,train,263_LA
+278,HCM,SIEMENS,SymphonyTim,1.5,0,train,278_LA
+257,HCM,SIEMENS,SymphonyTim,1.5,0,train,257_LA
+78,HCM,Philips Medical Systems,Achieva,1.5,0,train,078_LA
+274,HCM,SIEMENS,SymphonyTim,1.5,0,train,274_LA
+98,HCM,SIEMENS,Symphony,1.5,0,train,098_LA
+92,HCM,Philips Medical Systems,Achieva,1.5,0,train,092_LA
+96,HCM,SIEMENS,Symphony,1.5,0,train,096_LA
+260,HCM,SIEMENS,SymphonyTim,1.5,0,train,260_LA
+74,HCM,Philips Medical Systems,Achieva,1.5,0,train,074_LA
+72,HCM,Philips Medical Systems,Achieva,1.5,0,train,072_LA
+265,HCM,SIEMENS,SymphonyTim,1.5,0,train,265_LA
+75,HCM,Philips Medical Systems,Achieva,1.5,0,train,075_LA
+246,LV,SIEMENS,Avanto Fit,1.5,0,train,246_LA
+54,LV,SIEMENS,Symphony,1.5,0,train,054_LA
+44,LV,SIEMENS,Symphony,1.5,0,train,044_LA
+52,LV,SIEMENS,TrioTim,3.0,0,train,052_LA
+255,LV,SIEMENS,SymphonyTim,1.5,0,train,255_LA
+248,LV,SIEMENS,SymphonyTim,1.5,0,train,248_LA
+63,LV,SIEMENS,SymphonyTim,1.5,0,train,063_LA
+50,LV,SIEMENS,SymphonyTim,1.5,0,train,050_LA
+238,LV,SIEMENS,SymphonyTim,1.5,0,train,238_LA
+53,LV,SIEMENS,SymphonyTim,1.5,0,train,053_LA
+64,LV,SIEMENS,SymphonyTim,1.5,0,train,064_LA
+235,LV,SIEMENS,Avanto Fit,1.5,0,train,235_LA
+67,LV,SIEMENS,SymphonyTim,1.5,0,train,067_LA
+234,LV,SIEMENS,SymphonyTim,1.5,0,train,234_LA
+41,LV,SIEMENS,SymphonyTim,1.5,0,train,041_LA
+34,NOR,Philips Medical Systems,Achieva,1.5,0,train,034_LA
+26,NOR,Philips Medical Systems,Achieva,1.5,0,train,026_LA
+209,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,0,train,209_LA
+5,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,005_LA
+205,NOR,Philips Medical Systems,Achieva,1.5,0,train,205_LA
+24,NOR,Philips Medical Systems,Achieva,1.5,0,train,024_LA
+225,NOR,SIEMENS,SymphonyTim,1.5,0,train,225_LA
+9,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,009_LA
+12,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,012_LA
+223,NOR,SIEMENS,SymphonyTim,1.5,0,train,223_LA
+6,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,006_LA
+22,NOR,Philips Medical Systems,Achieva,1.5,0,train,022_LA
+7,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,007_LA
+17,NOR,Philips Medical Systems,Achieva,1.5,0,train,017_LA
+221,NOR,SIEMENS,SymphonyTim,1.5,0,train,221_LA
+2,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,002_LA
+203,NOR,Philips Medical Systems,Achieva,1.5,0,train,203_LA
+10,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,010_LA
+219,NOR,SIEMENS,SymphonyTim,1.5,0,train,219_LA
+282,ARR,SIEMENS,Avanto Fit,1.5,0,train,282_LA
+142,CIA,GE MEDICAL SYSTEMS,Signa HDxt,1.5,0,train,142_LA
+330,RV,SIEMENS,SymphonyTim,1.5,0,train,330_LA
+200,TRI,SIEMENS,SymphonyTim,1.5,0,train,200_LA
+359,TRI,SIEMENS,SymphonyTim,1.5,0,train,359_LA
+352,TRI,SIEMENS,SymphonyTim,1.5,0,train,352_LA
+357,TRI,SIEMENS,SymphonyTim,1.5,0,train,357_LA
+197,TRI,Philips Medical Systems,Achieva,1.5,0,train,197_LA
+196,TRI,GE MEDICAL SYSTEMS,Signa HDxt,3.0,0,train,196_LA
+198,TRI,SIEMENS,SymphonyTim,1.5,0,train,198_LA
+324,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,324_LA
+191,RV,GE MEDICAL SYSTEMS,Signa HDxt,1.5,0,train,191_LA
+326,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,326_LA
+195,RV,SIEMENS,SymphonyTim,1.5,0,train,195_LA
+314,RV,SIEMENS,SymphonyTim,1.5,0,train,314_LA
+334,RV,SIEMENS,SymphonyTim,1.5,0,train,334_LA
+193,RV,Philips Medical Systems,Achieva,1.5,0,train,193_LA
+150,CIA,SIEMENS,Avanto Fit,1.5,0,train,150_LA
+144,CIA,Philips Medical Systems,Achieva,1.5,0,train,144_LA
+153,CIA,SIEMENS,Avanto Fit,1.5,0,train,153_LA
+309,CIA,SIEMENS,Avanto Fit,1.5,0,train,309_LA
+305,CIA,SIEMENS,SymphonyTim,1.5,0,train,305_LA
+301,CIA,SIEMENS,Symphony,1.5,0,train,301_LA
+189,CIA,Philips Medical Systems,Achieva,1.5,0,train,189_LA
+143,CIA,Philips Medical Systems,Achieva,1.5,0,train,143_LA
+124,FALL,SIEMENS,Avanto Fit,1.5,0,train,124_LA
+299,FALL,SIEMENS,Avanto Fit,1.5,0,train,299_LA
+128,FALL,SIEMENS,SymphonyTim,1.5,0,train,128_LA
+123,FALL,SIEMENS,Avanto Fit,1.5,0,train,123_LA
+133,FALL,SIEMENS,Avanto,1.5,0,train,133_LA
+292,FALL,SIEMENS,SymphonyTim,1.5,0,train,292_LA
+183,FALL,SIEMENS,Avanto Fit,1.5,0,train,183_LA
+297,FALL,SIEMENS,Avanto Fit,1.5,0,train,297_LA
+290,ARR,SIEMENS,SymphonyTim,1.5,0,train,290_LA
+180,ARR,SIEMENS,SymphonyTim,1.5,0,train,180_LA
+104,ARR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,104_LA
+112,ARR,Philips Medical Systems,Achieva,1.5,0,train,112_LA
+119,ARR,SIEMENS,SymphonyTim,1.5,0,train,119_LA
+176,ARR,GE MEDICAL SYSTEMS,Signa HDxt,3.0,0,train,176_LA
+106,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,0,train,106_LA
+115,ARR,Philips Medical Systems,Achieva,1.5,0,train,115_LA
+99,HCM,SIEMENS,Symphony,1.5,0,train,099_LA
+262,HCM,SIEMENS,Symphony,1.5,0,train,262_LA
+172,HCM,Philips Medical Systems,Achieva,1.5,0,train,172_LA
+256,HCM,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,256_LA
+267,HCM,SIEMENS,Symphony,1.5,0,train,267_LA
+93,HCM,Philips Medical Systems,Achieva,1.5,0,train,093_LA
+277,HCM,SIEMENS,SymphonyTim,1.5,0,train,277_LA
+280,HCM,SIEMENS,SymphonyTim,1.5,0,train,280_LA
+81,HCM,Philips Medical Systems,Achieva,1.5,0,train,081_LA
+97,HCM,SIEMENS,SymphonyTim,1.5,0,train,097_LA
+94,HCM,Philips Medical Systems,Achieva,1.5,0,train,094_LA
+258,HCM,SIEMENS,SymphonyTim,1.5,0,train,258_LA
+259,HCM,SIEMENS,Symphony,1.5,0,train,259_LA
+272,HCM,SIEMENS,SymphonyTim,1.5,0,train,272_LA
+95,HCM,SIEMENS,Avanto,1.5,0,train,095_LA
+46,LV,SIEMENS,SymphonyTim,1.5,0,train,046_LA
+51,LV,SIEMENS,SymphonyTim,1.5,0,train,051_LA
+66,LV,SIEMENS,Symphony,1.5,0,train,066_LA
+68,LV,SIEMENS,TrioTim,3.0,0,train,068_LA
+168,LV,SIEMENS,SymphonyTim,1.5,0,train,168_LA
+242,LV,SIEMENS,Symphony,1.5,0,train,242_LA
+43,LV,SIEMENS,SymphonyTim,1.5,0,train,043_LA
+57,LV,SIEMENS,SymphonyTim,1.5,0,train,057_LA
+58,LV,SIEMENS,Avanto Fit,1.5,0,train,058_LA
+170,LV,SIEMENS,SymphonyTim,1.5,0,train,170_LA
+49,LV,SIEMENS,SymphonyTim,1.5,0,train,049_LA
+243,LV,SIEMENS,SymphonyTim,1.5,0,train,243_LA
+231,LV,SIEMENS,SymphonyTim,1.5,0,train,231_LA
+70,LV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,0,train,070_LA
+167,LV,SIEMENS,SymphonyTim,1.5,0,train,167_LA
+201,NOR,SIEMENS,SymphonyTim,1.5,0,train,201_LA
+202,NOR,SIEMENS,SymphonyTim,1.5,0,train,202_LA
+33,NOR,Philips Medical Systems,Achieva,1.5,0,train,033_LA
+19,NOR,Philips Medical Systems,Achieva,1.5,0,train,019_LA
+162,NOR,Philips Medical Systems,Achieva,1.5,0,train,162_LA
+37,NOR,Philips Medical Systems,Achieva,1.5,0,train,037_LA
+208,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,0,train,208_LA
+16,NOR,Philips Medical Systems,Achieva,1.5,0,train,016_LA
+217,NOR,SIEMENS,SymphonyTim,1.5,0,train,217_LA
+35,NOR,Philips Medical Systems,Achieva,1.5,0,train,035_LA
+23,NOR,Philips Medical Systems,Achieva,1.5,0,train,023_LA
+226,NOR,SIEMENS,SymphonyTim,1.5,0,train,226_LA
+20,NOR,Philips Medical Systems,Achieva,1.5,0,train,020_LA
+25,NOR,Philips Medical Systems,Achieva,1.5,0,train,025_LA
+18,NOR,Philips Medical Systems,Achieva,1.5,0,train,018_LA
+32,NOR,Philips Medical Systems,Achieva,1.5,0,train,032_LA
+206,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,0,train,206_LA
+213,NOR,SIEMENS,SymphonyTim,1.5,0,train,213_LA
+220,NOR,SIEMENS,SymphonyTim,1.5,0,train,220_LA
+185,FALL,SIEMENS,SymphonyTim,1.5,0,train,185_LA
+156,CIA,SIEMENS,Avanto Fit,1.5,0,train,156_LA
+338,TRI,Philips Medical Systems,Achieva,1.5,0,train,338_LA
+354,TRI,SIEMENS,SymphonyTim,1.5,0,train,354_LA
+353,TRI,SIEMENS,TrioTim,3.0,0,train,353_LA
+360,TRI,SIEMENS,SymphonyTim,1.5,0,train,360_LA
+350,TRI,SIEMENS,SymphonyTim,1.5,0,train,350_LA
+337,TRI,Philips Medical Systems,Achieva,1.5,0,train,337_LA
+336,TRI,GE MEDICAL SYSTEMS,Signa HDxt,3.0,0,train,336_LA
+342,TRI,SIEMENS,SymphonyTim,1.5,0,train,342_LA
+311,RV,SIEMENS,SymphonyTim,1.5,0,train,311_LA
+312,RV,SIEMENS,SymphonyTim,1.5,0,train,312_LA
+315,RV,SIEMENS,SymphonyTim,1.5,0,train,315_LA
+317,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,317_LA
+323,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,323_LA
+333,RV,SIEMENS,SymphonyTim,1.5,0,train,333_LA
+327,RV,SIEMENS,SymphonyTim,1.5,0,train,327_LA
+304,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,304_LA
+307,CIA,SIEMENS,SymphonyTim,1.5,0,train,307_LA
+148,CIA,SIEMENS,SymphonyTim,1.5,0,train,148_LA
+146,CIA,Philips Medical Systems,Achieva,1.5,0,train,146_LA
+306,CIA,SIEMENS,Avanto Fit,1.5,0,train,306_LA
+302,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,302_LA
+155,CIA,SIEMENS,SymphonyTim,1.5,0,train,155_LA
+154,CIA,SIEMENS,Avanto Fit,1.5,0,train,154_LA
+135,FALL,SIEMENS,Avanto Fit,1.5,0,train,135_LA
+130,FALL,SIEMENS,SymphonyTim,1.5,0,train,130_LA
+132,FALL,SIEMENS,Avanto Fit,1.5,0,train,132_LA
+140,FALL,SIEMENS,SymphonyTim,1.5,0,train,140_LA
+298,FALL,SIEMENS,Avanto Fit,1.5,0,train,298_LA
+127,FALL,SIEMENS,SymphonyTim,1.5,0,train,127_LA
+122,FALL,SIEMENS,SymphonyTim,1.5,0,train,122_LA
+294,FALL,SIEMENS,SymphonyTim,1.5,0,train,294_LA
+101,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,0,train,101_LA
+118,ARR,Philips Medical Systems,Achieva,1.5,0,train,118_LA
+103,ARR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,103_LA
+284,ARR,SIEMENS,Avanto Fit,1.5,0,train,284_LA
+287,ARR,SIEMENS,Symphony,1.5,0,train,287_LA
+177,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,0,train,177_LA
+102,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,0,train,102_LA
+116,ARR,Philips Medical Systems,Achieva,1.5,0,train,116_LA
+261,HCM,SIEMENS,SymphonyTim,1.5,0,train,261_LA
+275,HCM,SIEMENS,SymphonyTim,1.5,0,train,275_LA
+174,HCM,Philips Medical Systems,Achieva,1.5,0,train,174_LA
+71,HCM,Philips Medical Systems,Achieva,1.5,0,train,071_LA
+83,HCM,Philips Medical Systems,Achieva,1.5,0,train,083_LA
+100,HCM,SIEMENS,SymphonyTim,1.5,0,train,100_LA
+171,HCM,GE MEDICAL SYSTEMS,Signa HDxt,1.5,0,train,171_LA
+173,HCM,Philips Medical Systems,Achieva,1.5,0,train,173_LA
+77,HCM,Philips Medical Systems,Achieva,1.5,0,train,077_LA
+269,HCM,SIEMENS,SymphonyTim,1.5,0,train,269_LA
+266,HCM,SIEMENS,Symphony,1.5,0,train,266_LA
+80,HCM,Philips Medical Systems,Achieva,1.5,0,train,080_LA
+175,HCM,SIEMENS,SymphonyTim,1.5,0,train,175_LA
+279,HCM,SIEMENS,SymphonyTim,1.5,0,train,279_LA
+273,HCM,SIEMENS,SymphonyTim,1.5,0,train,273_LA
+55,LV,SIEMENS,SymphonyTim,1.5,0,train,055_LA
+166,LV,SIEMENS,Symphony,1.5,0,train,166_LA
+232,LV,SIEMENS,SymphonyTim,1.5,0,train,232_LA
+247,LV,SIEMENS,Avanto Fit,1.5,0,train,247_LA
+233,LV,SIEMENS,SymphonyTim,1.5,0,train,233_LA
+237,LV,SIEMENS,SymphonyTim,1.5,0,train,237_LA
+48,LV,SIEMENS,SymphonyTim,1.5,0,train,048_LA
+42,LV,SIEMENS,SymphonyTim,1.5,0,train,042_LA
+69,LV,SIEMENS,SymphonyTim,1.5,0,train,069_LA
+62,LV,SIEMENS,SymphonyTim,1.5,0,train,062_LA
+253,LV,SIEMENS,SymphonyTim,1.5,0,train,253_LA
+254,LV,SIEMENS,Avanto Fit,1.5,0,train,254_LA
+245,LV,SIEMENS,Avanto Fit,1.5,0,train,245_LA
+65,LV,SIEMENS,SymphonyTim,1.5,0,train,065_LA
+244,LV,SIEMENS,TrioTim,3.0,0,train,244_LA
+13,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,013_LA
+31,NOR,Philips Medical Systems,Achieva,1.5,0,train,031_LA
+224,NOR,SIEMENS,SymphonyTim,1.5,0,train,224_LA
+164,NOR,Philips Medical Systems,Achieva,1.5,0,train,164_LA
+210,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,0,train,210_LA
+204,NOR,Philips Medical Systems,Achieva,1.5,0,train,204_LA
+1,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,0,train,001_LA
+222,NOR,SIEMENS,SymphonyTim,1.5,0,train,222_LA
+14,NOR,Philips Medical Systems,Achieva,1.5,0,train,014_LA
+28,NOR,Philips Medical Systems,Achieva,1.5,0,train,028_LA
+216,NOR,SIEMENS,SymphonyTim,1.5,0,train,216_LA
+38,NOR,Philips Medical Systems,Achieva,1.5,0,train,038_LA
+163,NOR,Philips Medical Systems,Achieva,1.5,0,train,163_LA
+29,NOR,Philips Medical Systems,Achieva,1.5,0,train,029_LA
+165,NOR,Philips Medical Systems,Achieva,1.5,0,train,165_LA
+215,NOR,SIEMENS,SymphonyTim,1.5,0,train,215_LA
+21,NOR,Philips Medical Systems,Achieva,1.5,0,train,021_LA
+39,NOR,Philips Medical Systems,Achieva,1.5,0,train,039_LA
+105,ARR,GE MEDICAL SYSTEMS,Signa HDxt,3.0,0,train,105_LA
+296,FALL,SIEMENS,SymphonyTim,1.5,0,train,296_LA
+159,CIA,SIEMENS,SymphonyTim,1.5,0,train,159_LA
+339,TRI,Philips Medical Systems,Achieva,1.5,0,train,339_LA
+199,TRI,SIEMENS,SymphonyTim,1.5,1,train,199_LA
+358,TRI,SIEMENS,Symphony,1.5,1,train,358_LA
+340,TRI,Philips Medical Systems,Achieva,1.5,1,train,340_LA
+349,TRI,SIEMENS,SymphonyTim,1.5,1,train,349_LA
+341,TRI,SIEMENS,Avanto Fit,1.5,1,train,341_LA
+345,TRI,SIEMENS,SymphonyTim,1.5,1,train,345_LA
+351,TRI,SIEMENS,SymphonyTim,1.5,1,train,351_LA
+322,RV,Philips Medical Systems,Achieva,1.5,1,train,322_LA
+192,RV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,1,train,192_LA
+320,RV,Philips Medical Systems,Achieva,1.5,1,train,320_LA
+325,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,325_LA
+335,RV,SIEMENS,Avanto Fit,1.5,1,train,335_LA
+329,RV,SIEMENS,SymphonyTim,1.5,1,train,329_LA
+316,RV,SIEMENS,SymphonyTim,1.5,1,train,316_LA
+187,CIA,GE MEDICAL SYSTEMS,Signa HDxt,3.0,1,train,187_LA
+308,CIA,SIEMENS,SymphonyTim,1.5,1,train,308_LA
+149,CIA,SIEMENS,SymphonyTim,1.5,1,train,149_LA
+160,CIA,SIEMENS,SymphonyTim,1.5,1,train,160_LA
+186,CIA,GE MEDICAL SYSTEMS,Signa HDxt,3.0,1,train,186_LA
+141,CIA,GE MEDICAL SYSTEMS,Signa HDxt,3.0,1,train,141_LA
+158,CIA,SIEMENS,Symphony,1.5,1,train,158_LA
+190,CIA,SIEMENS,SymphonyTim,1.5,1,train,190_LA
+131,FALL,SIEMENS,Avanto Fit,1.5,1,train,131_LA
+139,FALL,SIEMENS,Avanto Fit,1.5,1,train,139_LA
+184,FALL,SIEMENS,SymphonyTim,1.5,1,train,184_LA
+137,FALL,SIEMENS,SymphonyTim,1.5,1,train,137_LA
+125,FALL,SIEMENS,Avanto Fit,1.5,1,train,125_LA
+291,FALL,SIEMENS,Avanto Fit,1.5,1,train,291_LA
+126,FALL,SIEMENS,SymphonyTim,1.5,1,train,126_LA
+181,FALL,SIEMENS,SymphonyTim,1.5,1,train,181_LA
+107,ARR,GE MEDICAL SYSTEMS,Signa HDxt,3.0,1,train,107_LA
+281,ARR,SIEMENS,SymphonyTim,1.5,1,train,281_LA
+289,ARR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,289_LA
+111,ARR,Philips Medical Systems,Achieva,1.5,1,train,111_LA
+120,ARR,SIEMENS,SymphonyTim,1.5,1,train,120_LA
+110,ARR,Philips Medical Systems,Achieva,1.5,1,train,110_LA
+109,ARR,GE MEDICAL SYSTEMS,Signa Explorer,1.5,1,train,109_LA
+283,ARR,SIEMENS,Avanto,1.5,1,train,283_LA
+270,HCM,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,270_LA
+264,HCM,SIEMENS,SymphonyTim,1.5,1,train,264_LA
+85,HCM,Philips Medical Systems,Achieva,1.5,1,train,085_LA
+271,HCM,SIEMENS,Symphony,1.5,1,train,271_LA
+90,HCM,Philips Medical Systems,Achieva,1.5,1,train,090_LA
+88,HCM,Philips Medical Systems,Achieva,1.5,1,train,088_LA
+79,HCM,Philips Medical Systems,Achieva,1.5,1,train,079_LA
+86,HCM,Philips Medical Systems,Achieva,1.5,1,train,086_LA
+87,HCM,Philips Medical Systems,Achieva,1.5,1,train,087_LA
+276,HCM,SIEMENS,SymphonyTim,1.5,1,train,276_LA
+91,HCM,Philips Medical Systems,Achieva,1.5,1,train,091_LA
+84,HCM,Philips Medical Systems,Achieva,1.5,1,train,084_LA
+82,HCM,Philips Medical Systems,Achieva,1.5,1,train,082_LA
+76,HCM,Philips Medical Systems,Achieva,1.5,1,train,076_LA
+268,HCM,SIEMENS,SymphonyTim,1.5,1,train,268_LA
+47,LV,SIEMENS,SymphonyTim,1.5,1,train,047_LA
+241,LV,SIEMENS,SymphonyTim,1.5,1,train,241_LA
+250,LV,SIEMENS,SymphonyTim,1.5,1,train,250_LA
+61,LV,SIEMENS,SymphonyTim,1.5,1,train,061_LA
+236,LV,SIEMENS,SymphonyTim,1.5,1,train,236_LA
+56,LV,SIEMENS,Symphony,1.5,1,train,056_LA
+252,LV,SIEMENS,SymphonyTim,1.5,1,train,252_LA
+239,LV,SIEMENS,SymphonyTim,1.5,1,train,239_LA
+240,LV,SIEMENS,SymphonyTim,1.5,1,train,240_LA
+169,LV,SIEMENS,SymphonyTim,1.5,1,train,169_LA
+59,LV,SIEMENS,SymphonyTim,1.5,1,train,059_LA
+60,LV,SIEMENS,SymphonyTim,1.5,1,train,060_LA
+249,LV,SIEMENS,SymphonyTim,1.5,1,train,249_LA
+45,LV,SIEMENS,SymphonyTim,1.5,1,train,045_LA
+251,LV,SIEMENS,SymphonyTim,1.5,1,train,251_LA
+36,NOR,Philips Medical Systems,Achieva,1.5,1,train,036_LA
+212,NOR,SIEMENS,SymphonyTim,1.5,1,train,212_LA
+8,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,008_LA
+230,NOR,SIEMENS,SymphonyTim,1.5,1,train,230_LA
+228,NOR,SIEMENS,SymphonyTim,1.5,1,train,228_LA
+161,NOR,Philips Medical Systems,Achieva,1.5,1,train,161_LA
+229,NOR,SIEMENS,SymphonyTim,1.5,1,train,229_LA
+4,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,004_LA
+211,NOR,SIEMENS,SymphonyTim,1.5,1,train,211_LA
+3,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,003_LA
+15,NOR,Philips Medical Systems,Achieva,1.5,1,train,015_LA
+27,NOR,Philips Medical Systems,Achieva,1.5,1,train,027_LA
+207,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,1,train,207_LA
+40,NOR,Philips Medical Systems,Achieva,1.5,1,train,040_LA
+218,NOR,SIEMENS,SymphonyTim,1.5,1,train,218_LA
+214,NOR,SIEMENS,SymphonyTim,1.5,1,train,214_LA
+227,NOR,SIEMENS,SymphonyTim,1.5,1,train,227_LA
+30,NOR,Philips Medical Systems,Achieva,1.5,1,train,030_LA
+11,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,011_LA
+114,ARR,Philips Medical Systems,Achieva,1.5,1,train,114_LA
+300,FALL,SIEMENS,Avanto Fit,1.5,1,train,300_LA
+321,RV,Philips Medical Systems,Achieva,1.5,1,train,321_LA
+346,TRI,SIEMENS,Avanto,1.5,1,test,346_LA
+348,TRI,SIEMENS,SymphonyTim,1.5,1,test,348_LA
+343,TRI,SIEMENS,SymphonyTim,1.5,1,test,343_LA
+355,TRI,SIEMENS,Symphony,1.5,1,test,355_LA
+347,TRI,SIEMENS,SymphonyTim,1.5,1,test,347_LA
+344,TRI,SIEMENS,Avanto,1.5,1,test,344_LA
+356,TRI,SIEMENS,Symphony,1.5,1,test,356_LA
+313,RV,SIEMENS,SymphonyTim,1.5,1,test,313_LA
+318,RV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,1,test,318_LA
+194,RV,SIEMENS,TrioTim,3.0,1,test,194_LA
+332,RV,SIEMENS,SymphonyTim,1.5,1,test,332_LA
+319,RV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,1,test,319_LA
+331,RV,SIEMENS,SymphonyTim,1.5,1,test,331_LA
+328,RV,SIEMENS,SymphonyTim,1.5,1,test,328_LA
+157,CIA,SIEMENS,Avanto Fit,1.5,1,test,157_LA
+151,CIA,SIEMENS,SymphonyTim,1.5,1,test,151_LA
+145,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,test,145_LA
+310,CIA,SIEMENS,Avanto Fit,1.5,1,test,310_LA
+303,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,test,303_LA
+152,CIA,SIEMENS,SymphonyTim,1.5,1,test,152_LA
+147,CIA,Philips Medical Systems,Achieva,1.5,1,test,147_LA
+188,CIA,Philips Medical Systems,Achieva,1.5,1,test,188_LA
+182,FALL,SIEMENS,Avanto Fit,1.5,1,test,182_LA
+138,FALL,SIEMENS,SymphonyTim,1.5,1,test,138_LA
+293,FALL,SIEMENS,Avanto Fit,1.5,1,test,293_LA
+136,FALL,SIEMENS,Avanto Fit,1.5,1,test,136_LA
+295,FALL,SIEMENS,Avanto Fit,1.5,1,test,295_LA
+121,FALL,SIEMENS,SymphonyTim,1.5,1,test,121_LA
+134,FALL,SIEMENS,Avanto Fit,1.5,1,test,134_LA
+129,FALL,SIEMENS,Avanto Fit,1.5,1,test,129_LA
+113,ARR,Philips Medical Systems,Achieva,1.5,1,test,113_LA
+108,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,1,test,108_LA
+288,ARR,SIEMENS,SymphonyTim,1.5,1,test,288_LA
+117,ARR,Philips Medical Systems,Achieva,1.5,1,test,117_LA
+179,ARR,Philips Medical Systems,Achieva,1.5,1,test,179_LA
+285,ARR,SIEMENS,SymphonyTim,1.5,1,test,285_LA
+286,ARR,SIEMENS,SymphonyTim,1.5,1,test,286_LA
+178,ARR,Philips Medical Systems,Achieva,1.5,1,test,178_LA
+89,HCM,Philips Medical Systems,Achieva,1.5,1,test,089_LA
+73,HCM,Philips Medical Systems,Achieva,1.5,1,test,073_LA
+263,HCM,SIEMENS,Symphony,1.5,1,test,263_LA
+278,HCM,SIEMENS,SymphonyTim,1.5,1,test,278_LA
+257,HCM,SIEMENS,SymphonyTim,1.5,1,test,257_LA
+78,HCM,Philips Medical Systems,Achieva,1.5,1,test,078_LA
+274,HCM,SIEMENS,SymphonyTim,1.5,1,test,274_LA
+98,HCM,SIEMENS,Symphony,1.5,1,test,098_LA
+92,HCM,Philips Medical Systems,Achieva,1.5,1,test,092_LA
+96,HCM,SIEMENS,Symphony,1.5,1,test,096_LA
+260,HCM,SIEMENS,SymphonyTim,1.5,1,test,260_LA
+74,HCM,Philips Medical Systems,Achieva,1.5,1,test,074_LA
+72,HCM,Philips Medical Systems,Achieva,1.5,1,test,072_LA
+265,HCM,SIEMENS,SymphonyTim,1.5,1,test,265_LA
+75,HCM,Philips Medical Systems,Achieva,1.5,1,test,075_LA
+246,LV,SIEMENS,Avanto Fit,1.5,1,test,246_LA
+54,LV,SIEMENS,Symphony,1.5,1,test,054_LA
+44,LV,SIEMENS,Symphony,1.5,1,test,044_LA
+52,LV,SIEMENS,TrioTim,3.0,1,test,052_LA
+255,LV,SIEMENS,SymphonyTim,1.5,1,test,255_LA
+248,LV,SIEMENS,SymphonyTim,1.5,1,test,248_LA
+63,LV,SIEMENS,SymphonyTim,1.5,1,test,063_LA
+50,LV,SIEMENS,SymphonyTim,1.5,1,test,050_LA
+238,LV,SIEMENS,SymphonyTim,1.5,1,test,238_LA
+53,LV,SIEMENS,SymphonyTim,1.5,1,test,053_LA
+64,LV,SIEMENS,SymphonyTim,1.5,1,test,064_LA
+235,LV,SIEMENS,Avanto Fit,1.5,1,test,235_LA
+67,LV,SIEMENS,SymphonyTim,1.5,1,test,067_LA
+234,LV,SIEMENS,SymphonyTim,1.5,1,test,234_LA
+41,LV,SIEMENS,SymphonyTim,1.5,1,test,041_LA
+34,NOR,Philips Medical Systems,Achieva,1.5,1,test,034_LA
+26,NOR,Philips Medical Systems,Achieva,1.5,1,test,026_LA
+209,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,1,test,209_LA
+5,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,test,005_LA
+205,NOR,Philips Medical Systems,Achieva,1.5,1,test,205_LA
+24,NOR,Philips Medical Systems,Achieva,1.5,1,test,024_LA
+225,NOR,SIEMENS,SymphonyTim,1.5,1,test,225_LA
+9,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,test,009_LA
+12,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,test,012_LA
+223,NOR,SIEMENS,SymphonyTim,1.5,1,test,223_LA
+6,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,test,006_LA
+22,NOR,Philips Medical Systems,Achieva,1.5,1,test,022_LA
+7,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,test,007_LA
+17,NOR,Philips Medical Systems,Achieva,1.5,1,test,017_LA
+221,NOR,SIEMENS,SymphonyTim,1.5,1,test,221_LA
+2,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,test,002_LA
+203,NOR,Philips Medical Systems,Achieva,1.5,1,test,203_LA
+10,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,test,010_LA
+219,NOR,SIEMENS,SymphonyTim,1.5,1,test,219_LA
+282,ARR,SIEMENS,Avanto Fit,1.5,1,test,282_LA
+142,CIA,GE MEDICAL SYSTEMS,Signa HDxt,1.5,1,test,142_LA
+330,RV,SIEMENS,SymphonyTim,1.5,1,test,330_LA
+200,TRI,SIEMENS,SymphonyTim,1.5,1,train,200_LA
+359,TRI,SIEMENS,SymphonyTim,1.5,1,train,359_LA
+352,TRI,SIEMENS,SymphonyTim,1.5,1,train,352_LA
+357,TRI,SIEMENS,SymphonyTim,1.5,1,train,357_LA
+197,TRI,Philips Medical Systems,Achieva,1.5,1,train,197_LA
+196,TRI,GE MEDICAL SYSTEMS,Signa HDxt,3.0,1,train,196_LA
+198,TRI,SIEMENS,SymphonyTim,1.5,1,train,198_LA
+324,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,324_LA
+191,RV,GE MEDICAL SYSTEMS,Signa HDxt,1.5,1,train,191_LA
+326,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,326_LA
+195,RV,SIEMENS,SymphonyTim,1.5,1,train,195_LA
+314,RV,SIEMENS,SymphonyTim,1.5,1,train,314_LA
+334,RV,SIEMENS,SymphonyTim,1.5,1,train,334_LA
+193,RV,Philips Medical Systems,Achieva,1.5,1,train,193_LA
+150,CIA,SIEMENS,Avanto Fit,1.5,1,train,150_LA
+144,CIA,Philips Medical Systems,Achieva,1.5,1,train,144_LA
+153,CIA,SIEMENS,Avanto Fit,1.5,1,train,153_LA
+309,CIA,SIEMENS,Avanto Fit,1.5,1,train,309_LA
+305,CIA,SIEMENS,SymphonyTim,1.5,1,train,305_LA
+301,CIA,SIEMENS,Symphony,1.5,1,train,301_LA
+189,CIA,Philips Medical Systems,Achieva,1.5,1,train,189_LA
+143,CIA,Philips Medical Systems,Achieva,1.5,1,train,143_LA
+124,FALL,SIEMENS,Avanto Fit,1.5,1,train,124_LA
+299,FALL,SIEMENS,Avanto Fit,1.5,1,train,299_LA
+128,FALL,SIEMENS,SymphonyTim,1.5,1,train,128_LA
+123,FALL,SIEMENS,Avanto Fit,1.5,1,train,123_LA
+133,FALL,SIEMENS,Avanto,1.5,1,train,133_LA
+292,FALL,SIEMENS,SymphonyTim,1.5,1,train,292_LA
+183,FALL,SIEMENS,Avanto Fit,1.5,1,train,183_LA
+297,FALL,SIEMENS,Avanto Fit,1.5,1,train,297_LA
+290,ARR,SIEMENS,SymphonyTim,1.5,1,train,290_LA
+180,ARR,SIEMENS,SymphonyTim,1.5,1,train,180_LA
+104,ARR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,104_LA
+112,ARR,Philips Medical Systems,Achieva,1.5,1,train,112_LA
+119,ARR,SIEMENS,SymphonyTim,1.5,1,train,119_LA
+176,ARR,GE MEDICAL SYSTEMS,Signa HDxt,3.0,1,train,176_LA
+106,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,1,train,106_LA
+115,ARR,Philips Medical Systems,Achieva,1.5,1,train,115_LA
+99,HCM,SIEMENS,Symphony,1.5,1,train,099_LA
+262,HCM,SIEMENS,Symphony,1.5,1,train,262_LA
+172,HCM,Philips Medical Systems,Achieva,1.5,1,train,172_LA
+256,HCM,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,256_LA
+267,HCM,SIEMENS,Symphony,1.5,1,train,267_LA
+93,HCM,Philips Medical Systems,Achieva,1.5,1,train,093_LA
+277,HCM,SIEMENS,SymphonyTim,1.5,1,train,277_LA
+280,HCM,SIEMENS,SymphonyTim,1.5,1,train,280_LA
+81,HCM,Philips Medical Systems,Achieva,1.5,1,train,081_LA
+97,HCM,SIEMENS,SymphonyTim,1.5,1,train,097_LA
+94,HCM,Philips Medical Systems,Achieva,1.5,1,train,094_LA
+258,HCM,SIEMENS,SymphonyTim,1.5,1,train,258_LA
+259,HCM,SIEMENS,Symphony,1.5,1,train,259_LA
+272,HCM,SIEMENS,SymphonyTim,1.5,1,train,272_LA
+95,HCM,SIEMENS,Avanto,1.5,1,train,095_LA
+46,LV,SIEMENS,SymphonyTim,1.5,1,train,046_LA
+51,LV,SIEMENS,SymphonyTim,1.5,1,train,051_LA
+66,LV,SIEMENS,Symphony,1.5,1,train,066_LA
+68,LV,SIEMENS,TrioTim,3.0,1,train,068_LA
+168,LV,SIEMENS,SymphonyTim,1.5,1,train,168_LA
+242,LV,SIEMENS,Symphony,1.5,1,train,242_LA
+43,LV,SIEMENS,SymphonyTim,1.5,1,train,043_LA
+57,LV,SIEMENS,SymphonyTim,1.5,1,train,057_LA
+58,LV,SIEMENS,Avanto Fit,1.5,1,train,058_LA
+170,LV,SIEMENS,SymphonyTim,1.5,1,train,170_LA
+49,LV,SIEMENS,SymphonyTim,1.5,1,train,049_LA
+243,LV,SIEMENS,SymphonyTim,1.5,1,train,243_LA
+231,LV,SIEMENS,SymphonyTim,1.5,1,train,231_LA
+70,LV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,1,train,070_LA
+167,LV,SIEMENS,SymphonyTim,1.5,1,train,167_LA
+201,NOR,SIEMENS,SymphonyTim,1.5,1,train,201_LA
+202,NOR,SIEMENS,SymphonyTim,1.5,1,train,202_LA
+33,NOR,Philips Medical Systems,Achieva,1.5,1,train,033_LA
+19,NOR,Philips Medical Systems,Achieva,1.5,1,train,019_LA
+162,NOR,Philips Medical Systems,Achieva,1.5,1,train,162_LA
+37,NOR,Philips Medical Systems,Achieva,1.5,1,train,037_LA
+208,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,1,train,208_LA
+16,NOR,Philips Medical Systems,Achieva,1.5,1,train,016_LA
+217,NOR,SIEMENS,SymphonyTim,1.5,1,train,217_LA
+35,NOR,Philips Medical Systems,Achieva,1.5,1,train,035_LA
+23,NOR,Philips Medical Systems,Achieva,1.5,1,train,023_LA
+226,NOR,SIEMENS,SymphonyTim,1.5,1,train,226_LA
+20,NOR,Philips Medical Systems,Achieva,1.5,1,train,020_LA
+25,NOR,Philips Medical Systems,Achieva,1.5,1,train,025_LA
+18,NOR,Philips Medical Systems,Achieva,1.5,1,train,018_LA
+32,NOR,Philips Medical Systems,Achieva,1.5,1,train,032_LA
+206,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,1,train,206_LA
+213,NOR,SIEMENS,SymphonyTim,1.5,1,train,213_LA
+220,NOR,SIEMENS,SymphonyTim,1.5,1,train,220_LA
+185,FALL,SIEMENS,SymphonyTim,1.5,1,train,185_LA
+156,CIA,SIEMENS,Avanto Fit,1.5,1,train,156_LA
+338,TRI,Philips Medical Systems,Achieva,1.5,1,train,338_LA
+354,TRI,SIEMENS,SymphonyTim,1.5,1,train,354_LA
+353,TRI,SIEMENS,TrioTim,3.0,1,train,353_LA
+360,TRI,SIEMENS,SymphonyTim,1.5,1,train,360_LA
+350,TRI,SIEMENS,SymphonyTim,1.5,1,train,350_LA
+337,TRI,Philips Medical Systems,Achieva,1.5,1,train,337_LA
+336,TRI,GE MEDICAL SYSTEMS,Signa HDxt,3.0,1,train,336_LA
+342,TRI,SIEMENS,SymphonyTim,1.5,1,train,342_LA
+311,RV,SIEMENS,SymphonyTim,1.5,1,train,311_LA
+312,RV,SIEMENS,SymphonyTim,1.5,1,train,312_LA
+315,RV,SIEMENS,SymphonyTim,1.5,1,train,315_LA
+317,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,317_LA
+323,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,323_LA
+333,RV,SIEMENS,SymphonyTim,1.5,1,train,333_LA
+327,RV,SIEMENS,SymphonyTim,1.5,1,train,327_LA
+304,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,304_LA
+307,CIA,SIEMENS,SymphonyTim,1.5,1,train,307_LA
+148,CIA,SIEMENS,SymphonyTim,1.5,1,train,148_LA
+146,CIA,Philips Medical Systems,Achieva,1.5,1,train,146_LA
+306,CIA,SIEMENS,Avanto Fit,1.5,1,train,306_LA
+302,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,302_LA
+155,CIA,SIEMENS,SymphonyTim,1.5,1,train,155_LA
+154,CIA,SIEMENS,Avanto Fit,1.5,1,train,154_LA
+135,FALL,SIEMENS,Avanto Fit,1.5,1,train,135_LA
+130,FALL,SIEMENS,SymphonyTim,1.5,1,train,130_LA
+132,FALL,SIEMENS,Avanto Fit,1.5,1,train,132_LA
+140,FALL,SIEMENS,SymphonyTim,1.5,1,train,140_LA
+298,FALL,SIEMENS,Avanto Fit,1.5,1,train,298_LA
+127,FALL,SIEMENS,SymphonyTim,1.5,1,train,127_LA
+122,FALL,SIEMENS,SymphonyTim,1.5,1,train,122_LA
+294,FALL,SIEMENS,SymphonyTim,1.5,1,train,294_LA
+101,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,1,train,101_LA
+118,ARR,Philips Medical Systems,Achieva,1.5,1,train,118_LA
+103,ARR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,103_LA
+284,ARR,SIEMENS,Avanto Fit,1.5,1,train,284_LA
+287,ARR,SIEMENS,Symphony,1.5,1,train,287_LA
+177,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,1,train,177_LA
+102,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,1,train,102_LA
+116,ARR,Philips Medical Systems,Achieva,1.5,1,train,116_LA
+261,HCM,SIEMENS,SymphonyTim,1.5,1,train,261_LA
+275,HCM,SIEMENS,SymphonyTim,1.5,1,train,275_LA
+174,HCM,Philips Medical Systems,Achieva,1.5,1,train,174_LA
+71,HCM,Philips Medical Systems,Achieva,1.5,1,train,071_LA
+83,HCM,Philips Medical Systems,Achieva,1.5,1,train,083_LA
+100,HCM,SIEMENS,SymphonyTim,1.5,1,train,100_LA
+171,HCM,GE MEDICAL SYSTEMS,Signa HDxt,1.5,1,train,171_LA
+173,HCM,Philips Medical Systems,Achieva,1.5,1,train,173_LA
+77,HCM,Philips Medical Systems,Achieva,1.5,1,train,077_LA
+269,HCM,SIEMENS,SymphonyTim,1.5,1,train,269_LA
+266,HCM,SIEMENS,Symphony,1.5,1,train,266_LA
+80,HCM,Philips Medical Systems,Achieva,1.5,1,train,080_LA
+175,HCM,SIEMENS,SymphonyTim,1.5,1,train,175_LA
+279,HCM,SIEMENS,SymphonyTim,1.5,1,train,279_LA
+273,HCM,SIEMENS,SymphonyTim,1.5,1,train,273_LA
+55,LV,SIEMENS,SymphonyTim,1.5,1,train,055_LA
+166,LV,SIEMENS,Symphony,1.5,1,train,166_LA
+232,LV,SIEMENS,SymphonyTim,1.5,1,train,232_LA
+247,LV,SIEMENS,Avanto Fit,1.5,1,train,247_LA
+233,LV,SIEMENS,SymphonyTim,1.5,1,train,233_LA
+237,LV,SIEMENS,SymphonyTim,1.5,1,train,237_LA
+48,LV,SIEMENS,SymphonyTim,1.5,1,train,048_LA
+42,LV,SIEMENS,SymphonyTim,1.5,1,train,042_LA
+69,LV,SIEMENS,SymphonyTim,1.5,1,train,069_LA
+62,LV,SIEMENS,SymphonyTim,1.5,1,train,062_LA
+253,LV,SIEMENS,SymphonyTim,1.5,1,train,253_LA
+254,LV,SIEMENS,Avanto Fit,1.5,1,train,254_LA
+245,LV,SIEMENS,Avanto Fit,1.5,1,train,245_LA
+65,LV,SIEMENS,SymphonyTim,1.5,1,train,065_LA
+244,LV,SIEMENS,TrioTim,3.0,1,train,244_LA
+13,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,013_LA
+31,NOR,Philips Medical Systems,Achieva,1.5,1,train,031_LA
+224,NOR,SIEMENS,SymphonyTim,1.5,1,train,224_LA
+164,NOR,Philips Medical Systems,Achieva,1.5,1,train,164_LA
+210,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,1,train,210_LA
+204,NOR,Philips Medical Systems,Achieva,1.5,1,train,204_LA
+1,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,1,train,001_LA
+222,NOR,SIEMENS,SymphonyTim,1.5,1,train,222_LA
+14,NOR,Philips Medical Systems,Achieva,1.5,1,train,014_LA
+28,NOR,Philips Medical Systems,Achieva,1.5,1,train,028_LA
+216,NOR,SIEMENS,SymphonyTim,1.5,1,train,216_LA
+38,NOR,Philips Medical Systems,Achieva,1.5,1,train,038_LA
+163,NOR,Philips Medical Systems,Achieva,1.5,1,train,163_LA
+29,NOR,Philips Medical Systems,Achieva,1.5,1,train,029_LA
+165,NOR,Philips Medical Systems,Achieva,1.5,1,train,165_LA
+215,NOR,SIEMENS,SymphonyTim,1.5,1,train,215_LA
+21,NOR,Philips Medical Systems,Achieva,1.5,1,train,021_LA
+39,NOR,Philips Medical Systems,Achieva,1.5,1,train,039_LA
+105,ARR,GE MEDICAL SYSTEMS,Signa HDxt,3.0,1,train,105_LA
+296,FALL,SIEMENS,SymphonyTim,1.5,1,train,296_LA
+159,CIA,SIEMENS,SymphonyTim,1.5,1,train,159_LA
+339,TRI,Philips Medical Systems,Achieva,1.5,1,train,339_LA
+199,TRI,SIEMENS,SymphonyTim,1.5,2,train,199_LA
+358,TRI,SIEMENS,Symphony,1.5,2,train,358_LA
+340,TRI,Philips Medical Systems,Achieva,1.5,2,train,340_LA
+349,TRI,SIEMENS,SymphonyTim,1.5,2,train,349_LA
+341,TRI,SIEMENS,Avanto Fit,1.5,2,train,341_LA
+345,TRI,SIEMENS,SymphonyTim,1.5,2,train,345_LA
+351,TRI,SIEMENS,SymphonyTim,1.5,2,train,351_LA
+322,RV,Philips Medical Systems,Achieva,1.5,2,train,322_LA
+192,RV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,2,train,192_LA
+320,RV,Philips Medical Systems,Achieva,1.5,2,train,320_LA
+325,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,325_LA
+335,RV,SIEMENS,Avanto Fit,1.5,2,train,335_LA
+329,RV,SIEMENS,SymphonyTim,1.5,2,train,329_LA
+316,RV,SIEMENS,SymphonyTim,1.5,2,train,316_LA
+187,CIA,GE MEDICAL SYSTEMS,Signa HDxt,3.0,2,train,187_LA
+308,CIA,SIEMENS,SymphonyTim,1.5,2,train,308_LA
+149,CIA,SIEMENS,SymphonyTim,1.5,2,train,149_LA
+160,CIA,SIEMENS,SymphonyTim,1.5,2,train,160_LA
+186,CIA,GE MEDICAL SYSTEMS,Signa HDxt,3.0,2,train,186_LA
+141,CIA,GE MEDICAL SYSTEMS,Signa HDxt,3.0,2,train,141_LA
+158,CIA,SIEMENS,Symphony,1.5,2,train,158_LA
+190,CIA,SIEMENS,SymphonyTim,1.5,2,train,190_LA
+131,FALL,SIEMENS,Avanto Fit,1.5,2,train,131_LA
+139,FALL,SIEMENS,Avanto Fit,1.5,2,train,139_LA
+184,FALL,SIEMENS,SymphonyTim,1.5,2,train,184_LA
+137,FALL,SIEMENS,SymphonyTim,1.5,2,train,137_LA
+125,FALL,SIEMENS,Avanto Fit,1.5,2,train,125_LA
+291,FALL,SIEMENS,Avanto Fit,1.5,2,train,291_LA
+126,FALL,SIEMENS,SymphonyTim,1.5,2,train,126_LA
+181,FALL,SIEMENS,SymphonyTim,1.5,2,train,181_LA
+107,ARR,GE MEDICAL SYSTEMS,Signa HDxt,3.0,2,train,107_LA
+281,ARR,SIEMENS,SymphonyTim,1.5,2,train,281_LA
+289,ARR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,289_LA
+111,ARR,Philips Medical Systems,Achieva,1.5,2,train,111_LA
+120,ARR,SIEMENS,SymphonyTim,1.5,2,train,120_LA
+110,ARR,Philips Medical Systems,Achieva,1.5,2,train,110_LA
+109,ARR,GE MEDICAL SYSTEMS,Signa Explorer,1.5,2,train,109_LA
+283,ARR,SIEMENS,Avanto,1.5,2,train,283_LA
+270,HCM,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,270_LA
+264,HCM,SIEMENS,SymphonyTim,1.5,2,train,264_LA
+85,HCM,Philips Medical Systems,Achieva,1.5,2,train,085_LA
+271,HCM,SIEMENS,Symphony,1.5,2,train,271_LA
+90,HCM,Philips Medical Systems,Achieva,1.5,2,train,090_LA
+88,HCM,Philips Medical Systems,Achieva,1.5,2,train,088_LA
+79,HCM,Philips Medical Systems,Achieva,1.5,2,train,079_LA
+86,HCM,Philips Medical Systems,Achieva,1.5,2,train,086_LA
+87,HCM,Philips Medical Systems,Achieva,1.5,2,train,087_LA
+276,HCM,SIEMENS,SymphonyTim,1.5,2,train,276_LA
+91,HCM,Philips Medical Systems,Achieva,1.5,2,train,091_LA
+84,HCM,Philips Medical Systems,Achieva,1.5,2,train,084_LA
+82,HCM,Philips Medical Systems,Achieva,1.5,2,train,082_LA
+76,HCM,Philips Medical Systems,Achieva,1.5,2,train,076_LA
+268,HCM,SIEMENS,SymphonyTim,1.5,2,train,268_LA
+47,LV,SIEMENS,SymphonyTim,1.5,2,train,047_LA
+241,LV,SIEMENS,SymphonyTim,1.5,2,train,241_LA
+250,LV,SIEMENS,SymphonyTim,1.5,2,train,250_LA
+61,LV,SIEMENS,SymphonyTim,1.5,2,train,061_LA
+236,LV,SIEMENS,SymphonyTim,1.5,2,train,236_LA
+56,LV,SIEMENS,Symphony,1.5,2,train,056_LA
+252,LV,SIEMENS,SymphonyTim,1.5,2,train,252_LA
+239,LV,SIEMENS,SymphonyTim,1.5,2,train,239_LA
+240,LV,SIEMENS,SymphonyTim,1.5,2,train,240_LA
+169,LV,SIEMENS,SymphonyTim,1.5,2,train,169_LA
+59,LV,SIEMENS,SymphonyTim,1.5,2,train,059_LA
+60,LV,SIEMENS,SymphonyTim,1.5,2,train,060_LA
+249,LV,SIEMENS,SymphonyTim,1.5,2,train,249_LA
+45,LV,SIEMENS,SymphonyTim,1.5,2,train,045_LA
+251,LV,SIEMENS,SymphonyTim,1.5,2,train,251_LA
+36,NOR,Philips Medical Systems,Achieva,1.5,2,train,036_LA
+212,NOR,SIEMENS,SymphonyTim,1.5,2,train,212_LA
+8,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,008_LA
+230,NOR,SIEMENS,SymphonyTim,1.5,2,train,230_LA
+228,NOR,SIEMENS,SymphonyTim,1.5,2,train,228_LA
+161,NOR,Philips Medical Systems,Achieva,1.5,2,train,161_LA
+229,NOR,SIEMENS,SymphonyTim,1.5,2,train,229_LA
+4,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,004_LA
+211,NOR,SIEMENS,SymphonyTim,1.5,2,train,211_LA
+3,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,003_LA
+15,NOR,Philips Medical Systems,Achieva,1.5,2,train,015_LA
+27,NOR,Philips Medical Systems,Achieva,1.5,2,train,027_LA
+207,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,2,train,207_LA
+40,NOR,Philips Medical Systems,Achieva,1.5,2,train,040_LA
+218,NOR,SIEMENS,SymphonyTim,1.5,2,train,218_LA
+214,NOR,SIEMENS,SymphonyTim,1.5,2,train,214_LA
+227,NOR,SIEMENS,SymphonyTim,1.5,2,train,227_LA
+30,NOR,Philips Medical Systems,Achieva,1.5,2,train,030_LA
+11,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,011_LA
+114,ARR,Philips Medical Systems,Achieva,1.5,2,train,114_LA
+300,FALL,SIEMENS,Avanto Fit,1.5,2,train,300_LA
+321,RV,Philips Medical Systems,Achieva,1.5,2,train,321_LA
+346,TRI,SIEMENS,Avanto,1.5,2,train,346_LA
+348,TRI,SIEMENS,SymphonyTim,1.5,2,train,348_LA
+343,TRI,SIEMENS,SymphonyTim,1.5,2,train,343_LA
+355,TRI,SIEMENS,Symphony,1.5,2,train,355_LA
+347,TRI,SIEMENS,SymphonyTim,1.5,2,train,347_LA
+344,TRI,SIEMENS,Avanto,1.5,2,train,344_LA
+356,TRI,SIEMENS,Symphony,1.5,2,train,356_LA
+313,RV,SIEMENS,SymphonyTim,1.5,2,train,313_LA
+318,RV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,2,train,318_LA
+194,RV,SIEMENS,TrioTim,3.0,2,train,194_LA
+332,RV,SIEMENS,SymphonyTim,1.5,2,train,332_LA
+319,RV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,2,train,319_LA
+331,RV,SIEMENS,SymphonyTim,1.5,2,train,331_LA
+328,RV,SIEMENS,SymphonyTim,1.5,2,train,328_LA
+157,CIA,SIEMENS,Avanto Fit,1.5,2,train,157_LA
+151,CIA,SIEMENS,SymphonyTim,1.5,2,train,151_LA
+145,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,145_LA
+310,CIA,SIEMENS,Avanto Fit,1.5,2,train,310_LA
+303,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,303_LA
+152,CIA,SIEMENS,SymphonyTim,1.5,2,train,152_LA
+147,CIA,Philips Medical Systems,Achieva,1.5,2,train,147_LA
+188,CIA,Philips Medical Systems,Achieva,1.5,2,train,188_LA
+182,FALL,SIEMENS,Avanto Fit,1.5,2,train,182_LA
+138,FALL,SIEMENS,SymphonyTim,1.5,2,train,138_LA
+293,FALL,SIEMENS,Avanto Fit,1.5,2,train,293_LA
+136,FALL,SIEMENS,Avanto Fit,1.5,2,train,136_LA
+295,FALL,SIEMENS,Avanto Fit,1.5,2,train,295_LA
+121,FALL,SIEMENS,SymphonyTim,1.5,2,train,121_LA
+134,FALL,SIEMENS,Avanto Fit,1.5,2,train,134_LA
+129,FALL,SIEMENS,Avanto Fit,1.5,2,train,129_LA
+113,ARR,Philips Medical Systems,Achieva,1.5,2,train,113_LA
+108,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,2,train,108_LA
+288,ARR,SIEMENS,SymphonyTim,1.5,2,train,288_LA
+117,ARR,Philips Medical Systems,Achieva,1.5,2,train,117_LA
+179,ARR,Philips Medical Systems,Achieva,1.5,2,train,179_LA
+285,ARR,SIEMENS,SymphonyTim,1.5,2,train,285_LA
+286,ARR,SIEMENS,SymphonyTim,1.5,2,train,286_LA
+178,ARR,Philips Medical Systems,Achieva,1.5,2,train,178_LA
+89,HCM,Philips Medical Systems,Achieva,1.5,2,train,089_LA
+73,HCM,Philips Medical Systems,Achieva,1.5,2,train,073_LA
+263,HCM,SIEMENS,Symphony,1.5,2,train,263_LA
+278,HCM,SIEMENS,SymphonyTim,1.5,2,train,278_LA
+257,HCM,SIEMENS,SymphonyTim,1.5,2,train,257_LA
+78,HCM,Philips Medical Systems,Achieva,1.5,2,train,078_LA
+274,HCM,SIEMENS,SymphonyTim,1.5,2,train,274_LA
+98,HCM,SIEMENS,Symphony,1.5,2,train,098_LA
+92,HCM,Philips Medical Systems,Achieva,1.5,2,train,092_LA
+96,HCM,SIEMENS,Symphony,1.5,2,train,096_LA
+260,HCM,SIEMENS,SymphonyTim,1.5,2,train,260_LA
+74,HCM,Philips Medical Systems,Achieva,1.5,2,train,074_LA
+72,HCM,Philips Medical Systems,Achieva,1.5,2,train,072_LA
+265,HCM,SIEMENS,SymphonyTim,1.5,2,train,265_LA
+75,HCM,Philips Medical Systems,Achieva,1.5,2,train,075_LA
+246,LV,SIEMENS,Avanto Fit,1.5,2,train,246_LA
+54,LV,SIEMENS,Symphony,1.5,2,train,054_LA
+44,LV,SIEMENS,Symphony,1.5,2,train,044_LA
+52,LV,SIEMENS,TrioTim,3.0,2,train,052_LA
+255,LV,SIEMENS,SymphonyTim,1.5,2,train,255_LA
+248,LV,SIEMENS,SymphonyTim,1.5,2,train,248_LA
+63,LV,SIEMENS,SymphonyTim,1.5,2,train,063_LA
+50,LV,SIEMENS,SymphonyTim,1.5,2,train,050_LA
+238,LV,SIEMENS,SymphonyTim,1.5,2,train,238_LA
+53,LV,SIEMENS,SymphonyTim,1.5,2,train,053_LA
+64,LV,SIEMENS,SymphonyTim,1.5,2,train,064_LA
+235,LV,SIEMENS,Avanto Fit,1.5,2,train,235_LA
+67,LV,SIEMENS,SymphonyTim,1.5,2,train,067_LA
+234,LV,SIEMENS,SymphonyTim,1.5,2,train,234_LA
+41,LV,SIEMENS,SymphonyTim,1.5,2,train,041_LA
+34,NOR,Philips Medical Systems,Achieva,1.5,2,train,034_LA
+26,NOR,Philips Medical Systems,Achieva,1.5,2,train,026_LA
+209,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,2,train,209_LA
+5,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,005_LA
+205,NOR,Philips Medical Systems,Achieva,1.5,2,train,205_LA
+24,NOR,Philips Medical Systems,Achieva,1.5,2,train,024_LA
+225,NOR,SIEMENS,SymphonyTim,1.5,2,train,225_LA
+9,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,009_LA
+12,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,012_LA
+223,NOR,SIEMENS,SymphonyTim,1.5,2,train,223_LA
+6,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,006_LA
+22,NOR,Philips Medical Systems,Achieva,1.5,2,train,022_LA
+7,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,007_LA
+17,NOR,Philips Medical Systems,Achieva,1.5,2,train,017_LA
+221,NOR,SIEMENS,SymphonyTim,1.5,2,train,221_LA
+2,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,002_LA
+203,NOR,Philips Medical Systems,Achieva,1.5,2,train,203_LA
+10,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,010_LA
+219,NOR,SIEMENS,SymphonyTim,1.5,2,train,219_LA
+282,ARR,SIEMENS,Avanto Fit,1.5,2,train,282_LA
+142,CIA,GE MEDICAL SYSTEMS,Signa HDxt,1.5,2,train,142_LA
+330,RV,SIEMENS,SymphonyTim,1.5,2,train,330_LA
+200,TRI,SIEMENS,SymphonyTim,1.5,2,test,200_LA
+359,TRI,SIEMENS,SymphonyTim,1.5,2,test,359_LA
+352,TRI,SIEMENS,SymphonyTim,1.5,2,test,352_LA
+357,TRI,SIEMENS,SymphonyTim,1.5,2,test,357_LA
+197,TRI,Philips Medical Systems,Achieva,1.5,2,test,197_LA
+196,TRI,GE MEDICAL SYSTEMS,Signa HDxt,3.0,2,test,196_LA
+198,TRI,SIEMENS,SymphonyTim,1.5,2,test,198_LA
+324,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,test,324_LA
+191,RV,GE MEDICAL SYSTEMS,Signa HDxt,1.5,2,test,191_LA
+326,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,test,326_LA
+195,RV,SIEMENS,SymphonyTim,1.5,2,test,195_LA
+314,RV,SIEMENS,SymphonyTim,1.5,2,test,314_LA
+334,RV,SIEMENS,SymphonyTim,1.5,2,test,334_LA
+193,RV,Philips Medical Systems,Achieva,1.5,2,test,193_LA
+150,CIA,SIEMENS,Avanto Fit,1.5,2,test,150_LA
+144,CIA,Philips Medical Systems,Achieva,1.5,2,test,144_LA
+153,CIA,SIEMENS,Avanto Fit,1.5,2,test,153_LA
+309,CIA,SIEMENS,Avanto Fit,1.5,2,test,309_LA
+305,CIA,SIEMENS,SymphonyTim,1.5,2,test,305_LA
+301,CIA,SIEMENS,Symphony,1.5,2,test,301_LA
+189,CIA,Philips Medical Systems,Achieva,1.5,2,test,189_LA
+143,CIA,Philips Medical Systems,Achieva,1.5,2,test,143_LA
+124,FALL,SIEMENS,Avanto Fit,1.5,2,test,124_LA
+299,FALL,SIEMENS,Avanto Fit,1.5,2,test,299_LA
+128,FALL,SIEMENS,SymphonyTim,1.5,2,test,128_LA
+123,FALL,SIEMENS,Avanto Fit,1.5,2,test,123_LA
+133,FALL,SIEMENS,Avanto,1.5,2,test,133_LA
+292,FALL,SIEMENS,SymphonyTim,1.5,2,test,292_LA
+183,FALL,SIEMENS,Avanto Fit,1.5,2,test,183_LA
+297,FALL,SIEMENS,Avanto Fit,1.5,2,test,297_LA
+290,ARR,SIEMENS,SymphonyTim,1.5,2,test,290_LA
+180,ARR,SIEMENS,SymphonyTim,1.5,2,test,180_LA
+104,ARR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,test,104_LA
+112,ARR,Philips Medical Systems,Achieva,1.5,2,test,112_LA
+119,ARR,SIEMENS,SymphonyTim,1.5,2,test,119_LA
+176,ARR,GE MEDICAL SYSTEMS,Signa HDxt,3.0,2,test,176_LA
+106,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,2,test,106_LA
+115,ARR,Philips Medical Systems,Achieva,1.5,2,test,115_LA
+99,HCM,SIEMENS,Symphony,1.5,2,test,099_LA
+262,HCM,SIEMENS,Symphony,1.5,2,test,262_LA
+172,HCM,Philips Medical Systems,Achieva,1.5,2,test,172_LA
+256,HCM,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,test,256_LA
+267,HCM,SIEMENS,Symphony,1.5,2,test,267_LA
+93,HCM,Philips Medical Systems,Achieva,1.5,2,test,093_LA
+277,HCM,SIEMENS,SymphonyTim,1.5,2,test,277_LA
+280,HCM,SIEMENS,SymphonyTim,1.5,2,test,280_LA
+81,HCM,Philips Medical Systems,Achieva,1.5,2,test,081_LA
+97,HCM,SIEMENS,SymphonyTim,1.5,2,test,097_LA
+94,HCM,Philips Medical Systems,Achieva,1.5,2,test,094_LA
+258,HCM,SIEMENS,SymphonyTim,1.5,2,test,258_LA
+259,HCM,SIEMENS,Symphony,1.5,2,test,259_LA
+272,HCM,SIEMENS,SymphonyTim,1.5,2,test,272_LA
+95,HCM,SIEMENS,Avanto,1.5,2,test,095_LA
+46,LV,SIEMENS,SymphonyTim,1.5,2,test,046_LA
+51,LV,SIEMENS,SymphonyTim,1.5,2,test,051_LA
+66,LV,SIEMENS,Symphony,1.5,2,test,066_LA
+68,LV,SIEMENS,TrioTim,3.0,2,test,068_LA
+168,LV,SIEMENS,SymphonyTim,1.5,2,test,168_LA
+242,LV,SIEMENS,Symphony,1.5,2,test,242_LA
+43,LV,SIEMENS,SymphonyTim,1.5,2,test,043_LA
+57,LV,SIEMENS,SymphonyTim,1.5,2,test,057_LA
+58,LV,SIEMENS,Avanto Fit,1.5,2,test,058_LA
+170,LV,SIEMENS,SymphonyTim,1.5,2,test,170_LA
+49,LV,SIEMENS,SymphonyTim,1.5,2,test,049_LA
+243,LV,SIEMENS,SymphonyTim,1.5,2,test,243_LA
+231,LV,SIEMENS,SymphonyTim,1.5,2,test,231_LA
+70,LV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,2,test,070_LA
+167,LV,SIEMENS,SymphonyTim,1.5,2,test,167_LA
+201,NOR,SIEMENS,SymphonyTim,1.5,2,test,201_LA
+202,NOR,SIEMENS,SymphonyTim,1.5,2,test,202_LA
+33,NOR,Philips Medical Systems,Achieva,1.5,2,test,033_LA
+19,NOR,Philips Medical Systems,Achieva,1.5,2,test,019_LA
+162,NOR,Philips Medical Systems,Achieva,1.5,2,test,162_LA
+37,NOR,Philips Medical Systems,Achieva,1.5,2,test,037_LA
+208,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,2,test,208_LA
+16,NOR,Philips Medical Systems,Achieva,1.5,2,test,016_LA
+217,NOR,SIEMENS,SymphonyTim,1.5,2,test,217_LA
+35,NOR,Philips Medical Systems,Achieva,1.5,2,test,035_LA
+23,NOR,Philips Medical Systems,Achieva,1.5,2,test,023_LA
+226,NOR,SIEMENS,SymphonyTim,1.5,2,test,226_LA
+20,NOR,Philips Medical Systems,Achieva,1.5,2,test,020_LA
+25,NOR,Philips Medical Systems,Achieva,1.5,2,test,025_LA
+18,NOR,Philips Medical Systems,Achieva,1.5,2,test,018_LA
+32,NOR,Philips Medical Systems,Achieva,1.5,2,test,032_LA
+206,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,2,test,206_LA
+213,NOR,SIEMENS,SymphonyTim,1.5,2,test,213_LA
+220,NOR,SIEMENS,SymphonyTim,1.5,2,test,220_LA
+185,FALL,SIEMENS,SymphonyTim,1.5,2,test,185_LA
+156,CIA,SIEMENS,Avanto Fit,1.5,2,test,156_LA
+338,TRI,Philips Medical Systems,Achieva,1.5,2,test,338_LA
+354,TRI,SIEMENS,SymphonyTim,1.5,2,train,354_LA
+353,TRI,SIEMENS,TrioTim,3.0,2,train,353_LA
+360,TRI,SIEMENS,SymphonyTim,1.5,2,train,360_LA
+350,TRI,SIEMENS,SymphonyTim,1.5,2,train,350_LA
+337,TRI,Philips Medical Systems,Achieva,1.5,2,train,337_LA
+336,TRI,GE MEDICAL SYSTEMS,Signa HDxt,3.0,2,train,336_LA
+342,TRI,SIEMENS,SymphonyTim,1.5,2,train,342_LA
+311,RV,SIEMENS,SymphonyTim,1.5,2,train,311_LA
+312,RV,SIEMENS,SymphonyTim,1.5,2,train,312_LA
+315,RV,SIEMENS,SymphonyTim,1.5,2,train,315_LA
+317,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,317_LA
+323,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,323_LA
+333,RV,SIEMENS,SymphonyTim,1.5,2,train,333_LA
+327,RV,SIEMENS,SymphonyTim,1.5,2,train,327_LA
+304,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,304_LA
+307,CIA,SIEMENS,SymphonyTim,1.5,2,train,307_LA
+148,CIA,SIEMENS,SymphonyTim,1.5,2,train,148_LA
+146,CIA,Philips Medical Systems,Achieva,1.5,2,train,146_LA
+306,CIA,SIEMENS,Avanto Fit,1.5,2,train,306_LA
+302,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,302_LA
+155,CIA,SIEMENS,SymphonyTim,1.5,2,train,155_LA
+154,CIA,SIEMENS,Avanto Fit,1.5,2,train,154_LA
+135,FALL,SIEMENS,Avanto Fit,1.5,2,train,135_LA
+130,FALL,SIEMENS,SymphonyTim,1.5,2,train,130_LA
+132,FALL,SIEMENS,Avanto Fit,1.5,2,train,132_LA
+140,FALL,SIEMENS,SymphonyTim,1.5,2,train,140_LA
+298,FALL,SIEMENS,Avanto Fit,1.5,2,train,298_LA
+127,FALL,SIEMENS,SymphonyTim,1.5,2,train,127_LA
+122,FALL,SIEMENS,SymphonyTim,1.5,2,train,122_LA
+294,FALL,SIEMENS,SymphonyTim,1.5,2,train,294_LA
+101,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,2,train,101_LA
+118,ARR,Philips Medical Systems,Achieva,1.5,2,train,118_LA
+103,ARR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,103_LA
+284,ARR,SIEMENS,Avanto Fit,1.5,2,train,284_LA
+287,ARR,SIEMENS,Symphony,1.5,2,train,287_LA
+177,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,2,train,177_LA
+102,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,2,train,102_LA
+116,ARR,Philips Medical Systems,Achieva,1.5,2,train,116_LA
+261,HCM,SIEMENS,SymphonyTim,1.5,2,train,261_LA
+275,HCM,SIEMENS,SymphonyTim,1.5,2,train,275_LA
+174,HCM,Philips Medical Systems,Achieva,1.5,2,train,174_LA
+71,HCM,Philips Medical Systems,Achieva,1.5,2,train,071_LA
+83,HCM,Philips Medical Systems,Achieva,1.5,2,train,083_LA
+100,HCM,SIEMENS,SymphonyTim,1.5,2,train,100_LA
+171,HCM,GE MEDICAL SYSTEMS,Signa HDxt,1.5,2,train,171_LA
+173,HCM,Philips Medical Systems,Achieva,1.5,2,train,173_LA
+77,HCM,Philips Medical Systems,Achieva,1.5,2,train,077_LA
+269,HCM,SIEMENS,SymphonyTim,1.5,2,train,269_LA
+266,HCM,SIEMENS,Symphony,1.5,2,train,266_LA
+80,HCM,Philips Medical Systems,Achieva,1.5,2,train,080_LA
+175,HCM,SIEMENS,SymphonyTim,1.5,2,train,175_LA
+279,HCM,SIEMENS,SymphonyTim,1.5,2,train,279_LA
+273,HCM,SIEMENS,SymphonyTim,1.5,2,train,273_LA
+55,LV,SIEMENS,SymphonyTim,1.5,2,train,055_LA
+166,LV,SIEMENS,Symphony,1.5,2,train,166_LA
+232,LV,SIEMENS,SymphonyTim,1.5,2,train,232_LA
+247,LV,SIEMENS,Avanto Fit,1.5,2,train,247_LA
+233,LV,SIEMENS,SymphonyTim,1.5,2,train,233_LA
+237,LV,SIEMENS,SymphonyTim,1.5,2,train,237_LA
+48,LV,SIEMENS,SymphonyTim,1.5,2,train,048_LA
+42,LV,SIEMENS,SymphonyTim,1.5,2,train,042_LA
+69,LV,SIEMENS,SymphonyTim,1.5,2,train,069_LA
+62,LV,SIEMENS,SymphonyTim,1.5,2,train,062_LA
+253,LV,SIEMENS,SymphonyTim,1.5,2,train,253_LA
+254,LV,SIEMENS,Avanto Fit,1.5,2,train,254_LA
+245,LV,SIEMENS,Avanto Fit,1.5,2,train,245_LA
+65,LV,SIEMENS,SymphonyTim,1.5,2,train,065_LA
+244,LV,SIEMENS,TrioTim,3.0,2,train,244_LA
+13,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,013_LA
+31,NOR,Philips Medical Systems,Achieva,1.5,2,train,031_LA
+224,NOR,SIEMENS,SymphonyTim,1.5,2,train,224_LA
+164,NOR,Philips Medical Systems,Achieva,1.5,2,train,164_LA
+210,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,2,train,210_LA
+204,NOR,Philips Medical Systems,Achieva,1.5,2,train,204_LA
+1,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,2,train,001_LA
+222,NOR,SIEMENS,SymphonyTim,1.5,2,train,222_LA
+14,NOR,Philips Medical Systems,Achieva,1.5,2,train,014_LA
+28,NOR,Philips Medical Systems,Achieva,1.5,2,train,028_LA
+216,NOR,SIEMENS,SymphonyTim,1.5,2,train,216_LA
+38,NOR,Philips Medical Systems,Achieva,1.5,2,train,038_LA
+163,NOR,Philips Medical Systems,Achieva,1.5,2,train,163_LA
+29,NOR,Philips Medical Systems,Achieva,1.5,2,train,029_LA
+165,NOR,Philips Medical Systems,Achieva,1.5,2,train,165_LA
+215,NOR,SIEMENS,SymphonyTim,1.5,2,train,215_LA
+21,NOR,Philips Medical Systems,Achieva,1.5,2,train,021_LA
+39,NOR,Philips Medical Systems,Achieva,1.5,2,train,039_LA
+105,ARR,GE MEDICAL SYSTEMS,Signa HDxt,3.0,2,train,105_LA
+296,FALL,SIEMENS,SymphonyTim,1.5,2,train,296_LA
+159,CIA,SIEMENS,SymphonyTim,1.5,2,train,159_LA
+339,TRI,Philips Medical Systems,Achieva,1.5,2,train,339_LA
+199,TRI,SIEMENS,SymphonyTim,1.5,3,train,199_LA
+358,TRI,SIEMENS,Symphony,1.5,3,train,358_LA
+340,TRI,Philips Medical Systems,Achieva,1.5,3,train,340_LA
+349,TRI,SIEMENS,SymphonyTim,1.5,3,train,349_LA
+341,TRI,SIEMENS,Avanto Fit,1.5,3,train,341_LA
+345,TRI,SIEMENS,SymphonyTim,1.5,3,train,345_LA
+351,TRI,SIEMENS,SymphonyTim,1.5,3,train,351_LA
+322,RV,Philips Medical Systems,Achieva,1.5,3,train,322_LA
+192,RV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,3,train,192_LA
+320,RV,Philips Medical Systems,Achieva,1.5,3,train,320_LA
+325,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,325_LA
+335,RV,SIEMENS,Avanto Fit,1.5,3,train,335_LA
+329,RV,SIEMENS,SymphonyTim,1.5,3,train,329_LA
+316,RV,SIEMENS,SymphonyTim,1.5,3,train,316_LA
+187,CIA,GE MEDICAL SYSTEMS,Signa HDxt,3.0,3,train,187_LA
+308,CIA,SIEMENS,SymphonyTim,1.5,3,train,308_LA
+149,CIA,SIEMENS,SymphonyTim,1.5,3,train,149_LA
+160,CIA,SIEMENS,SymphonyTim,1.5,3,train,160_LA
+186,CIA,GE MEDICAL SYSTEMS,Signa HDxt,3.0,3,train,186_LA
+141,CIA,GE MEDICAL SYSTEMS,Signa HDxt,3.0,3,train,141_LA
+158,CIA,SIEMENS,Symphony,1.5,3,train,158_LA
+190,CIA,SIEMENS,SymphonyTim,1.5,3,train,190_LA
+131,FALL,SIEMENS,Avanto Fit,1.5,3,train,131_LA
+139,FALL,SIEMENS,Avanto Fit,1.5,3,train,139_LA
+184,FALL,SIEMENS,SymphonyTim,1.5,3,train,184_LA
+137,FALL,SIEMENS,SymphonyTim,1.5,3,train,137_LA
+125,FALL,SIEMENS,Avanto Fit,1.5,3,train,125_LA
+291,FALL,SIEMENS,Avanto Fit,1.5,3,train,291_LA
+126,FALL,SIEMENS,SymphonyTim,1.5,3,train,126_LA
+181,FALL,SIEMENS,SymphonyTim,1.5,3,train,181_LA
+107,ARR,GE MEDICAL SYSTEMS,Signa HDxt,3.0,3,train,107_LA
+281,ARR,SIEMENS,SymphonyTim,1.5,3,train,281_LA
+289,ARR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,289_LA
+111,ARR,Philips Medical Systems,Achieva,1.5,3,train,111_LA
+120,ARR,SIEMENS,SymphonyTim,1.5,3,train,120_LA
+110,ARR,Philips Medical Systems,Achieva,1.5,3,train,110_LA
+109,ARR,GE MEDICAL SYSTEMS,Signa Explorer,1.5,3,train,109_LA
+283,ARR,SIEMENS,Avanto,1.5,3,train,283_LA
+270,HCM,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,270_LA
+264,HCM,SIEMENS,SymphonyTim,1.5,3,train,264_LA
+85,HCM,Philips Medical Systems,Achieva,1.5,3,train,085_LA
+271,HCM,SIEMENS,Symphony,1.5,3,train,271_LA
+90,HCM,Philips Medical Systems,Achieva,1.5,3,train,090_LA
+88,HCM,Philips Medical Systems,Achieva,1.5,3,train,088_LA
+79,HCM,Philips Medical Systems,Achieva,1.5,3,train,079_LA
+86,HCM,Philips Medical Systems,Achieva,1.5,3,train,086_LA
+87,HCM,Philips Medical Systems,Achieva,1.5,3,train,087_LA
+276,HCM,SIEMENS,SymphonyTim,1.5,3,train,276_LA
+91,HCM,Philips Medical Systems,Achieva,1.5,3,train,091_LA
+84,HCM,Philips Medical Systems,Achieva,1.5,3,train,084_LA
+82,HCM,Philips Medical Systems,Achieva,1.5,3,train,082_LA
+76,HCM,Philips Medical Systems,Achieva,1.5,3,train,076_LA
+268,HCM,SIEMENS,SymphonyTim,1.5,3,train,268_LA
+47,LV,SIEMENS,SymphonyTim,1.5,3,train,047_LA
+241,LV,SIEMENS,SymphonyTim,1.5,3,train,241_LA
+250,LV,SIEMENS,SymphonyTim,1.5,3,train,250_LA
+61,LV,SIEMENS,SymphonyTim,1.5,3,train,061_LA
+236,LV,SIEMENS,SymphonyTim,1.5,3,train,236_LA
+56,LV,SIEMENS,Symphony,1.5,3,train,056_LA
+252,LV,SIEMENS,SymphonyTim,1.5,3,train,252_LA
+239,LV,SIEMENS,SymphonyTim,1.5,3,train,239_LA
+240,LV,SIEMENS,SymphonyTim,1.5,3,train,240_LA
+169,LV,SIEMENS,SymphonyTim,1.5,3,train,169_LA
+59,LV,SIEMENS,SymphonyTim,1.5,3,train,059_LA
+60,LV,SIEMENS,SymphonyTim,1.5,3,train,060_LA
+249,LV,SIEMENS,SymphonyTim,1.5,3,train,249_LA
+45,LV,SIEMENS,SymphonyTim,1.5,3,train,045_LA
+251,LV,SIEMENS,SymphonyTim,1.5,3,train,251_LA
+36,NOR,Philips Medical Systems,Achieva,1.5,3,train,036_LA
+212,NOR,SIEMENS,SymphonyTim,1.5,3,train,212_LA
+8,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,008_LA
+230,NOR,SIEMENS,SymphonyTim,1.5,3,train,230_LA
+228,NOR,SIEMENS,SymphonyTim,1.5,3,train,228_LA
+161,NOR,Philips Medical Systems,Achieva,1.5,3,train,161_LA
+229,NOR,SIEMENS,SymphonyTim,1.5,3,train,229_LA
+4,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,004_LA
+211,NOR,SIEMENS,SymphonyTim,1.5,3,train,211_LA
+3,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,003_LA
+15,NOR,Philips Medical Systems,Achieva,1.5,3,train,015_LA
+27,NOR,Philips Medical Systems,Achieva,1.5,3,train,027_LA
+207,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,3,train,207_LA
+40,NOR,Philips Medical Systems,Achieva,1.5,3,train,040_LA
+218,NOR,SIEMENS,SymphonyTim,1.5,3,train,218_LA
+214,NOR,SIEMENS,SymphonyTim,1.5,3,train,214_LA
+227,NOR,SIEMENS,SymphonyTim,1.5,3,train,227_LA
+30,NOR,Philips Medical Systems,Achieva,1.5,3,train,030_LA
+11,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,011_LA
+114,ARR,Philips Medical Systems,Achieva,1.5,3,train,114_LA
+300,FALL,SIEMENS,Avanto Fit,1.5,3,train,300_LA
+321,RV,Philips Medical Systems,Achieva,1.5,3,train,321_LA
+346,TRI,SIEMENS,Avanto,1.5,3,train,346_LA
+348,TRI,SIEMENS,SymphonyTim,1.5,3,train,348_LA
+343,TRI,SIEMENS,SymphonyTim,1.5,3,train,343_LA
+355,TRI,SIEMENS,Symphony,1.5,3,train,355_LA
+347,TRI,SIEMENS,SymphonyTim,1.5,3,train,347_LA
+344,TRI,SIEMENS,Avanto,1.5,3,train,344_LA
+356,TRI,SIEMENS,Symphony,1.5,3,train,356_LA
+313,RV,SIEMENS,SymphonyTim,1.5,3,train,313_LA
+318,RV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,3,train,318_LA
+194,RV,SIEMENS,TrioTim,3.0,3,train,194_LA
+332,RV,SIEMENS,SymphonyTim,1.5,3,train,332_LA
+319,RV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,3,train,319_LA
+331,RV,SIEMENS,SymphonyTim,1.5,3,train,331_LA
+328,RV,SIEMENS,SymphonyTim,1.5,3,train,328_LA
+157,CIA,SIEMENS,Avanto Fit,1.5,3,train,157_LA
+151,CIA,SIEMENS,SymphonyTim,1.5,3,train,151_LA
+145,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,145_LA
+310,CIA,SIEMENS,Avanto Fit,1.5,3,train,310_LA
+303,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,303_LA
+152,CIA,SIEMENS,SymphonyTim,1.5,3,train,152_LA
+147,CIA,Philips Medical Systems,Achieva,1.5,3,train,147_LA
+188,CIA,Philips Medical Systems,Achieva,1.5,3,train,188_LA
+182,FALL,SIEMENS,Avanto Fit,1.5,3,train,182_LA
+138,FALL,SIEMENS,SymphonyTim,1.5,3,train,138_LA
+293,FALL,SIEMENS,Avanto Fit,1.5,3,train,293_LA
+136,FALL,SIEMENS,Avanto Fit,1.5,3,train,136_LA
+295,FALL,SIEMENS,Avanto Fit,1.5,3,train,295_LA
+121,FALL,SIEMENS,SymphonyTim,1.5,3,train,121_LA
+134,FALL,SIEMENS,Avanto Fit,1.5,3,train,134_LA
+129,FALL,SIEMENS,Avanto Fit,1.5,3,train,129_LA
+113,ARR,Philips Medical Systems,Achieva,1.5,3,train,113_LA
+108,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,3,train,108_LA
+288,ARR,SIEMENS,SymphonyTim,1.5,3,train,288_LA
+117,ARR,Philips Medical Systems,Achieva,1.5,3,train,117_LA
+179,ARR,Philips Medical Systems,Achieva,1.5,3,train,179_LA
+285,ARR,SIEMENS,SymphonyTim,1.5,3,train,285_LA
+286,ARR,SIEMENS,SymphonyTim,1.5,3,train,286_LA
+178,ARR,Philips Medical Systems,Achieva,1.5,3,train,178_LA
+89,HCM,Philips Medical Systems,Achieva,1.5,3,train,089_LA
+73,HCM,Philips Medical Systems,Achieva,1.5,3,train,073_LA
+263,HCM,SIEMENS,Symphony,1.5,3,train,263_LA
+278,HCM,SIEMENS,SymphonyTim,1.5,3,train,278_LA
+257,HCM,SIEMENS,SymphonyTim,1.5,3,train,257_LA
+78,HCM,Philips Medical Systems,Achieva,1.5,3,train,078_LA
+274,HCM,SIEMENS,SymphonyTim,1.5,3,train,274_LA
+98,HCM,SIEMENS,Symphony,1.5,3,train,098_LA
+92,HCM,Philips Medical Systems,Achieva,1.5,3,train,092_LA
+96,HCM,SIEMENS,Symphony,1.5,3,train,096_LA
+260,HCM,SIEMENS,SymphonyTim,1.5,3,train,260_LA
+74,HCM,Philips Medical Systems,Achieva,1.5,3,train,074_LA
+72,HCM,Philips Medical Systems,Achieva,1.5,3,train,072_LA
+265,HCM,SIEMENS,SymphonyTim,1.5,3,train,265_LA
+75,HCM,Philips Medical Systems,Achieva,1.5,3,train,075_LA
+246,LV,SIEMENS,Avanto Fit,1.5,3,train,246_LA
+54,LV,SIEMENS,Symphony,1.5,3,train,054_LA
+44,LV,SIEMENS,Symphony,1.5,3,train,044_LA
+52,LV,SIEMENS,TrioTim,3.0,3,train,052_LA
+255,LV,SIEMENS,SymphonyTim,1.5,3,train,255_LA
+248,LV,SIEMENS,SymphonyTim,1.5,3,train,248_LA
+63,LV,SIEMENS,SymphonyTim,1.5,3,train,063_LA
+50,LV,SIEMENS,SymphonyTim,1.5,3,train,050_LA
+238,LV,SIEMENS,SymphonyTim,1.5,3,train,238_LA
+53,LV,SIEMENS,SymphonyTim,1.5,3,train,053_LA
+64,LV,SIEMENS,SymphonyTim,1.5,3,train,064_LA
+235,LV,SIEMENS,Avanto Fit,1.5,3,train,235_LA
+67,LV,SIEMENS,SymphonyTim,1.5,3,train,067_LA
+234,LV,SIEMENS,SymphonyTim,1.5,3,train,234_LA
+41,LV,SIEMENS,SymphonyTim,1.5,3,train,041_LA
+34,NOR,Philips Medical Systems,Achieva,1.5,3,train,034_LA
+26,NOR,Philips Medical Systems,Achieva,1.5,3,train,026_LA
+209,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,3,train,209_LA
+5,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,005_LA
+205,NOR,Philips Medical Systems,Achieva,1.5,3,train,205_LA
+24,NOR,Philips Medical Systems,Achieva,1.5,3,train,024_LA
+225,NOR,SIEMENS,SymphonyTim,1.5,3,train,225_LA
+9,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,009_LA
+12,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,012_LA
+223,NOR,SIEMENS,SymphonyTim,1.5,3,train,223_LA
+6,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,006_LA
+22,NOR,Philips Medical Systems,Achieva,1.5,3,train,022_LA
+7,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,007_LA
+17,NOR,Philips Medical Systems,Achieva,1.5,3,train,017_LA
+221,NOR,SIEMENS,SymphonyTim,1.5,3,train,221_LA
+2,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,002_LA
+203,NOR,Philips Medical Systems,Achieva,1.5,3,train,203_LA
+10,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,010_LA
+219,NOR,SIEMENS,SymphonyTim,1.5,3,train,219_LA
+282,ARR,SIEMENS,Avanto Fit,1.5,3,train,282_LA
+142,CIA,GE MEDICAL SYSTEMS,Signa HDxt,1.5,3,train,142_LA
+330,RV,SIEMENS,SymphonyTim,1.5,3,train,330_LA
+200,TRI,SIEMENS,SymphonyTim,1.5,3,train,200_LA
+359,TRI,SIEMENS,SymphonyTim,1.5,3,train,359_LA
+352,TRI,SIEMENS,SymphonyTim,1.5,3,train,352_LA
+357,TRI,SIEMENS,SymphonyTim,1.5,3,train,357_LA
+197,TRI,Philips Medical Systems,Achieva,1.5,3,train,197_LA
+196,TRI,GE MEDICAL SYSTEMS,Signa HDxt,3.0,3,train,196_LA
+198,TRI,SIEMENS,SymphonyTim,1.5,3,train,198_LA
+324,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,324_LA
+191,RV,GE MEDICAL SYSTEMS,Signa HDxt,1.5,3,train,191_LA
+326,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,326_LA
+195,RV,SIEMENS,SymphonyTim,1.5,3,train,195_LA
+314,RV,SIEMENS,SymphonyTim,1.5,3,train,314_LA
+334,RV,SIEMENS,SymphonyTim,1.5,3,train,334_LA
+193,RV,Philips Medical Systems,Achieva,1.5,3,train,193_LA
+150,CIA,SIEMENS,Avanto Fit,1.5,3,train,150_LA
+144,CIA,Philips Medical Systems,Achieva,1.5,3,train,144_LA
+153,CIA,SIEMENS,Avanto Fit,1.5,3,train,153_LA
+309,CIA,SIEMENS,Avanto Fit,1.5,3,train,309_LA
+305,CIA,SIEMENS,SymphonyTim,1.5,3,train,305_LA
+301,CIA,SIEMENS,Symphony,1.5,3,train,301_LA
+189,CIA,Philips Medical Systems,Achieva,1.5,3,train,189_LA
+143,CIA,Philips Medical Systems,Achieva,1.5,3,train,143_LA
+124,FALL,SIEMENS,Avanto Fit,1.5,3,train,124_LA
+299,FALL,SIEMENS,Avanto Fit,1.5,3,train,299_LA
+128,FALL,SIEMENS,SymphonyTim,1.5,3,train,128_LA
+123,FALL,SIEMENS,Avanto Fit,1.5,3,train,123_LA
+133,FALL,SIEMENS,Avanto,1.5,3,train,133_LA
+292,FALL,SIEMENS,SymphonyTim,1.5,3,train,292_LA
+183,FALL,SIEMENS,Avanto Fit,1.5,3,train,183_LA
+297,FALL,SIEMENS,Avanto Fit,1.5,3,train,297_LA
+290,ARR,SIEMENS,SymphonyTim,1.5,3,train,290_LA
+180,ARR,SIEMENS,SymphonyTim,1.5,3,train,180_LA
+104,ARR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,104_LA
+112,ARR,Philips Medical Systems,Achieva,1.5,3,train,112_LA
+119,ARR,SIEMENS,SymphonyTim,1.5,3,train,119_LA
+176,ARR,GE MEDICAL SYSTEMS,Signa HDxt,3.0,3,train,176_LA
+106,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,3,train,106_LA
+115,ARR,Philips Medical Systems,Achieva,1.5,3,train,115_LA
+99,HCM,SIEMENS,Symphony,1.5,3,train,099_LA
+262,HCM,SIEMENS,Symphony,1.5,3,train,262_LA
+172,HCM,Philips Medical Systems,Achieva,1.5,3,train,172_LA
+256,HCM,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,train,256_LA
+267,HCM,SIEMENS,Symphony,1.5,3,train,267_LA
+93,HCM,Philips Medical Systems,Achieva,1.5,3,train,093_LA
+277,HCM,SIEMENS,SymphonyTim,1.5,3,train,277_LA
+280,HCM,SIEMENS,SymphonyTim,1.5,3,train,280_LA
+81,HCM,Philips Medical Systems,Achieva,1.5,3,train,081_LA
+97,HCM,SIEMENS,SymphonyTim,1.5,3,train,097_LA
+94,HCM,Philips Medical Systems,Achieva,1.5,3,train,094_LA
+258,HCM,SIEMENS,SymphonyTim,1.5,3,train,258_LA
+259,HCM,SIEMENS,Symphony,1.5,3,train,259_LA
+272,HCM,SIEMENS,SymphonyTim,1.5,3,train,272_LA
+95,HCM,SIEMENS,Avanto,1.5,3,train,095_LA
+46,LV,SIEMENS,SymphonyTim,1.5,3,train,046_LA
+51,LV,SIEMENS,SymphonyTim,1.5,3,train,051_LA
+66,LV,SIEMENS,Symphony,1.5,3,train,066_LA
+68,LV,SIEMENS,TrioTim,3.0,3,train,068_LA
+168,LV,SIEMENS,SymphonyTim,1.5,3,train,168_LA
+242,LV,SIEMENS,Symphony,1.5,3,train,242_LA
+43,LV,SIEMENS,SymphonyTim,1.5,3,train,043_LA
+57,LV,SIEMENS,SymphonyTim,1.5,3,train,057_LA
+58,LV,SIEMENS,Avanto Fit,1.5,3,train,058_LA
+170,LV,SIEMENS,SymphonyTim,1.5,3,train,170_LA
+49,LV,SIEMENS,SymphonyTim,1.5,3,train,049_LA
+243,LV,SIEMENS,SymphonyTim,1.5,3,train,243_LA
+231,LV,SIEMENS,SymphonyTim,1.5,3,train,231_LA
+70,LV,GE MEDICAL SYSTEMS,Signa HDxt,3.0,3,train,070_LA
+167,LV,SIEMENS,SymphonyTim,1.5,3,train,167_LA
+201,NOR,SIEMENS,SymphonyTim,1.5,3,train,201_LA
+202,NOR,SIEMENS,SymphonyTim,1.5,3,train,202_LA
+33,NOR,Philips Medical Systems,Achieva,1.5,3,train,033_LA
+19,NOR,Philips Medical Systems,Achieva,1.5,3,train,019_LA
+162,NOR,Philips Medical Systems,Achieva,1.5,3,train,162_LA
+37,NOR,Philips Medical Systems,Achieva,1.5,3,train,037_LA
+208,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,3,train,208_LA
+16,NOR,Philips Medical Systems,Achieva,1.5,3,train,016_LA
+217,NOR,SIEMENS,SymphonyTim,1.5,3,train,217_LA
+35,NOR,Philips Medical Systems,Achieva,1.5,3,train,035_LA
+23,NOR,Philips Medical Systems,Achieva,1.5,3,train,023_LA
+226,NOR,SIEMENS,SymphonyTim,1.5,3,train,226_LA
+20,NOR,Philips Medical Systems,Achieva,1.5,3,train,020_LA
+25,NOR,Philips Medical Systems,Achieva,1.5,3,train,025_LA
+18,NOR,Philips Medical Systems,Achieva,1.5,3,train,018_LA
+32,NOR,Philips Medical Systems,Achieva,1.5,3,train,032_LA
+206,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,3,train,206_LA
+213,NOR,SIEMENS,SymphonyTim,1.5,3,train,213_LA
+220,NOR,SIEMENS,SymphonyTim,1.5,3,train,220_LA
+185,FALL,SIEMENS,SymphonyTim,1.5,3,train,185_LA
+156,CIA,SIEMENS,Avanto Fit,1.5,3,train,156_LA
+338,TRI,Philips Medical Systems,Achieva,1.5,3,train,338_LA
+354,TRI,SIEMENS,SymphonyTim,1.5,3,test,354_LA
+353,TRI,SIEMENS,TrioTim,3.0,3,test,353_LA
+360,TRI,SIEMENS,SymphonyTim,1.5,3,test,360_LA
+350,TRI,SIEMENS,SymphonyTim,1.5,3,test,350_LA
+337,TRI,Philips Medical Systems,Achieva,1.5,3,test,337_LA
+336,TRI,GE MEDICAL SYSTEMS,Signa HDxt,3.0,3,test,336_LA
+342,TRI,SIEMENS,SymphonyTim,1.5,3,test,342_LA
+311,RV,SIEMENS,SymphonyTim,1.5,3,test,311_LA
+312,RV,SIEMENS,SymphonyTim,1.5,3,test,312_LA
+315,RV,SIEMENS,SymphonyTim,1.5,3,test,315_LA
+317,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,test,317_LA
+323,RV,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,test,323_LA
+333,RV,SIEMENS,SymphonyTim,1.5,3,test,333_LA
+327,RV,SIEMENS,SymphonyTim,1.5,3,test,327_LA
+304,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,test,304_LA
+307,CIA,SIEMENS,SymphonyTim,1.5,3,test,307_LA
+148,CIA,SIEMENS,SymphonyTim,1.5,3,test,148_LA
+146,CIA,Philips Medical Systems,Achieva,1.5,3,test,146_LA
+306,CIA,SIEMENS,Avanto Fit,1.5,3,test,306_LA
+302,CIA,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,test,302_LA
+155,CIA,SIEMENS,SymphonyTim,1.5,3,test,155_LA
+154,CIA,SIEMENS,Avanto Fit,1.5,3,test,154_LA
+135,FALL,SIEMENS,Avanto Fit,1.5,3,test,135_LA
+130,FALL,SIEMENS,SymphonyTim,1.5,3,test,130_LA
+132,FALL,SIEMENS,Avanto Fit,1.5,3,test,132_LA
+140,FALL,SIEMENS,SymphonyTim,1.5,3,test,140_LA
+298,FALL,SIEMENS,Avanto Fit,1.5,3,test,298_LA
+127,FALL,SIEMENS,SymphonyTim,1.5,3,test,127_LA
+122,FALL,SIEMENS,SymphonyTim,1.5,3,test,122_LA
+294,FALL,SIEMENS,SymphonyTim,1.5,3,test,294_LA
+101,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,3,test,101_LA
+118,ARR,Philips Medical Systems,Achieva,1.5,3,test,118_LA
+103,ARR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,test,103_LA
+284,ARR,SIEMENS,Avanto Fit,1.5,3,test,284_LA
+287,ARR,SIEMENS,Symphony,1.5,3,test,287_LA
+177,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,3,test,177_LA
+102,ARR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,3,test,102_LA
+116,ARR,Philips Medical Systems,Achieva,1.5,3,test,116_LA
+261,HCM,SIEMENS,SymphonyTim,1.5,3,test,261_LA
+275,HCM,SIEMENS,SymphonyTim,1.5,3,test,275_LA
+174,HCM,Philips Medical Systems,Achieva,1.5,3,test,174_LA
+71,HCM,Philips Medical Systems,Achieva,1.5,3,test,071_LA
+83,HCM,Philips Medical Systems,Achieva,1.5,3,test,083_LA
+100,HCM,SIEMENS,SymphonyTim,1.5,3,test,100_LA
+171,HCM,GE MEDICAL SYSTEMS,Signa HDxt,1.5,3,test,171_LA
+173,HCM,Philips Medical Systems,Achieva,1.5,3,test,173_LA
+77,HCM,Philips Medical Systems,Achieva,1.5,3,test,077_LA
+269,HCM,SIEMENS,SymphonyTim,1.5,3,test,269_LA
+266,HCM,SIEMENS,Symphony,1.5,3,test,266_LA
+80,HCM,Philips Medical Systems,Achieva,1.5,3,test,080_LA
+175,HCM,SIEMENS,SymphonyTim,1.5,3,test,175_LA
+279,HCM,SIEMENS,SymphonyTim,1.5,3,test,279_LA
+273,HCM,SIEMENS,SymphonyTim,1.5,3,test,273_LA
+55,LV,SIEMENS,SymphonyTim,1.5,3,test,055_LA
+166,LV,SIEMENS,Symphony,1.5,3,test,166_LA
+232,LV,SIEMENS,SymphonyTim,1.5,3,test,232_LA
+247,LV,SIEMENS,Avanto Fit,1.5,3,test,247_LA
+233,LV,SIEMENS,SymphonyTim,1.5,3,test,233_LA
+237,LV,SIEMENS,SymphonyTim,1.5,3,test,237_LA
+48,LV,SIEMENS,SymphonyTim,1.5,3,test,048_LA
+42,LV,SIEMENS,SymphonyTim,1.5,3,test,042_LA
+69,LV,SIEMENS,SymphonyTim,1.5,3,test,069_LA
+62,LV,SIEMENS,SymphonyTim,1.5,3,test,062_LA
+253,LV,SIEMENS,SymphonyTim,1.5,3,test,253_LA
+254,LV,SIEMENS,Avanto Fit,1.5,3,test,254_LA
+245,LV,SIEMENS,Avanto Fit,1.5,3,test,245_LA
+65,LV,SIEMENS,SymphonyTim,1.5,3,test,065_LA
+244,LV,SIEMENS,TrioTim,3.0,3,test,244_LA
+13,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,test,013_LA
+31,NOR,Philips Medical Systems,Achieva,1.5,3,test,031_LA
+224,NOR,SIEMENS,SymphonyTim,1.5,3,test,224_LA
+164,NOR,Philips Medical Systems,Achieva,1.5,3,test,164_LA
+210,NOR,GE MEDICAL SYSTEMS,Signa HDxt,1.5,3,test,210_LA
+204,NOR,Philips Medical Systems,Achieva,1.5,3,test,204_LA
+1,NOR,GE MEDICAL SYSTEMS,SIGNA EXCITE,1.5,3,test,001_LA
+222,NOR,SIEMENS,SymphonyTim,1.5,3,test,222_LA
+14,NOR,Philips Medical Systems,Achieva,1.5,3,test,014_LA
+28,NOR,Philips Medical Systems,Achieva,1.5,3,test,028_LA
+216,NOR,SIEMENS,SymphonyTim,1.5,3,test,216_LA
+38,NOR,Philips Medical Systems,Achieva,1.5,3,test,038_LA
+163,NOR,Philips Medical Systems,Achieva,1.5,3,test,163_LA
+29,NOR,Philips Medical Systems,Achieva,1.5,3,test,029_LA
+165,NOR,Philips Medical Systems,Achieva,1.5,3,test,165_LA
+215,NOR,SIEMENS,SymphonyTim,1.5,3,test,215_LA
+21,NOR,Philips Medical Systems,Achieva,1.5,3,test,021_LA
+39,NOR,Philips Medical Systems,Achieva,1.5,3,test,039_LA
+105,ARR,GE MEDICAL SYSTEMS,Signa HDxt,3.0,3,test,105_LA
+296,FALL,SIEMENS,SymphonyTim,1.5,3,test,296_LA
+159,CIA,SIEMENS,SymphonyTim,1.5,3,test,159_LA
+339,TRI,Philips Medical Systems,Achieva,1.5,3,test,339_LA

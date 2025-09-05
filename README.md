@@ -49,6 +49,7 @@ How to get started?
 
 #### Inference
 - <a target="_blank" href="https://github.com/Cardio-AI/cmr-las-phase2phase-analysis/tree/main/docs/Keyframe-detection.md">Keyframe detection</a>
+- <a target="_blank" href="https://github.com/Cardio-AI/cmr-las-phase2phase-analysis/tree/main/docs/CINE_CMR_Segmentation.md">Cine CMR Segmentation</a>
 - <a target="_blank" href="https://github.com/Cardio-AI/cmr-las-phase2phase-analysis/tree/main/docs/Phase2Phase-LAS.md">Phase to phase LAS computing</a>
 
 Project Organization

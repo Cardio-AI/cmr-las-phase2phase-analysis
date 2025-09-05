@@ -41,6 +41,8 @@ Our trainings script supports single- and multi-GPU training (local or  cluster)
 For segmentation, we used the publicly available <a target="_blank" href="https://github.com/MIC-DKFZ/nnUNet"> nnU-Net </a>  framework. 
 Please use 2D 4CH cine CMR images for the training of the model. 
 
+Following training, please also run the command to automatically determine the best configuration, as postprocessing will be applied.
+
 Note: nnU-Net does not support time sequences. During LAS estimation, our pipeline processes each timestep independently and assembles cine masks.
 
 Segmentation labels:
