@@ -39,6 +39,18 @@ where z = 1.
 In addition, you must set the correct temporal dimension in the configuration file to at least t + 1 ( ```"T_SHAPE" ```).
 By default, it is set to 40. If your sequence has more than 39 time steps, you need to increase this number accordingly.
 
+#### File naming conventions
+File names are used to extract patient IDS, which must mathc those in phases.csv and df_kfold.csv.
+
+Supported regex patterns (from source datasets):
+- ```r'\d+-([a-zA-Z0-9]+)_\d{4}-\d{2}-\d{2}.*'```  -> GCN: 0000-0ae4r74l_1900-01-01_...
+- ```r'(\d+)_LA_CINE.*'```  -> M&Ms and M&Ms-2: 039_LA_CINE.nii.gz
+- ```r'patient(\d+)_.*'```  -> ACDC: patient001_4d.nii.gz
+- 
+If your dataset uses a different convention, add your regex pattern to:
+```src/data/Dataset.py -> extract_id```.
+
+
 #### Dataframe for k-fold split validation
 For a split in several folds you have to provide a **_df_kfold.csv_** file. 
 Here you should have a row for each patient and fold and if it belongs to "train" or "test" in the modality column.
